@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>액션에어그룹 — 히트펌프 산업의 미래</title>
+  <meta name="description" content="냉난방 공조, 보일러, 온수, 난방, 수영장 비즈니스. 히트펌프 산업의 미래와 함께하는 액션에어그룹입니다.">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="액션에어그룹">
+  <meta property="og:title" content="액션에어그룹 — 히트펌프 산업의 미래">
+  <meta property="og:description" content="냉난방 공조, 보일러, 온수, 난방, 수영장 비즈니스. 히트펌프 산업의 미래와 함께하는 액션에어그룹입니다.">
+  <meta property="og:locale" content="ko_KR">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/academy.css">
+  <!-- 시안 프리뷰: 기존 그룹소개 드롭다운 하위 링크는 운영 사이트로 연결 -->
+  <script>window.AAG_LIVE_BASE = 'https://www.actionairgroup.com/pages/';</script>
+  <script src="js/main.js" defer></script>
+
+  <style>
+    .biz-unit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .biz-card {
+      background: var(--glass);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px 24px;
+      text-align: center;
+      transition: border-color 0.4s var(--ease), box-shadow 0.4s var(--ease), transform 0.4s var(--ease);
+      position: relative;
+      overflow: hidden;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    .biz-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+    .biz-card:hover { border-color: var(--gold-border); transform: translateY(-6px); box-shadow: var(--shadow); }
+    .biz-card:hover::before { opacity: 1; }
+    .biz-card-icon-wrap {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--surface), var(--surface-2));
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+      color: var(--gold);
+      transition: all 0.4s var(--ease);
+    }
+    .biz-card:hover .biz-card-icon-wrap {
+      background: linear-gradient(135deg, var(--gold-glow), rgba(153,118,55,0.15));
+      border-color: var(--gold-border);
+      transform: scale(1.08);
+    }
+    .biz-card-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--gold);
+      background: var(--gold-glow);
+      border: 1px solid var(--gold-border);
+      border-radius: 100px;
+      margin-bottom: 10px;
+    }
+    .biz-card-name {
+      font-family: var(--font-display);
+      font-size: 1.05rem; font-weight: 700;
+      color: var(--white); margin-bottom: 4px;
+    }
+    .biz-card-sub {
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      letter-spacing: 0.06em;
+      margin-bottom: 12px;
+    }
+    .biz-card-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px; }
+    .biz-card-link {
+      font-size: 0.78rem; font-weight: 600; color: var(--gold);
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .biz-card-link:hover { gap: 10px; }
+
+    .showroom-highlight {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .showroom-img-stack { position: relative; height: 500px; }
+    .showroom-img-stack .img-main {
+      width: 85%; height: 400px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .showroom-img-stack .img-float {
+      position: absolute;
+      bottom: 0; right: 0;
+      width: 55%; height: 240px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 2px solid var(--gold-border);
+      box-shadow: var(--shadow-lg);
+    }
+    .showroom-img-stack img { width: 100%; height: 100%; object-fit: cover; }
+
+    .consulting-preview { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .consulting-card {
+      background: var(--glass);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 48px 40px;
+      transition: all var(--transition);
+    }
+    .consulting-card:hover { border-color: var(--gold-border); }
+    .consulting-card .price-tag {
+      font-family: var(--font-display);
+      font-size: 1.8rem; font-weight: 700; color: var(--gold);
+      margin: 20px 0 8px;
+    }
+    .consulting-card .price-sub { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 24px; }
+    .consulting-card ul li {
+      padding: 8px 0;
+      font-size: 0.9rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .consulting-card ul li::before { content: '—'; color: var(--gold); }
+
+    @media (max-width: 1024px) {
+      .showroom-highlight { grid-template-columns: 1fr; }
+      .showroom-img-stack { height: 400px; }
+      .consulting-preview { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .biz-unit-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+      .showroom-img-stack { height: 320px; }
+      .showroom-img-stack .img-float { width: 60%; height: 180px; }
+    }
+    @media (max-width: 480px) {
+      .biz-unit-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PROMO BANNER -->
+  <div class="promo-banner" id="promoBanner">
+    액션에어 아카데미 국비지원과정(국민내일배움카드) 주말반 모집 중!
+    <a href="pages/academy-courses.html#hrd">과정 보기 &rarr;</a>
+    <button class="promo-banner-close" id="promoClose" aria-label="닫기">&times;</button>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="nav">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.png" alt="액션에어그룹" class="nav-logo-img" onerror="this.classList.add('error')">
+        <span class="nav-logo-text">ACTION AIR GROUP</span>
+      </a>
+      <div class="nav-menu" id="navMenu">
+        <a href="https://www.actionairgroup.com/pages/about.html" class="nav-link">그룹소개</a>
+        <a href="https://www.actionairgroup.com/pages/nz15c.html" class="nav-link">N.Z 1.5℃ 쇼룸</a>
+        <a href="https://www.actionairgroup.com/pages/iot.html" class="nav-link">IoT 쇼룸</a>
+        <a href="https://www.actionairgroup.com/pages/archi-u.html" class="nav-link">아키유</a>
+        <!-- ★ 신규: 아카데미 메뉴 (드롭다운) -->
+        <div class="nav-dropdown">
+          <a href="pages/academy.html" class="nav-link">아카데미<span class="nav-link-caret">▾</span></a>
+          <div class="nav-dropdown-menu">
+            <a href="pages/academy.html" class="nav-dropdown-item"><span class="nav-dd-text"><span class="nav-dd-label">아카데미 소개</span><span class="nav-dd-desc">교육이념 · 연혁 · 시설 · 오시는 길</span></span><span class="nav-dd-arrow">&rarr;</span></a>
+            <a href="pages/academy-courses.html" class="nav-dropdown-item"><span class="nav-dd-text"><span class="nav-dd-label">교육과정</span><span class="nav-dd-desc">국비지원 · 창업과정 · 청소과정 · 단과반</span></span><span class="nav-dd-arrow">&rarr;</span></a>
+            <a href="pages/academy-payment.html" class="nav-dropdown-item"><span class="nav-dd-text"><span class="nav-dd-label">학원비 결제</span><span class="nav-dd-desc">국민내일배움카드 · 신용카드 · 계좌이체</span></span><span class="nav-dd-arrow">&rarr;</span></a>
+            <a href="pages/academy-partner.html" class="nav-dropdown-item"><span class="nav-dd-text"><span class="nav-dd-label">파트너 · 창업</span><span class="nav-dd-desc">파트너 모집 · 아카데미 가맹 · 시공/기업서비스</span></span><span class="nav-dd-arrow">&rarr;</span></a>
+            <a href="pages/academy-community.html" class="nav-dropdown-item"><span class="nav-dd-text"><span class="nav-dd-label">커뮤니티</span><span class="nav-dd-desc">공지사항 · FAQ · 1:1 상담신청</span></span><span class="nav-dd-arrow">&rarr;</span></a>
+          </div>
+        </div>
+        <a href="https://www.actionairgroup.com/pages/consulting.html" class="nav-link">컨설팅</a>
+        <a href="https://www.actionairgroup.com/pages/contact.html" class="nav-link">문의</a>
+        <a href="https://www.actionairgroup.com/pages/reservation.html" class="nav-cta">쇼룸 예약</a>
+      </div>
+      <div class="nav-auth">
+        <button class="nav-auth-btn" id="navLoginBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          로그인
+        </button>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="메뉴">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO SLIDER -->
+  <section class="hero-slider">
+
+    <!-- Slide 1: Brand Main -->
+    <div class="hero-slide active">
+      <div class="hero-bg">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80" alt="Bright Modern Building" onerror="this.src='images/showroom-hero.jpg'">
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge"><span class="dot"></span>히트펌프 산업의 미래</div>
+          <h1>냉난방의 새로운 기준,<br><span class="text-gradient">액션에어그룹</span></h1>
+          <p class="hero-desc">
+            냉난방 공조 · 보일러 · 온수 · 난방 · 수영장 비즈니스<br>
+            히트펌프 산업의 미래와 함께 액션에어그룹이 함께합니다.
+          </p>
+          <div class="hero-actions">
+            <a href="https://www.actionairgroup.com/pages/reservation.html" class="btn btn-primary">쇼룸 방문 예약 <span class="btn-icon">&rarr;</span></a>
+            <a href="https://www.actionairgroup.com/pages/consulting.html" class="btn btn-outline">컨설팅 알아보기</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2: Academy (신규) -->
+    <div class="hero-slide">
+      <div class="hero-bg">
+        <img src="images/adademy-front.jpg" alt="액션에어 아카데미">
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge"><span class="dot"></span>Action Air Academy</div>
+          <h1>에어컨 기술로<br><span class="text-gradient">미래를 준비하세요</span></h1>
+          <p class="hero-desc">
+            전국최초 일반에어컨 + 시스템에어컨 동시 교육<br>
+            국민내일배움카드 국비지원과정 · 창업과정 · 단과반 수시모집.
+          </p>
+          <div class="hero-actions">
+            <a href="pages/academy-courses.html" class="btn btn-primary">교육과정 보기 <span class="btn-icon">&rarr;</span></a>
+            <a href="pages/academy-payment.html" class="btn btn-outline">수강 신청</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3: Showroom -->
+    <div class="hero-slide">
+      <div class="hero-bg">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=80" alt="Modern Showroom" onerror="this.src='images/showroom-hero.jpg'">
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge"><span class="dot"></span>N.Z 1.5&#8451; Showroom</div>
+          <h1>세종시 프리미엄 쇼룸에서<br><span class="text-gradient">직접 체험하세요</span></h1>
+          <p class="hero-desc">
+            LG Therma V 기반 히트펌프 시스템의 실제 구동 환경을<br>
+            N.Z 1.5&#8451; 쇼룸에서 경험하십시오.
+          </p>
+          <div class="hero-actions">
+            <a href="https://www.actionairgroup.com/pages/nz15c.html" class="btn btn-primary">쇼룸 둘러보기 <span class="btn-icon">&rarr;</span></a>
+            <a href="https://www.actionairgroup.com/pages/iot.html" class="btn btn-outline">IoT 쇼룸 보기</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 4: Consulting -->
+    <div class="hero-slide">
+      <div class="hero-bg">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80" alt="Professional Consulting" onerror="this.src='images/showroom-drone.jpg'">
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge"><span class="dot"></span>Professional Services</div>
+          <h1>15년 현장 경험의<br><span class="text-gradient">전문 컨설팅</span></h1>
+          <p class="hero-desc">
+            히트펌프 설계부터 시공, 유지관리까지<br>
+            1:1 맞춤 컨설팅과 실무 전자책을 만나보세요.
+          </p>
+          <div class="hero-actions">
+            <a href="https://www.actionairgroup.com/pages/consulting.html" class="btn btn-primary">컨설팅 신청 <span class="btn-icon">&rarr;</span></a>
+            <a href="https://www.actionairgroup.com/pages/consulting.html#ebooks" class="btn btn-outline">전자책 보기</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-dots">
+      <button class="hero-dot active" aria-label="슬라이드 1"></button>
+      <button class="hero-dot" aria-label="슬라이드 2"></button>
+      <button class="hero-dot" aria-label="슬라이드 3"></button>
+      <button class="hero-dot" aria-label="슬라이드 4"></button>
+    </div>
+
+    <div class="hero-scroll-indicator">SCROLL<span class="line"></span></div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-item">◆ LG THERMA V 공식 파트너</div>
+    <div class="trust-item">◆ Aqara 스마트홈 파트너</div>
+    <div class="trust-item">◆ N.Z 1.5℃ 인증 쇼룸</div>
+    <div class="trust-item">◆ 국민내일배움카드 훈련기관</div>
+  </div>
+
+  <!-- STATS -->
+  <section class="section">
+    <div class="container">
+      <div class="stats-row">
+        <div class="stat-item"><div class="stat-number" data-count="15" data-suffix="+">15+</div><div class="stat-label">년 업계 경력</div></div>
+        <div class="stat-item"><div class="stat-number" data-count="500" data-suffix="+">500+</div><div class="stat-label">프로젝트 완료</div></div>
+        <div class="stat-item"><div class="stat-number" data-count="6">6</div><div class="stat-label">사업 부문 운영</div></div>
+        <div class="stat-item"><div class="stat-number" data-count="98" data-suffix="%">98%</div><div class="stat-label">고객 만족도</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRAND STORY -->
+  <section class="section">
+    <div class="container">
+      <div class="brand-story">
+        <div style="border-radius:var(--radius-lg);overflow:hidden;min-height:400px;">
+          <img src="images/actionair_ourstory_4x3_1.jpg" alt="액션에어그룹" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <div class="brand-story-text">
+          <div class="section-label">Our Story</div>
+          <h2 class="section-title">현장에서 답을 찾는<br><span class="text-gradient">엔지니어의 철학</span></h2>
+          <blockquote class="brand-story-quote">
+            "히트펌프는 단순한 설비가 아닙니다.<br>
+            공간에 사는 사람의 삶의 질을 바꾸는 기술입니다."
+          </blockquote>
+          <p>
+            15년간 냉난방 공조 현장을 누비며 깨달은 것은, 좋은 시스템은 기술력만으로 완성되지 않는다는 것입니다.
+            건축주의 생활 패턴, 건물의 특성, 그리고 장기적인 에너지 효율까지 모두 고려해야 진정한 쾌적함이 만들어집니다.
+          </p>
+          <p>
+            액션에어그룹은 설계부터 시공, 스마트홈 연동, 유지관리까지 하나의 그룹 안에서 해결하는 통합 솔루션을 제공합니다.
+            세종시 쇼룸에서 직접 체험하고, 데이터로 확인하세요.
+          </p>
+          <div class="divider"></div>
+          <a href="https://www.actionairgroup.com/pages/archi-u.html" class="btn btn-outline btn-sm">아키유 건축 컨설팅 &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUSINESS UNITS -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-label">Business Units</div>
+      <h2 class="section-title">통합 솔루션,<br><span class="text-gradient">6개 사업 부문</span></h2>
+      <p class="section-desc" style="margin-bottom:60px;">
+        히트펌프·IoT 스마트홈·도매 유통까지, 건축 공조 산업의 모든 영역을 아우르는 전문 그룹입니다.
+      </p>
+
+      <div class="biz-unit-grid">
+        <a href="https://www.actionairgroup.com/pages/archi-u.html" class="biz-card card-tilt">
+          <div class="biz-card-icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M9 8h1M9 12h1M9 16h1M14 8h1M14 12h1M14 16h1M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16"/></svg></div>
+          <div class="biz-card-badge">직영건축 컨설팅</div>
+          <div class="biz-card-name">아키유</div>
+          <div class="biz-card-sub">Archi-U Consulting</div>
+          <div class="biz-card-desc">노출콘크리트 직영건축 전문<br>설계 &middot; 시공 &middot; 감리 원스톱</div>
+          <span class="biz-card-link">자세히 보기 <span>&rarr;</span></span>
+        </a>
+        <a href="https://www.dawonairsys.co.kr" target="_blank" class="biz-card card-tilt">
+          <div class="biz-card-icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+          <div class="biz-card-badge">LG전자 B2B 전문점</div>
+          <div class="biz-card-name">다원에어시스</div>
+          <div class="biz-card-sub">Dawon Air Systems</div>
+          <div class="biz-card-desc">히트펌프 냉난방 시공 &middot; 유지보수<br>LG 시스템에어컨 공식 인증</div>
+          <span class="biz-card-link">바로가기 <span>&rarr;</span></span>
+        </a>
+        <!-- ★ 아카데미: 외부링크 → 사이트 내 메뉴로 변경 -->
+        <a href="pages/academy.html" class="biz-card card-tilt">
+          <div class="biz-card-icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 3 3 6 3s6-1 6-3v-5"/></svg></div>
+          <div class="biz-card-badge">국비지원과정 운영</div>
+          <div class="biz-card-name">액션에어 아카데미</div>
+          <div class="biz-card-sub">Action Air Academy</div>
+          <div class="biz-card-desc">HVAC 전문 인력 양성 교육기관<br>시공기술 실무 &middot; 창업과정</div>
+          <span class="biz-card-link">자세히 보기 <span>&rarr;</span></span>
+        </a>
+        <a href="https://www.actionairgroup.com/pages/nz15c.html" class="biz-card card-tilt">
+          <div class="biz-card-icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 14.76V3.5a2.5 2.5 0 00-5 0v11.26a4.5 4.5 0 105 0z"/></svg></div>
+          <div class="biz-card-badge">히트펌프 체험 쇼룸</div>
+          <div class="biz-card-name">N.Z 1.5&#8451;</div>
+          <div class="biz-card-sub">HVAC Solution Studio</div>
+          <div class="biz-card-desc">LG Therma V 실제 구동 환경<br>냉난방 &middot; 온수 &middot; 수영장 체험</div>
+          <span class="biz-card-link">쇼룸 보기 <span>&rarr;</span></span>
+        </a>
+        <a href="https://www.actionairgroup.com/pages/iot.html" class="biz-card card-tilt">
+          <div class="biz-card-icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12.55a11 11 0 0114.08 0"/><path d="M1.42 9a16 16 0 0121.16 0"/><path d="M8.53 16.11a6 6 0 016.95 0"/><circle cx="12" cy="20" r="1" fill="currentColor"/></svg></div>
+          <div class="biz-card-badge">Aqara 공식 파트너</div>
+          <div class="biz-card-name">아카라 IoT 쇼룸</div>
+          <div class="biz-card-sub">Aqara Smart Home</div>
+          <div class="biz-card-desc">스마트홈 자동화 체험 공간<br>조명 &middot; 보안 &middot; 에너지 통합 제어</div>
+          <span class="biz-card-link">체험하기 <span>&rarr;</span></span>
+        </a>
+        <a href="https://www.actionairgroup.com/pages/locations.html#distribution" class="biz-card card-tilt">
+          <div class="biz-card-icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-6 9 6v11a1 1 0 01-1 1h-4v-7H8v7H4a1 1 0 01-1-1V9z"/><path d="M10 16h4"/></svg></div>
+          <div class="biz-card-badge">도매 유통 거점</div>
+          <div class="biz-card-name">액션에어 유통전문점</div>
+          <div class="biz-card-sub">Action Air Distribution</div>
+          <div class="biz-card-desc">LG &middot; 삼성 전 브랜드 신품 도매<br>충남 아산 배방 유통센터 운영</div>
+          <span class="biz-card-link">위치 보기 <span>&rarr;</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ★ 신규: ACADEMY HIGHLIGHT -->
+  <section class="section">
+    <div class="container">
+      <div class="academy-highlight">
+        <div class="academy-highlight-img reveal">
+          <img src="images/adademy-front.jpg" alt="액션에어 아카데미">
+          <div class="academy-highlight-chip">
+            <b>국비지원 45~100%</b>
+            <span>국민내일배움카드 훈련과정</span>
+          </div>
+        </div>
+        <div>
+          <div class="section-label">Action Air Academy</div>
+          <h2 class="section-title">에어컨 분야<br><span class="text-gradient">Tech Master를 양성합니다</span></h2>
+          <p style="color:var(--text-muted);line-height:1.9;">
+            에어컨 설치 · AS · 세척 등 현장에 필요한 전문기술 교육과 창업을 지원하는 국내 유일의 에어컨기술 전문학원.
+            전국최초로 일반에어컨과 시스템에어컨을 동시에 배울 수 있는 교육장입니다.
+          </p>
+          <div class="academy-mini-list">
+            <a href="pages/academy-courses.html#hrd"><span>국비지원과정<small>8주 주말 · 내일배움카드</small></span><span class="arrow">&rarr;</span></a>
+            <a href="pages/academy-courses.html#startup"><span>에어컨기술 창업과정<small>5일 · 10일 평일과정</small></span><span class="arrow">&rarr;</span></a>
+            <a href="pages/academy-courses.html#clean"><span>에어컨청소 창업과정<small>기본 10일 · 집중 5일</small></span><span class="arrow">&rarr;</span></a>
+            <a href="pages/academy-courses.html#short"><span>집중 단과반<small>1~2일 · 수시모집</small></span><span class="arrow">&rarr;</span></a>
+          </div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <a href="pages/academy.html" class="btn btn-primary btn-sm">아카데미 소개 <span class="btn-icon">→</span></a>
+            <a href="pages/academy-payment.html" class="btn btn-outline btn-sm">수강 신청 · 학원비 결제</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW WE WORK -->
+  <section class="section section-dark">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:60px;">
+        <div class="section-label" style="justify-content:center;">How We Work</div>
+        <h2 class="section-title">설계부터 유지관리까지,<br><span class="text-gradient">원스톱 프로세스</span></h2>
+        <p class="section-desc" style="margin:0 auto;">액션에어그룹은 각 단계별 전문 팀이 유기적으로 협력하여 최적의 결과를 만들어냅니다.</p>
+      </div>
+      <div class="hww-grid">
+        <div class="hww-card">
+          <div class="hww-card-img"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80" alt="상담 & 설계" onerror="this.src='images/showroom-hero.jpg'"></div>
+          <div class="hww-card-body">
+            <div class="hww-card-step">Step 01</div>
+            <div class="hww-card-title">상담 & 설계</div>
+            <div class="hww-card-desc">현장 방문 후 열부하 계산과 에너지 시뮬레이션을 통해 과설계 없는 최적 시스템을 설계합니다.</div>
+            <a href="https://www.actionairgroup.com/pages/consulting.html" class="card-link">컨설팅 알아보기 <span>&rarr;</span></a>
+          </div>
+        </div>
+        <div class="hww-card">
+          <div class="hww-card-img"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="시공 & 설치" onerror="this.src='images/showroom-drone.jpg'"></div>
+          <div class="hww-card-body">
+            <div class="hww-card-step">Step 02</div>
+            <div class="hww-card-title">시공 & 설치</div>
+            <div class="hww-card-desc">직영 시공으로 히트펌프 설치부터 스마트홈 IoT 연동까지 한 번에 완성합니다.</div>
+            <a href="https://www.actionairgroup.com/pages/archi-u.html" class="card-link">아키유 보기 <span>&rarr;</span></a>
+          </div>
+        </div>
+        <div class="hww-card">
+          <div class="hww-card-img"><img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&q=80" alt="유지 & 관리" onerror="this.src='images/showroom-hero.jpg'"></div>
+          <div class="hww-card-body">
+            <div class="hww-card-step">Step 03</div>
+            <div class="hww-card-title">유지 & 관리</div>
+            <div class="hww-card-desc">정기 점검과 IoT 원격 모니터링으로 시스템 효율을 유지하고, 신속한 A/S를 지원합니다.</div>
+            <a href="https://www.actionairgroup.com/pages/iot.html" class="card-link">IoT 쇼룸 보기 <span>&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOWROOM HIGHLIGHT -->
+  <section class="section">
+    <div class="container">
+      <div class="showroom-highlight">
+        <div class="showroom-img-stack">
+          <div class="img-main reveal"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" alt="N.Z 1.5℃ 쇼룸" onerror="this.src='images/showroom-hero.jpg'"></div>
+          <div class="img-float reveal reveal-delay-2"><img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&q=80" alt="쇼룸 항공 뷰" onerror="this.src='images/showroom-drone.jpg'"></div>
+        </div>
+        <div class="split-text">
+          <div class="section-label">N.Z 1.5℃ Showroom</div>
+          <h2 class="section-title">직접 체험하는<br><span class="text-gradient">히트펌프의 미래</span></h2>
+          <p>세종시 행복마을5길 4에 위치한 N.Z 1.5℃ 쇼룸에서 LG Therma V 히트펌프 시스템을 직접 체험해 보세요.</p>
+          <p>냉난방, 온수, 바닥난방까지 실제 운영 환경에서 성능을 확인할 수 있습니다.</p>
+          <div class="divider"></div>
+          <div style="display:flex;gap:16px;margin-top:8px;">
+            <a href="https://www.actionairgroup.com/pages/reservation.html" class="btn btn-primary btn-sm">방문 예약 <span class="btn-icon">→</span></a>
+            <a href="https://www.actionairgroup.com/pages/nz15c.html" class="btn btn-outline btn-sm">쇼룸 상세</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUSTOMER CASE -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="case-banner">
+        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1400&q=80" alt="시공 완성 사례" onerror="this.src='images/showroom-drone.jpg'">
+        <div class="case-banner-overlay">
+          <span class="case-banner-label">Construction Interview</span>
+          <div class="case-banner-title">전문가와 함께한<br>히트펌프 시공 이야기</div>
+          <p class="case-banner-desc">"에너지 비용이 40% 줄었습니다" — 직접 시공을 경험한 건축주가 들려주는 히트펌프 시스템 도입 전후의 변화.</p>
+          <a href="https://www.actionairgroup.com/pages/nz15c.html" class="btn btn-outline btn-sm">사례 더보기 &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMAGE BANNER -->
+  <section style="padding:0 40px;">
+    <div class="img-banner" style="max-width:var(--container);margin:0 auto;">
+      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1400&q=80" alt="Bright Corporate Office" onerror="this.src='images/showroom-drone.jpg'">
+      <div class="img-banner-overlay">
+        <div>
+          <div class="img-banner-text">건축 공조의 A to Z</div>
+          <p style="color:var(--text-muted);font-size:0.9rem;margin-top:4px;">설계부터 시공, 유지관리까지 원스톱 솔루션</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONSULTING + E-BOOK PREVIEW -->
+  <section class="section section-dark">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:60px;">
+        <div class="section-label" style="justify-content:center;">Professional Services</div>
+        <h2 class="section-title">전문 컨설팅 &<br><span class="text-gradient">실전 전자책</span></h2>
+        <p class="section-desc" style="margin:0 auto;">15년 이상의 현장 경험을 바탕으로 한 1:1 맞춤 컨설팅과 실무 가이드를 제공합니다.</p>
+      </div>
+      <div class="consulting-preview card-stagger">
+        <div class="consulting-card">
+          <div class="badge">1:1 맞춤</div>
+          <div class="price-tag">300,000원</div>
+          <div class="price-sub">2시간 / 1회 세션</div>
+          <ul>
+            <li>공조 시스템 설계 검토</li><li>히트펌프 용량 산정</li><li>에너지 효율 최적화</li>
+            <li>시공 견적 검증</li><li>유지보수 계획 수립</li><li>보조금·인센티브 안내</li>
+          </ul>
+          <a href="https://www.actionairgroup.com/pages/consulting.html" class="btn btn-primary btn-sm" style="margin-top:28px;width:100%;">컨설팅 신청 <span class="btn-icon">→</span></a>
+        </div>
+        <div class="consulting-card">
+          <div class="badge">전자책</div>
+          <div class="price-tag">9,900원~</div>
+          <div class="price-sub">단권 9,900원~49,000원 / 패키지 79,000원</div>
+          <ul>
+            <li>히트펌프 시스템 완벽 가이드</li><li>공조 설계 실무 핸드북</li>
+            <li>에너지 절감 전략 보고서</li><li>스마트홈 구축 매뉴얼</li>
+          </ul>
+          <a href="https://www.actionairgroup.com/pages/consulting.html#ebooks" class="btn btn-outline btn-sm" style="margin-top:28px;width:100%;">전자책 구매 <span class="btn-icon">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT LIBRARY -->
+  <section class="section">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:60px;">
+        <div class="section-label" style="justify-content:center;">Knowledge Library</div>
+        <h2 class="section-title">히트펌프<br><span class="text-gradient">핵심 가이드 10선</span></h2>
+        <p class="section-desc" style="margin:0 auto;">히트펌프 입문부터 실전까지, 꼭 알아야 할 핵심 주제를 모았습니다.</p>
+      </div>
+      <div class="library-grid">
+        <a href="https://www.actionairgroup.com/pages/consulting.html#ebooks" class="library-item"><span class="library-num">01</span><span class="library-title">히트펌프 기초 이해</span><span class="library-arrow">&rarr;</span></a>
+        <a href="https://www.actionairgroup.com/pages/consulting.html#ebooks" class="library-item"><span class="library-num">02</span><span class="library-title">냉매 종류와 R290</span><span class="library-arrow">&rarr;</span></a>
+        <a href="https://www.actionairgroup.com/pages/consulting.html#ebooks" class="library-item"><span class="library-num">03</span><span class="library-title">용량 산정 방법</span><span class="library-arrow">&rarr;</span></a>
+        <a href="https://www.actionairgroup.com/pages/consulting.html#ebooks" class="library-item"><span class="library-num">04</span><span class="library-title">에너지 효율 등급 가이드</span><span class="library-arrow">&rarr;</span></a>
+        <a href="https://www.actionairgroup.com/pages/consulting.html#ebooks" class="library-item"><span class="library-num">05</span><span class="library-title">바닥난방 설계 핵심</span><span class="library-arrow">&rarr;</span></a>
+        <a href="https://www.actionairgroup.com/pages/consulting.html#ebooks" class="library-item"><span class="library-num">06</span><span class="library-title">수영장 히트펌프 솔루션</span><span class="library-arrow">&rarr;</span></a>
+        <a href="https://www.actionairgroup.com/pages/iot.html" class="library-item"><span class="library-num">07</span><span class="library-title">스마트홈 자동화 입문</span><span class="library-arrow">&rarr;</span></a>
+        <a href="https://www.actionairgroup.com/pages/consulting.html" class="library-item"><span class="library-num">08</span><span class="library-title">보조금 & 인센티브 안내</span><span class="library-arrow">&rarr;</span></a>
+        <a href="https://www.actionairgroup.com/pages/consulting.html#ebooks" class="library-item"><span class="library-num">09</span><span class="library-title">유지보수 실전 가이드</span><span class="library-arrow">&rarr;</span></a>
+        <a href="pages/academy-courses.html" class="library-item"><span class="library-num">10</span><span class="library-title">에어컨 시공기술 교육과정</span><span class="library-arrow">&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="section">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:60px;">
+        <div class="section-label" style="justify-content:center;">Why Action Air Group</div>
+        <h2 class="section-title">액션에어그룹을 선택하는 이유</h2>
+      </div>
+      <div class="feature-grid card-stagger">
+        <div class="feature-item"><div class="feature-icon">🔬</div><div class="feature-title">체험 중심 쇼룸</div><div class="feature-desc">카탈로그가 아닌 실제 운영 환경에서 히트펌프와 IoT 시스템을 직접 경험합니다.</div></div>
+        <div class="feature-item"><div class="feature-icon">🤝</div><div class="feature-title">원스톱 통합 서비스</div><div class="feature-desc">설계 → 시공 → 스마트홈 연동 → 유지관리까지 전 과정을 한 그룹에서 해결합니다.</div></div>
+        <div class="feature-item"><div class="feature-icon">🏆</div><div class="feature-title">LG·Aqara 공식 파트너</div><div class="feature-desc">글로벌 브랜드의 공식 파트너로서 정품 시스템과 기술 지원을 보장합니다.</div></div>
+        <div class="feature-item"><div class="feature-icon">📊</div><div class="feature-title">데이터 기반 설계</div><div class="feature-desc">부하 계산, 에너지 시뮬레이션을 통해 과설계 없는 최적 시스템을 제안합니다.</div></div>
+        <div class="feature-item"><div class="feature-icon">🎓</div><div class="feature-title">교육 & 콘텐츠</div><div class="feature-desc">업계 전문 학원 운영과 실무 전자책으로 지속적인 지식 공유를 실천합니다.</div></div>
+        <div class="feature-item"><div class="feature-icon">🌱</div><div class="feature-title">친환경 솔루션</div><div class="feature-desc">탄소중립 목표에 부합하는 R290 냉매 시스템과 에너지 효율 최적화를 추구합니다.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SNS FEED -->
+  <section class="section section-dark">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:60px;">
+        <div class="section-label" style="justify-content:center;">Daily Construction Note</div>
+        <h2 class="section-title">현장의 <span class="text-gradient">생생한 이야기</span></h2>
+        <p class="section-desc" style="margin:0 auto;">다원에어시스 & 액션에어 아카데미의 최신 현장 소식을 만나보세요.</p>
+      </div>
+      <div class="sns-grid">
+        <a href="https://www.instagram.com/dawon2627/" target="_blank" rel="noopener" class="sns-item">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&q=80" alt="시공 현장 1" onerror="this.src='images/showroom-01.jpg'">
+          <div class="sns-item-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></div>
+        </a>
+        <a href="https://www.instagram.com/dawon2627/" target="_blank" rel="noopener" class="sns-item">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80" alt="시공 현장 2" onerror="this.src='images/showroom-02.jpg'">
+          <div class="sns-item-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></div>
+        </a>
+        <a href="https://www.instagram.com/actionair_academy/" target="_blank" rel="noopener" class="sns-item">
+          <img src="images/adademy-front.jpg" alt="액션에어 아카데미">
+          <div class="sns-item-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></div>
+        </a>
+        <a href="https://www.instagram.com/actionair_academy/" target="_blank" rel="noopener" class="sns-item">
+          <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=400&q=80" alt="시공 현장 4" onerror="this.src='images/showroom-04.jpg'">
+          <div class="sns-item-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></div>
+        </a>
+      </div>
+      <div style="text-align:center;margin-top:40px;">
+        <a href="https://www.instagram.com/dawon2627/" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Instagram 팔로우 &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWS / NOTICE -->
+  <section class="section">
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px;">
+        <div>
+          <div class="section-label">News & Notice</div>
+          <h2 class="section-title" style="margin-bottom:0;">최신 소식</h2>
+        </div>
+        <a href="https://www.actionairgroup.com/pages/news.html" class="btn btn-ghost btn-sm">전체보기 &rarr;</a>
+      </div>
+      <div class="news-list">
+        <a href="pages/academy-community.html" class="news-item"><span class="news-badge">교육</span><span class="news-title">액션에어 아카데미 에어컨설치실무 국비지원과정 주말반 모집 안내</span><span class="news-date">2026.05.01</span></a>
+        <a href="https://www.actionairgroup.com/pages/news.html" class="news-item"><span class="news-badge">공지</span><span class="news-title">N.Z 1.5&#8451; 쇼룸 2026년 상반기 운영 안내</span><span class="news-date">2026.04.10</span></a>
+        <a href="https://www.actionairgroup.com/pages/news.html" class="news-item"><span class="news-badge">이벤트</span><span class="news-title">쇼룸 방문 예약 시 전문 컨설팅 30분 무료 이벤트</span><span class="news-date">2026.04.05</span></a>
+        <a href="https://www.actionairgroup.com/pages/news.html" class="news-item"><span class="news-badge">소식</span><span class="news-title">LG Therma V R290 모노블럭 신모델 쇼룸 입고</span><span class="news-date">2026.03.28</span></a>
+        <a href="https://www.actionairgroup.com/pages/news.html" class="news-item"><span class="news-badge">소식</span><span class="news-title">아카라 IoT 쇼룸 Matter 호환 기기 확대 업데이트</span><span class="news-date">2026.03.15</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="section" style="padding:80px 0;background:linear-gradient(135deg, #F0F0F4, #F7F7F9);">
+    <div class="container" style="text-align:center;">
+      <h2 style="margin-bottom:16px;">쇼룸에서 직접 확인하세요</h2>
+      <p class="section-desc" style="margin:0 auto 40px;">세종시 행복마을5길 4 · 예약 후 방문 · 2시간 체험 프로그램</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="https://www.actionairgroup.com/pages/reservation.html" class="btn btn-primary">쇼룸 예약하기 <span class="btn-icon">→</span></a>
+        <a href="https://www.actionairgroup.com/pages/contact.html" class="btn btn-outline">문의하기</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <img src="images/logo.png" alt="액션에어그룹" style="opacity:0.7;background:transparent;border-radius:4px;" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+            <span style="display:none;font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--text-muted);">ACTION AIR GROUP</span>
+          </div>
+          <p class="footer-desc">히트펌프 산업의 미래,<br>액션에어그룹이 함께합니다.</p>
+        </div>
+        <div class="footer-links">
+          <h4>사업 분야</h4>
+          <a href="https://www.actionairgroup.com/pages/archi-u.html">아키유 건축컨설팅</a>
+          <a href="https://www.dawonairsys.co.kr" target="_blank">다원에어시스</a>
+          <a href="pages/academy.html">액션에어아카데미</a>
+          <a href="https://www.actionairgroup.com/pages/nz15c.html">N.Z 1.5℃ 쇼룸</a>
+          <a href="https://www.actionairgroup.com/pages/iot.html">아카라 IoT 쇼룸</a>
+          <a href="https://www.actionairgroup.com/pages/locations.html#distribution">액션에어 유통전문점</a>
+        </div>
+        <div class="footer-links">
+          <h4>아카데미</h4>
+          <a href="pages/academy.html">아카데미 소개</a>
+          <a href="pages/academy-courses.html">교육과정</a>
+          <a href="pages/academy-payment.html">학원비 결제</a>
+          <a href="pages/academy-partner.html">파트너 · 창업</a>
+          <a href="pages/academy-community.html">커뮤니티</a>
+        </div>
+        <div class="footer-links">
+          <h4>서비스 · 연락처</h4>
+          <a href="https://www.actionairgroup.com/pages/reservation.html">쇼룸 방문 예약</a>
+          <a href="https://www.actionairgroup.com/pages/consulting.html">전문 컨설팅</a>
+          <a href="https://www.actionairgroup.com/pages/contact.html">문의하기</a>
+          <a href="tel:1533-2640">1533-2640</a>
+          <a href="mailto:info@actionairgroup.com">info@actionairgroup.com</a>
+        </div>
+      </div>
+
+      <!-- 계열사 네트워크 -->
+      <div style="padding:32px 0;border-top:1px solid var(--border);margin-top:32px;">
+        <h4 style="font-size:0.8rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:20px;">Group Network</h4>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;">
+          <a href="https://www.actionairgroup.com/pages/locations.html#hq" style="padding:20px;background:var(--glass);border:1px solid var(--border);border-radius:var(--radius-sm);display:block;transition:all 0.3s ease;" onmouseover="this.style.borderColor='rgba(153,118,55,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='';this.style.transform=''">
+            <div style="font-size:0.72rem;color:var(--gold);font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px;">본사</div>
+            <div style="font-size:0.88rem;font-weight:600;color:var(--white);margin-bottom:4px;">(주)다원에어시스</div>
+            <div style="font-size:0.8rem;color:var(--text-muted);line-height:1.6;">세종시 소정면 소정구길 228 8호<br><span style="color:var(--text-dim);">044-867-2627</span></div>
+          </a>
+          <a href="pages/academy.html#location" style="padding:20px;background:var(--glass);border:1px solid var(--border);border-radius:var(--radius-sm);display:block;transition:all 0.3s ease;" onmouseover="this.style.borderColor='rgba(153,118,55,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='';this.style.transform=''">
+            <div style="font-size:0.72rem;color:var(--gold);font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px;">아카데미</div>
+            <div style="font-size:0.88rem;font-weight:600;color:var(--white);margin-bottom:4px;">액션에어 에어컨기술창업학원</div>
+            <div style="font-size:0.8rem;color:var(--text-muted);line-height:1.6;">세종시 소정면 소정구길 228 9호<br><span style="color:var(--text-dim);">1533-2640</span></div>
+          </a>
+          <a href="https://www.actionairgroup.com/pages/locations.html#distribution" style="padding:20px;background:var(--glass);border:1px solid var(--border);border-radius:var(--radius-sm);display:block;transition:all 0.3s ease;" onmouseover="this.style.borderColor='rgba(153,118,55,0.35)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='';this.style.transform=''">
+            <div style="font-size:0.72rem;color:var(--gold);font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px;">유통지점</div>
+            <div style="font-size:0.88rem;font-weight:600;color:var(--white);margin-bottom:4px;">액션에어 유통센터</div>
+            <div style="font-size:0.8rem;color:var(--text-muted);line-height:1.6;">아산시 배방읍 월천2길 8-14 LS빌딩 1층<br><span style="color:var(--text-dim);">1555-7726</span></div>
+          </a>
+          <a href="https://www.actionairgroup.com/pages/locations.html#hss" style="padding:20px;background:var(--gold-glow);border:1px solid var(--gold-border);border-radius:var(--radius-sm);display:block;transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
+            <div style="font-size:0.72rem;color:var(--gold);font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px;">HSS (HVAC Solution Studio)</div>
+            <div style="font-size:0.88rem;font-weight:600;color:var(--white);margin-bottom:4px;">N.Z 1.5&#8451; 쇼룸</div>
+            <div style="font-size:0.8rem;color:var(--text-muted);line-height:1.6;">세종시 행복마을5길 4<br><span style="color:var(--gold);">지도 &middot; 사진 보기 &rarr;</span></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-brands">
+        <div class="footer-brand-group">
+          <h4>다원에어시스</h4>
+          <div class="footer-brand-links">
+            <a href="https://blog.naver.com/3122627" target="_blank" rel="noopener">Blog</a>
+            <a href="https://www.youtube.com/@ActionAir_dawon" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://www.instagram.com/dawon2627/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://smartstore.naver.com/actionair_dawon" target="_blank" rel="noopener">스마트스토어</a>
+          </div>
+        </div>
+        <div class="footer-brand-group">
+          <h4>액션에어 아카데미</h4>
+          <div class="footer-brand-links">
+            <a href="https://blog.naver.com/actionair2301" target="_blank" rel="noopener">Blog</a>
+            <a href="https://www.youtube.com/@actionair23" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://www.instagram.com/actionair_academy/" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
+        <div class="footer-brand-group">
+          <h4>Family Site</h4>
+          <div class="footer-brand-links">
+            <a href="https://www.lge.co.kr/air-solution/system-air-conditioner" target="_blank" rel="noopener">LG전자 시스템에어컨</a>
+            <a href="https://www.lge.co.kr/air-solution/hi-m-solutek" target="_blank" rel="noopener">LG전자 하이-엠솔루텍</a>
+            <a href="https://www.lge.co.kr" target="_blank" rel="noopener">LG전자 대표사이트</a>
+            <a href="https://www.dawonairsys.co.kr" target="_blank" rel="noopener">LG전자 B2B 시스템에어컨전문점 다원에어시스</a>
+          </div>
+        </div>
+      </div>
+
+      <div style="padding:24px 0;border-top:1px solid var(--border);margin-top:8px;font-size:0.78rem;color:var(--text-dim);line-height:1.8;">
+        <p><strong>액션에어그룹 (주)다원에어시스</strong> | 대표: 유한종 | 사업자등록번호: 520-88-00856</p>
+        <p>법인등록번호: 161511-0222962 | 통신판매업신고: 2021-세종조치원-0050</p>
+        <p>주소: (30001) 세종특별자치시 소정면 소정구길 228 (주)다원에어시스</p>
+        <p>전화: 1533-2640 | 이메일: info@actionairgroup.com</p>
+        <div style="margin-top:12px;display:flex;gap:16px;flex-wrap:wrap;">
+          <a href="https://www.actionairgroup.com/pages/terms.html" style="color:var(--text-dim);text-decoration:underline;text-underline-offset:2px;">이용약관</a>
+          <a href="https://www.actionairgroup.com/pages/privacy.html" style="color:var(--text-dim);text-decoration:underline;text-underline-offset:2px;">개인정보처리방침</a>
+          <a href="https://www.actionairgroup.com/pages/refund.html" style="color:var(--text-dim);text-decoration:underline;text-underline-offset:2px;">환불 정책</a>
+          <a href="https://www.actionairgroup.com/pages/terms.html" style="color:var(--text-dim);text-decoration:underline;text-underline-offset:2px;">이메일무단수집거부</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>본 사이트의 모든 콘텐츠는 저작권법의 보호를 받는 바, 무단 전재, 복사, 배포 등을 금합니다.</span>
+      </div>
+      <div class="footer-bottom" style="border:none;padding-top:8px;">
+        <span>&copy; 2026 액션에어그룹 (주)다원에어시스. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Buttons -->
+  <div class="floating-btns" id="floatingCta">
+    <a href="https://pf.kakao.com/_xbxcxcxj/chat" target="_blank" rel="noopener" class="floating-kakao" title="카카오톡 상담">
+      <svg viewBox="0 0 24 24" fill="#3C1E1E"><path d="M12 3C6.48 3 2 6.58 2 10.94c0 2.8 1.86 5.27 4.66 6.67-.15.53-.96 3.42-.99 3.66 0 0-.02.17.09.24.11.06.24.01.24.01.32-.04 3.7-2.44 4.28-2.85.56.08 1.14.13 1.72.13 5.52 0 10-3.58 10-7.86C22 6.58 17.52 3 12 3z"/></svg>
+    </a>
+    <a href="https://www.actionairgroup.com/pages/reservation.html" class="floating-cta-btn">쇼룸 예약</a>
+  </div>
+
+</body>
+</html>

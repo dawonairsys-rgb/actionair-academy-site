@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>액션에어 아카데미 — 에어컨기술 창업학원 | 액션에어그룹</title>
+  <meta name="description" content="에어컨 설치·AS·세척 등 현장 전문기술 교육과 창업을 지원하는 국내 유일의 에어컨기술 전문학원, 액션에어 아카데미.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/academy.css">
+  <script>window.AAG_LIVE_BASE = 'https://www.actionairgroup.com/pages/';</script>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/academy.js" defer></script>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="nav">
+    <div class="container">
+      <a href="../index.html" class="nav-logo">
+        <img src="../images/logo.png" alt="액션에어그룹" class="nav-logo-img" onerror="this.classList.add('error')">
+        <span class="nav-logo-text">ACTION AIR GROUP</span>
+      </a>
+      <div class="nav-menu" id="navMenu">
+        <a href="https://www.actionairgroup.com/pages/about.html" class="nav-link">그룹소개</a>
+        <a href="https://www.actionairgroup.com/pages/nz15c.html" class="nav-link">N.Z 1.5℃ 쇼룸</a>
+        <a href="https://www.actionairgroup.com/pages/iot.html" class="nav-link">IoT 쇼룸</a>
+        <a href="https://www.actionairgroup.com/pages/archi-u.html" class="nav-link">아키유</a>
+        <div class="nav-dropdown">
+          <a href="academy.html" class="nav-link active">아카데미<span class="nav-link-caret">▾</span></a>
+          <div class="nav-dropdown-menu">
+            <a href="academy.html" class="nav-dropdown-item active"><span class="nav-dd-text"><span class="nav-dd-label">아카데미 소개</span><span class="nav-dd-desc">교육이념 · 연혁 · 시설 · 오시는 길</span></span><span class="nav-dd-arrow">&rarr;</span></a>
+            <a href="academy-courses.html" class="nav-dropdown-item"><span class="nav-dd-text"><span class="nav-dd-label">교육과정</span><span class="nav-dd-desc">국비지원 · 창업과정 · 청소과정 · 단과반</span></span><span class="nav-dd-arrow">&rarr;</span></a>
+            <a href="academy-payment.html" class="nav-dropdown-item"><span class="nav-dd-text"><span class="nav-dd-label">학원비 결제</span><span class="nav-dd-desc">국민내일배움카드 · 신용카드 · 계좌이체</span></span><span class="nav-dd-arrow">&rarr;</span></a>
+            <a href="academy-partner.html" class="nav-dropdown-item"><span class="nav-dd-text"><span class="nav-dd-label">파트너 · 창업</span><span class="nav-dd-desc">파트너 모집 · 아카데미 가맹 · 시공/기업서비스</span></span><span class="nav-dd-arrow">&rarr;</span></a>
+            <a href="academy-community.html" class="nav-dropdown-item"><span class="nav-dd-text"><span class="nav-dd-label">커뮤니티</span><span class="nav-dd-desc">공지사항 · FAQ · 1:1 상담신청</span></span><span class="nav-dd-arrow">&rarr;</span></a>
+          </div>
+        </div>
+        <a href="https://www.actionairgroup.com/pages/consulting.html" class="nav-link">컨설팅</a>
+        <a href="https://www.actionairgroup.com/pages/contact.html" class="nav-link">문의</a>
+        <a href="academy-payment.html" class="nav-cta">수강 신청</a>
+      </div>
+      <div class="nav-auth">
+        <button class="nav-auth-btn" id="navLoginBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          로그인
+        </button>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="메뉴">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="page-header-bg">
+      <img src="../images/adademy-front.jpg" alt="액션에어 아카데미 외관">
+    </div>
+    <div class="container">
+      <div class="section-label">Action Air Academy</div>
+      <h1>에어컨 분야<br><span class="text-gradient">Tech Master를 양성합니다</span></h1>
+      <p class="section-desc">에어컨 설치 · AS · 세척 등 현장에 필요한 전문기술 교육과 창업을 지원하는 국내 유일의 에어컨기술 전문학원입니다.</p>
+    </div>
+  </header>
+
+  <!-- SUB NAV -->
+  <div class="sub-nav">
+    <div class="container">
+      <a href="#intro" class="active">학원 소개</a>
+      <a href="#philosophy">교육 이념</a>
+      <a href="#history">연혁</a>
+      <a href="#facility">시설 안내</a>
+      <a href="#location">오시는 길</a>
+      <a href="#recruit">인재모집</a>
+    </div>
+  </div>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-item">◆ 세종시교육청 등록 학원 제1567호</div>
+    <div class="trust-item">◆ 국민내일배움카드 훈련과정 운영</div>
+    <div class="trust-item">◆ 전국최초 일반 + 시스템에어컨 동시 교육</div>
+    <div class="trust-item">◆ LG전자 시스템에어컨 우수협력업체</div>
+  </div>
+
+  <!-- STATS -->
+  <section class="section" id="intro">
+    <div class="container">
+      <div class="stats-row">
+        <div class="stat-item">
+          <div class="stat-number" data-count="2023" data-static>2023</div>
+          <div class="stat-label">아카데미 설립</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-count="10" data-suffix="+">10+</div>
+          <div class="stat-label">년 경력 전문 강사진</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-count="4">4</div>
+          <div class="stat-label">전문 실습장 운영</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-count="5" data-suffix="회">5회</div>
+          <div class="stat-label">수료 후 현장실습 지원</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO / BRAND STORY -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="brand-story">
+        <div class="brand-story-img">
+          <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1000&q=80" alt="에어컨 설치 실습"
+               onerror="this.src='../images/adademy-front.jpg'">
+        </div>
+        <div class="brand-story-text">
+          <div class="section-label">About Academy</div>
+          <h2 class="section-title">현장에서 인정받는<br><span class="text-gradient">기술자를 키웁니다</span></h2>
+          <blockquote class="brand-story-quote">
+            "전국최초, 일반에어컨과 시스템에어컨을<br>동시에 배울 수 있는 교육장입니다."
+          </blockquote>
+          <p>
+            환경변화로 인해 향후 에어컨 설치 수요와 그에 따른 기술자 수요는 점점 확대될 예정입니다.
+            하지만 다른 분야에 비해 기술자 양성을 위한 체계적이고 표준화된 에어컨기술학원은 아직 부족한 상황입니다.
+          </p>
+          <p>
+            액션에어 에어컨기술 창업학원은 신규로 기술을 배우고자 하시는 분들과, 현장에서 필요한 기술을 업그레이드 하시길 원하시는
+            모든 분들을 위해 다양한 과정을 제공하여 에어컨기술 학원계의 사관학교가 될 수 있도록 노력하겠습니다.
+          </p>
+          <div class="divider"></div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <a href="academy-courses.html" class="btn btn-primary btn-sm">교육과정 보기 <span class="btn-icon">→</span></a>
+            <a href="academy-payment.html" class="btn btn-outline btn-sm">수강 신청</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section class="section section-dark" id="philosophy">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:60px;">
+        <div class="section-label" style="justify-content:center;">Our Philosophy</div>
+        <h2 class="section-title">"에어컨 분야 <span class="text-gradient">Tech Master</span>를 양성하자"</h2>
+        <p class="section-desc" style="margin:0 auto;">
+          액션에어 에어컨기술 창업학원의 교육 이념입니다. 모든 교육과정은 현장에 바로 사용할 수 있는 실습 위주로 진행됩니다.
+        </p>
+      </div>
+      <div class="feature-grid card-stagger">
+        <div class="feature-item">
+          <div class="feature-icon">🛠️</div>
+          <div class="feature-title">실습 위주 교육</div>
+          <div class="feature-desc">현장에 바로 사용할 수 있는 실습 위주 교육을 진행하며, 중요한 과정은 반복 숙달하여 현장에서 인정받는 교육생을 배출합니다.</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🔄</div>
+          <div class="feature-title">수료 후 보수교육</div>
+          <div class="feature-desc">매년 달라지는 최신 에어컨 기술에 대한 보수교육(연 1회 예정)으로 수료생의 기술 수준을 최상위로 유지합니다.</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🎯</div>
+          <div class="feature-title">창업 목적의 커리큘럼</div>
+          <div class="feature-desc">단순 기술 습득이 아닌, 수료 후 현장 업무와 창업이 가능한 수준까지 전국 최고 수준의 시설과 커리큘럼을 운영합니다.</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🏭</div>
+          <div class="feature-title">현장견학 · 실습</div>
+          <div class="feature-desc">수료 후 아파트 · 상가 · 오피스 등 실제 설치 현장에 투입되어 배운 내용을 실습합니다. (최대 5회, 소정 보수 지급)</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🤝</div>
+          <div class="feature-title">ACTION air 파트너 연계</div>
+          <div class="feature-desc">정규과정 수료 시 ATC 인증서를 발급하며, 파트너 지원 시 우대합니다. 도급현장 연계도 지원합니다.</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">📦</div>
+          <div class="feature-title">부자재 도매가 공급</div>
+          <div class="feature-desc">수료생에게 최대 도매할인율을 적용한 가격으로 에어컨 및 관련 부자재를 안정적으로 공급합니다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HISTORY -->
+  <section class="section" id="history">
+    <div class="container">
+      <div class="split">
+        <div>
+          <div class="section-label">History</div>
+          <h2 class="section-title">2014년 공조사업 진출,<br><span class="text-gradient">2023년 아카데미 설립</span></h2>
+          <p style="color:var(--text-muted);line-height:1.9;margin-bottom:16px;">
+            2017년 ㈜다원에어시스 법인전환을 시작으로 '시공하자 보증 10년! Global No.1 시스템에어컨 시공 전문기업'이라는
+            비전 아래 전 임직원이 하나되어 World Best 수준의 시공전문기업이 되도록 노력을 경주하고 있습니다.
+          </p>
+          <p style="color:var(--text-muted);line-height:1.9;">
+            2023년은 제2의 도약을 위해 ACTION air 브랜드를 런칭하였고, 우수한 에어컨 기술자를 양성하기 위해 아카데미를 설립하였습니다.
+          </p>
+          <div class="divider"></div>
+          <a href="https://www.actionairgroup.com/pages/about.html" class="btn btn-outline btn-sm">그룹 소개 보기 &rarr;</a>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">2023</div>
+            <ul><li>액션에어 아카데미 설립 · ACTION air 브랜드 런칭</li></ul>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2022</div>
+            <ul>
+              <li>시공기술 교육장 구축</li>
+              <li>공동주택 올인원 시스템에어컨 1,200세대/년 시공 달성</li>
+              <li>가정용 올인원 시스템에어컨 정기 세척 서비스 실시</li>
+              <li>시공자재 공동구매망 구축</li>
+            </ul>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2021</div>
+            <ul>
+              <li>세종특별자치시 내 노인정 냉난방기 무상공급 협약</li>
+              <li>공동주택 정기 세척 서비스 실시</li>
+              <li>천안 공동주택 공조기기 유지보수 에너지 절감 컨설팅 실시</li>
+            </ul>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2020</div>
+            <ul>
+              <li>입주주관 진행을 통한 공동주택 시스템에어컨 시공 (년 10개 단지)</li>
+              <li>공동주택 전열교환기 시공사업 실시 (힘펠 아파트공동구매 특약점)</li>
+              <li>LG전자 시스템에어컨 우수협력업체 선정 (~현재)</li>
+            </ul>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2019</div>
+            <ul>
+              <li>충청입주지원협회(CTSA) 우수협력업체 선정</li>
+              <li>GHP 시공 / 교육청 관련 공사 실시</li>
+              <li>LG 중앙제어시스템 원격제어 시스템 시공 [TMS]</li>
+            </ul>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2018</div>
+            <ul>
+              <li>시공품질 향상을 위한 자체교육 시스템 구축</li>
+              <li>시공팀 CS 대응 매뉴얼 구축</li>
+              <li>미래에셋생명보험㈜ 전국지점 케어서비스 실시</li>
+            </ul>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2017</div>
+            <ul>
+              <li>㈜다원에어시스 법인전환 · 10년 시공하자보증제 실시</li>
+              <li>미래에셋생명보험㈜ 유지관리보수업체 선정 (2016년말~현재)</li>
+              <li>시스템에어컨 세척사업 실시</li>
+            </ul>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2014</div>
+            <ul>
+              <li>다원에어시스 냉난방기 시공업체 설립 · 전국 시공설치팀 구축</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FACILITY -->
+  <section class="section section-dark" id="facility">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:60px;">
+        <div class="section-label" style="justify-content:center;">Facilities</div>
+        <h2 class="section-title">전국 최고 수준의<br><span class="text-gradient">전문 실습 시설</span></h2>
+        <p class="section-desc" style="margin:0 auto;">
+          세종시 소정면 본사에 시스템에어컨 · 벽걸이/스탠드 · 용접 실습장과 휴게공간을 갖추고 있습니다.
+        </p>
+      </div>
+      <div class="facility-grid">
+        <div class="facility-item large">
+          <img src="../images/adademy-front.jpg" alt="학원 전경">
+          <div class="facility-label"><b>학원 전경</b><span>세종시 소정면 소정구길 228 · 에어컨기술 창업학원</span></div>
+        </div>
+        <div class="facility-item">
+          <img src="https://images.unsplash.com/photo-1631545806609-5b5b0a53f3b4?w=800&q=80" alt="시스템에어컨 실습장" onerror="this.src='../images/showroom-01.jpg'">
+          <div class="facility-label"><b>시스템에어컨 실습장</b><span>천장형 1way · 2way · 4way · 360원형 · 덕트형</span></div>
+        </div>
+        <div class="facility-item">
+          <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80" alt="벽걸이/스탠드 에어컨 실습장" onerror="this.src='../images/showroom-02.jpg'">
+          <div class="facility-label"><b>벽걸이 / 스탠드 실습장</b><span>가정용 벽걸이 · 스탠드 · 2in1 설치 실습</span></div>
+        </div>
+        <div class="facility-item">
+          <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80" alt="용접 실습장" onerror="this.src='../images/showroom-03.jpg'">
+          <div class="facility-label"><b>용접 실습장</b><span>토치 · 산소용접 · 동관 가공 실습</span></div>
+        </div>
+        <div class="facility-item">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" alt="휴게공간" onerror="this.src='../images/showroom-04.jpg'">
+          <div class="facility-label"><b>휴게공간</b><span>교육생 휴게 · 이론교육 공간</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section class="section" id="location">
+    <div class="container">
+      <div class="split">
+        <div class="split-img">
+          <iframe
+            title="액션에어 아카데미 위치"
+            src="https://maps.google.com/maps?q=%EC%84%B8%EC%A2%85%EC%8B%9C%20%EC%86%8C%EC%A0%95%EB%A9%B4%20%EC%86%8C%EC%A0%95%EA%B5%AC%EA%B8%B8%20228&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            style="width:100%;height:100%;border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="split-text">
+          <div class="section-label">Location</div>
+          <h2 class="section-title">오시는 길</h2>
+          <p>액션에어 에어컨기술 창업학원은 (주)다원에어시스 본사와 같은 건물에 위치하고 있으며, 차량 방문 시 주차가 가능합니다.</p>
+          <div class="divider"></div>
+          <div style="display:grid;grid-template-columns:auto 1fr;gap:12px 20px;font-size:0.92rem;">
+            <div style="color:var(--gold);font-weight:700;">주소</div><div style="color:var(--text);">(30001) 세종특별자치시 소정면 소정구길 228 9호</div>
+            <div style="color:var(--gold);font-weight:700;">대표전화</div><div style="color:var(--text);"><a href="tel:1533-2640">1533-2640</a></div>
+            <div style="color:var(--gold);font-weight:700;">이메일</div><div style="color:var(--text);"><a href="mailto:3122627@naver.com">3122627@naver.com</a></div>
+            <div style="color:var(--gold);font-weight:700;">교육시간</div><div style="color:var(--text);">평일 09:00 ~ 16:00 / 주말과정 토·일 09:00 ~ 17:00</div>
+            <div style="color:var(--gold);font-weight:700;">주차</div><div style="color:var(--text);">건물 내 무료 주차 가능</div>
+          </div>
+          <div style="display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;">
+            <a href="https://map.naver.com/p/search/%EC%84%B8%EC%A2%85%EC%8B%9C%20%EC%86%8C%EC%A0%95%EB%A9%B4%20%EC%86%8C%EC%A0%95%EA%B5%AC%EA%B8%B8%20228" target="_blank" rel="noopener" class="btn btn-outline btn-sm">네이버 지도 &rarr;</a>
+            <a href="https://pf.kakao.com/_xbxcxcxj/chat" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">카카오톡 상담</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECRUIT -->
+  <section class="section section-dark" id="recruit">
+    <div class="container">
+      <div class="case-banner">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1400&q=80" alt="인재모집"
+             onerror="this.src='../images/showroom-drone.jpg'">
+        <div class="case-banner-overlay">
+          <span class="case-banner-label">Recruit · 상시채용</span>
+          <div class="case-banner-title">함께 성장할<br>에어컨 기술 인재를 찾습니다</div>
+          <p class="case-banner-desc">
+            시공팀 · 교육 강사 · 세척/유지보수 인력 상시 모집. 수료생 우대, 도급현장 연계 및 ACTION air 파트너 전환 지원.
+          </p>
+          <a href="academy-community.html#contact" class="btn btn-outline btn-sm">지원 문의하기 &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="section" style="padding:80px 0;background:linear-gradient(135deg, #F0F0F4, #F7F7F9);">
+    <div class="container" style="text-align:center;">
+      <h2 style="margin-bottom:16px;">에어컨 기술로 미래를 준비하세요</h2>
+      <p class="section-desc" style="margin:0 auto 40px;">
+        국비지원과정 · 창업과정 · 단과반 · 수시모집 · 1533-2640
+      </p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="academy-courses.html" class="btn btn-primary">교육과정 보기 <span class="btn-icon">→</span></a>
+        <a href="academy-payment.html" class="btn btn-outline">수강 신청 · 학원비 결제</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <img src="../images/logo.png" alt="액션에어그룹" style="opacity:0.7;background:transparent;border-radius:4px;"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+            <span style="display:none;font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--text-muted);">ACTION AIR GROUP</span>
+          </div>
+          <p class="footer-desc">히트펌프 산업의 미래,<br>액션에어그룹이 함께합니다.</p>
+        </div>
+        <div class="footer-links">
+          <h4>아카데미</h4>
+          <a href="academy.html">아카데미 소개</a>
+          <a href="academy-courses.html">교육과정</a>
+          <a href="academy-payment.html">학원비 결제</a>
+          <a href="academy-partner.html">파트너 · 창업</a>
+          <a href="academy-community.html">커뮤니티</a>
+        </div>
+        <div class="footer-links">
+          <h4>사업 분야</h4>
+          <a href="https://www.actionairgroup.com/pages/archi-u.html">아키유 건축컨설팅</a>
+          <a href="https://www.dawonairsys.co.kr" target="_blank">다원에어시스</a>
+          <a href="https://www.actionairgroup.com/pages/nz15c.html">N.Z 1.5℃ 쇼룸</a>
+          <a href="https://www.actionairgroup.com/pages/iot.html">아카라 IoT 쇼룸</a>
+          <a href="https://www.actionairgroup.com/pages/locations.html#distribution">액션에어 유통전문점</a>
+        </div>
+        <div class="footer-links">
+          <h4>연락처</h4>
+          <a href="tel:1533-2640">1533-2640</a>
+          <a href="tel:044-867-2627">044-867-2627</a>
+          <a href="mailto:info@actionairgroup.com">info@actionairgroup.com</a>
+          <a href="mailto:3122627@naver.com">3122627@naver.com</a>
+        </div>
+      </div>
+
+      <div class="footer-brands">
+        <div class="footer-brand-group">
+          <h4>액션에어 아카데미</h4>
+          <div class="footer-brand-links">
+            <a href="https://blog.naver.com/actionair2301" target="_blank" rel="noopener">Blog</a>
+            <a href="https://www.youtube.com/@actionair23" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://www.instagram.com/actionair_academy/" target="_blank" rel="noopener">Instagram</a>
+            <a href="http://www.actionair.co.kr" target="_blank" rel="noopener">기존 홈페이지</a>
+          </div>
+        </div>
+        <div class="footer-brand-group">
+          <h4>다원에어시스</h4>
+          <div class="footer-brand-links">
+            <a href="https://blog.naver.com/3122627" target="_blank" rel="noopener">Blog</a>
+            <a href="https://www.youtube.com/@ActionAir_dawon" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://www.instagram.com/dawon2627/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://smartstore.naver.com/actionair_dawon" target="_blank" rel="noopener">스마트스토어</a>
+          </div>
+        </div>
+        <div class="footer-brand-group">
+          <h4>Family Site</h4>
+          <div class="footer-brand-links">
+            <a href="https://www.lge.co.kr/air-solution/system-air-conditioner" target="_blank" rel="noopener">LG전자 시스템에어컨</a>
+            <a href="https://www.lge.co.kr" target="_blank" rel="noopener">LG전자 대표사이트</a>
+            <a href="https://www.hrd.go.kr" target="_blank" rel="noopener">HRD-Net (직업훈련포털)</a>
+          </div>
+        </div>
+      </div>
+
+      <div style="padding:24px 0;border-top:1px solid var(--border);margin-top:8px;font-size:0.78rem;color:var(--text-dim);line-height:1.8;">
+        <p><strong>액션에어 에어컨기술 창업학원 ㈜유앤영컴퍼니</strong> | 대표: 유한종 | 사업자등록번호: 324-87-02792 | 학원등록번호: 제1567호</p>
+        <p>통신판매업신고: 제-2023-세종조치원-0025호 | 주소: 세종특별자치시 소정면 소정구길 228 | 대표전화: 1533-2640</p>
+        <p><strong>액션에어그룹 (주)다원에어시스</strong> | 사업자등록번호: 520-88-00856 | 통신판매업신고: 2021-세종조치원-0050</p>
+        <div style="margin-top:12px;display:flex;gap:16px;flex-wrap:wrap;">
+          <a href="https://www.actionairgroup.com/pages/terms.html" style="color:var(--text-dim);text-decoration:underline;text-underline-offset:2px;">이용약관</a>
+          <a href="https://www.actionairgroup.com/pages/privacy.html" style="color:var(--text-dim);text-decoration:underline;text-underline-offset:2px;">개인정보처리방침</a>
+          <a href="https://www.actionairgroup.com/pages/refund.html" style="color:var(--text-dim);text-decoration:underline;text-underline-offset:2px;">환불 정책</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 액션에어그룹 · 액션에어 아카데미. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Buttons -->
+  <div class="floating-btns" id="floatingCta">
+    <a href="https://pf.kakao.com/_xbxcxcxj/chat" target="_blank" rel="noopener" class="floating-kakao" title="카카오톡 상담">
+      <svg viewBox="0 0 24 24" fill="#3C1E1E"><path d="M12 3C6.48 3 2 6.58 2 10.94c0 2.8 1.86 5.27 4.66 6.67-.15.53-.96 3.42-.99 3.66 0 0-.02.17.09.24.11.06.24.01.24.01.32-.04 3.7-2.44 4.28-2.85.56.08 1.14.13 1.72.13 5.52 0 10-3.58 10-7.86C22 6.58 17.52 3 12 3z"/></svg>
+    </a>
+    <a href="academy-payment.html" class="floating-cta-btn">수강 신청</a>
+  </div>
+
+</body>
+</html>

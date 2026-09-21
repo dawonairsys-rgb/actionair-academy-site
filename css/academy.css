@@ -1,0 +1,691 @@
+/* ============================================
+   ACTION AIR ACADEMY — 아카데미 메뉴 전용 스타일
+   기존 styles.css 디자인 토큰(골드 액센트 · 라이트 테마)을
+   그대로 상속하며, 아카데미 페이지에서만 쓰는 컴포넌트를 정의
+   ============================================ */
+
+/* ── Sub Nav (아카데미 내부 섹션 이동 바) ──────── */
+.sub-nav {
+  position: sticky;
+  top: var(--header-h);
+  z-index: 900;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.sub-nav .container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  height: 56px;
+}
+.sub-nav .container::-webkit-scrollbar { display: none; }
+.sub-nav a {
+  padding: 8px 16px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  border-radius: 100px;
+  white-space: nowrap;
+  transition: all var(--transition);
+}
+.sub-nav a:hover { color: var(--white); background: var(--glass-strong); }
+.sub-nav a.active { color: var(--gold-dark); background: var(--gold-glow); font-weight: 600; }
+
+/* ── Course Category Card (과정 4종 요약) ─────── */
+.course-cat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.course-cat {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 28px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: all 0.5s var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+.course-cat::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.course-cat:hover { border-color: var(--gold-border); transform: translateY(-6px); box-shadow: var(--shadow); }
+.course-cat:hover::before { opacity: 1; }
+.course-cat.featured { border-color: var(--gold); background: linear-gradient(180deg, rgba(184,147,74,0.08), var(--bg)); }
+.course-cat-icon {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--surface), var(--surface-2));
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+.course-cat-badge {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 3px 10px;
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.04em;
+  color: var(--gold);
+  background: var(--gold-glow);
+  border: 1px solid var(--gold-border);
+  border-radius: 100px;
+  margin-bottom: 10px;
+}
+.course-cat-name {
+  font-family: var(--font-display);
+  font-size: 1.1rem; font-weight: 700;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+.course-cat-sub { font-size: 0.72rem; color: var(--text-dim); letter-spacing: 0.04em; margin-bottom: 14px; }
+.course-cat-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 20px; flex: 1; }
+.course-cat-meta {
+  display: flex; flex-direction: column; gap: 6px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem; color: var(--text-muted);
+}
+.course-cat-meta span { display: flex; justify-content: space-between; }
+.course-cat-meta strong { color: var(--white); font-weight: 600; }
+.course-cat-meta .price { color: var(--gold); font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; }
+.course-cat .btn { margin-top: 20px; width: 100%; }
+
+/* ── Course Detail Card (과정 상세: 헤더 + 정보 + 커리큘럼) ── */
+.course-detail {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 32px;
+  transition: border-color var(--transition);
+}
+.course-detail:hover { border-color: var(--gold-border); }
+.course-detail.featured { border-color: var(--gold); }
+.course-detail-header {
+  background: linear-gradient(135deg, rgba(200,169,126,0.12), rgba(200,169,126,0.04));
+  border-bottom: 1px solid var(--gold-border);
+  padding: 40px 48px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.course-detail-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem; font-weight: 700;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+.course-detail-sub { font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; max-width: 560px; }
+.course-price-block { text-align: right; }
+.course-price-original {
+  font-size: 0.9rem; color: var(--text-dim);
+  text-decoration: line-through;
+}
+.course-price {
+  font-family: var(--font-display);
+  font-size: 2.4rem; font-weight: 700;
+  color: var(--gold);
+  line-height: 1.1;
+}
+.course-price span { font-size: 1.1rem; font-weight: 400; color: var(--text-muted); }
+.course-price-note { font-size: 0.78rem; color: #C0392B; font-weight: 600; margin-top: 6px; }
+.course-detail-body { padding: 40px 48px 48px; }
+
+/* 과정 정보 표 (교육기간 · 교육시간 · 모집인원 · 수강료 · 특전) */
+.course-info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.course-info-item {
+  padding: 18px 20px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+.course-info-label {
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+.course-info-value { font-size: 0.92rem; font-weight: 600; color: var(--white); line-height: 1.5; }
+.course-info-item.wide { grid-column: span 2; }
+.course-info-item.full { grid-column: 1 / -1; }
+
+/* 커리큘럼 테이블 */
+.curriculum {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  font-size: 0.88rem;
+}
+.curriculum th {
+  background: var(--surface);
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 14px 20px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+.curriculum td {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+.curriculum tr:last-child td { border-bottom: none; }
+.curriculum td:first-child {
+  width: 120px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--white);
+  background: var(--glass);
+  white-space: nowrap;
+}
+.curriculum td ul li { position: relative; padding-left: 14px; }
+.curriculum td ul li::before { content: '–'; position: absolute; left: 0; color: var(--gold); }
+.curriculum .tag {
+  display: inline-block;
+  padding: 2px 10px;
+  font-size: 0.7rem; font-weight: 700;
+  color: var(--gold-dark);
+  background: var(--gold-glow);
+  border: 1px solid var(--gold-border);
+  border-radius: 100px;
+  margin-top: 6px;
+}
+.curriculum-wrap { overflow-x: auto; }
+.curriculum-toggle {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.85rem; font-weight: 600; color: var(--gold);
+  cursor: pointer; margin-bottom: 20px;
+}
+.curriculum-toggle .chev { transition: transform var(--transition); display: inline-block; }
+.curriculum-toggle.open .chev { transform: rotate(180deg); }
+.curriculum-panel { display: none; }
+.curriculum-panel.open { display: block; }
+.course-note { font-size: 0.78rem; color: var(--text-dim); line-height: 1.7; margin-top: 16px; }
+.course-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+
+/* ── 국민내일배움카드 안내 배너 ──────────────── */
+.hrd-banner {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  padding: 56px;
+  background: linear-gradient(135deg, #F0F0F4, #F7F7F9);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+.hrd-pills { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+.hrd-pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 14px;
+  font-size: 0.78rem; font-weight: 600;
+  color: var(--text-muted);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+}
+.hrd-pill b { color: var(--gold); font-weight: 700; }
+.hrd-rate { border-top: 1px solid var(--border); margin-top: 24px; }
+.hrd-rate li {
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.88rem; color: var(--text-muted);
+}
+.hrd-rate li strong { color: var(--gold); font-family: var(--font-display); font-weight: 700; white-space: nowrap; }
+
+/* 내일배움카드 비주얼 (CSS로 그린 카드) */
+.hrd-card-visual {
+  position: relative;
+  aspect-ratio: 1.586;
+  max-width: 420px;
+  margin: 0 auto;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #1A1A2E 0%, #2A2A3E 60%, #3B3450 100%);
+  box-shadow: var(--shadow-lg);
+  padding: 28px;
+  color: #FFFFFF;
+  overflow: hidden;
+  transform: rotate(-4deg);
+  transition: transform 0.6s var(--ease);
+}
+.hrd-card-visual:hover { transform: rotate(0deg) translateY(-4px); }
+.hrd-card-visual::before {
+  content: '';
+  position: absolute;
+  top: -40%; right: -20%;
+  width: 70%; height: 180%;
+  background: linear-gradient(135deg, rgba(176,142,74,0.65), rgba(153,118,55,0.15));
+  transform: rotate(18deg);
+}
+.hrd-card-visual > * { position: relative; }
+.hrd-card-top { display: flex; justify-content: space-between; align-items: center; font-size: 0.72rem; letter-spacing: 0.1em; opacity: 0.85; }
+.hrd-card-chip {
+  width: 44px; height: 32px;
+  margin: 26px 0 18px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #E8D7A8, #B08E4A);
+}
+.hrd-card-num { font-family: var(--font-display); font-size: 1.25rem; letter-spacing: 0.18em; font-weight: 500; }
+.hrd-card-bottom { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 22px; font-size: 0.7rem; opacity: 0.85; }
+.hrd-card-bottom b { display: block; font-size: 0.95rem; font-weight: 700; letter-spacing: 0.02em; opacity: 1; }
+
+/* ── 결제 페이지 (학원비 결제) ─────────────── */
+.checkout-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-bottom: 56px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.checkout-step {
+  padding: 22px 24px;
+  display: flex; align-items: center; gap: 14px;
+  border-right: 1px solid var(--border);
+  background: var(--glass);
+  color: var(--text-dim);
+  font-size: 0.85rem; font-weight: 500;
+}
+.checkout-step:last-child { border-right: none; }
+.checkout-step .num {
+  width: 30px; height: 30px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  font-family: var(--font-display); font-weight: 700; font-size: 0.8rem;
+}
+.checkout-step.active { color: var(--white); background: var(--bg); font-weight: 600; }
+.checkout-step.active .num { background: linear-gradient(135deg, var(--gold-light), var(--gold)); color: #FFF; border-color: transparent; }
+.checkout-step.done .num { background: var(--gold-glow); color: var(--gold); border-color: var(--gold-border); }
+
+.checkout-layout {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+.checkout-panel {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 40px;
+  margin-bottom: 28px;
+}
+.checkout-panel-title {
+  display: flex; align-items: center; gap: 12px;
+  font-family: var(--font-display);
+  font-size: 1.15rem; font-weight: 700;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+.checkout-panel-title .step-badge {
+  width: 26px; height: 26px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: var(--gold-glow); color: var(--gold);
+  border: 1px solid var(--gold-border);
+  font-size: 0.75rem;
+}
+.checkout-panel-desc { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 28px; }
+
+/* 과정 선택 옵션 */
+.select-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.select-card {
+  position: relative;
+  display: block;
+  padding: 20px 22px;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.select-card:hover { border-color: var(--gold-border); background: var(--glass-strong); }
+.select-card input { position: absolute; opacity: 0; pointer-events: none; }
+.select-card.selected,
+.select-card:has(input:checked) {
+  border-color: var(--gold);
+  background: linear-gradient(180deg, rgba(184,147,74,0.10), var(--glass));
+  box-shadow: 0 0 0 3px var(--gold-glow);
+}
+.select-card .check {
+  position: absolute; top: 16px; right: 16px;
+  width: 20px; height: 20px; border-radius: 50%;
+  border: 1.5px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.7rem; color: #FFF;
+  transition: all var(--transition);
+}
+.select-card.selected .check,
+.select-card:has(input:checked) .check {
+  background: var(--gold); border-color: var(--gold);
+}
+.select-card-name { font-weight: 600; color: var(--white); font-size: 0.95rem; margin-bottom: 4px; padding-right: 28px; }
+.select-card-sub { font-size: 0.78rem; color: var(--text-dim); margin-bottom: 10px; }
+.select-card-price { font-family: var(--font-display); font-weight: 700; color: var(--gold); font-size: 1.05rem; }
+.select-card-price s { color: var(--text-dim); font-weight: 400; font-size: 0.8rem; margin-right: 6px; }
+
+/* 결제수단 옵션 */
+.pay-methods { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.pay-method { text-align: center; padding: 26px 18px; }
+.pay-method-icon {
+  width: 48px; height: 48px;
+  margin: 0 auto 14px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, var(--surface), var(--surface-2));
+  border: 1px solid var(--border);
+  color: var(--gold);
+}
+.pay-method .select-card-name { padding-right: 0; }
+.pay-method .rec {
+  display: inline-block; margin-top: 8px;
+  padding: 2px 10px; border-radius: 100px;
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.04em;
+  color: var(--gold); background: var(--gold-glow); border: 1px solid var(--gold-border);
+}
+.pay-method-detail {
+  display: none;
+  margin-top: 20px;
+  padding: 20px 22px;
+  background: var(--bg-alt);
+  border: 1px dashed var(--gold-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem; color: var(--text-muted); line-height: 1.7;
+}
+.pay-method-detail.active { display: block; }
+.pay-method-detail strong { color: var(--white); }
+.pay-method-detail ol { counter-reset: s; margin-top: 10px; }
+.pay-method-detail ol li { counter-increment: s; display: flex; gap: 10px; padding: 5px 0; }
+.pay-method-detail ol li::before {
+  content: counter(s);
+  flex-shrink: 0;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: var(--gold); color: #FFF;
+  font-size: 0.68rem; font-weight: 700;
+  display: inline-flex; align-items: center; justify-content: center;
+  margin-top: 2px;
+}
+
+/* 결제 요약 (우측 고정 카드) */
+.order-summary {
+  position: sticky;
+  top: calc(var(--header-h) + 24px);
+  background: var(--surface);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius);
+  padding: 36px;
+}
+.order-summary h3 { font-size: 1.1rem; margin-bottom: 20px; }
+.order-row {
+  display: flex; justify-content: space-between; align-items: flex-start; gap: 12px;
+  padding: 10px 0;
+  font-size: 0.88rem; color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+}
+.order-row span:last-child { color: var(--white); font-weight: 600; text-align: right; }
+.order-row.discount span:last-child { color: #C0392B; }
+.order-row.support span:last-child { color: var(--gold-dark); }
+.order-total {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 20px 0 6px;
+}
+.order-total .label { font-size: 0.9rem; color: var(--text-muted); font-weight: 600; }
+.order-total .amount { font-family: var(--font-display); font-size: 1.9rem; font-weight: 700; color: var(--gold); }
+.order-total .amount span { font-size: 1rem; color: var(--text-muted); font-weight: 400; }
+.order-note { font-size: 0.75rem; color: var(--text-dim); line-height: 1.6; margin-top: 8px; }
+.order-summary .btn { width: 100%; margin-top: 20px; }
+.order-secure {
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  margin-top: 14px;
+  font-size: 0.74rem; color: var(--text-dim);
+}
+.pay-logos { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 14px; }
+.pay-logos span {
+  padding: 4px 10px; border-radius: 6px;
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.04em;
+  color: var(--text-dim); background: var(--bg); border: 1px solid var(--border);
+}
+
+/* 약관 동의 박스 (기존 컨설팅 페이지와 동일 톤) */
+.agree-box {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px 18px;
+  background: var(--bg-alt);
+}
+.agree-box label { display: flex; gap: 8px; align-items: center; cursor: pointer; font-size: 0.82rem; color: var(--text-muted); padding: 4px 0; }
+.agree-box label.all { font-weight: 700; font-size: 0.88rem; color: var(--text); margin-bottom: 6px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+.agree-box input[type="checkbox"] { width: 15px; height: 15px; accent-color: var(--gold); }
+.agree-box strong { color: var(--text); }
+
+/* 시안 안내 배지 */
+.mock-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 16px;
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.04em;
+  color: var(--text-muted);
+  background: var(--bg-alt);
+  border: 1px dashed var(--border);
+  border-radius: 100px;
+}
+.mock-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: #C0392B; }
+
+/* ── 연혁 타임라인 ──────────────────────────── */
+.timeline { position: relative; padding-left: 32px; }
+.timeline::before {
+  content: '';
+  position: absolute; left: 6px; top: 8px; bottom: 8px;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--gold), var(--border));
+}
+.timeline-item { position: relative; padding-bottom: 36px; }
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-item::before {
+  content: '';
+  position: absolute; left: -30px; top: 8px;
+  width: 13px; height: 13px; border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--gold);
+}
+.timeline-year {
+  font-family: var(--font-display);
+  font-size: 1.3rem; font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.timeline-item ul li {
+  position: relative;
+  padding: 3px 0 3px 14px;
+  font-size: 0.9rem; color: var(--text-muted); line-height: 1.7;
+}
+.timeline-item ul li::before { content: '–'; position: absolute; left: 0; color: var(--gold); }
+
+/* ── 시설 안내 그리드 ───────────────────────── */
+.facility-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.facility-item {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  border: 1px solid var(--border);
+}
+.facility-item.large { grid-column: span 2; aspect-ratio: auto; }
+.facility-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease); }
+.facility-item:hover img { transform: scale(1.05); }
+.facility-label {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 18px 22px;
+  background: linear-gradient(0deg, rgba(26,26,46,0.85), transparent);
+  color: #FFF;
+}
+.facility-label b { display: block; font-family: var(--font-display); font-size: 1rem; font-weight: 700; }
+.facility-label span { font-size: 0.76rem; opacity: 0.8; }
+
+/* ── 진로 / 지원 리스트 (번호 카드) ────────────── */
+.num-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.num-item {
+  display: flex; gap: 20px;
+  padding: 28px;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: all var(--transition);
+}
+.num-item:hover { border-color: var(--gold-border); background: var(--glass-strong); }
+.num-item .n {
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-size: 1.6rem; font-weight: 700;
+  color: var(--gold); opacity: 0.5;
+  line-height: 1;
+}
+.num-item b { display: block; font-size: 1rem; font-weight: 600; color: var(--white); margin-bottom: 6px; }
+.num-item p { font-size: 0.86rem; color: var(--text-muted); line-height: 1.7; }
+
+/* ── 비용 표 (파트너 · 아카데미 창업) ──────────── */
+.cost-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; }
+.cost-table th, .cost-table td { padding: 14px 20px; border-bottom: 1px solid var(--border); text-align: left; }
+.cost-table th { background: var(--surface); color: var(--text-muted); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; }
+.cost-table td { color: var(--text-muted); }
+.cost-table td:first-child { color: var(--white); font-weight: 600; }
+.cost-table td.amt { font-family: var(--font-display); font-weight: 700; color: var(--gold); text-align: right; white-space: nowrap; }
+.cost-table tr:last-child td { border-bottom: none; }
+
+/* ── 사례 로고 텍스트 (기업서비스 사례) ─────────── */
+.client-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.client-item {
+  padding: 22px 18px;
+  text-align: center;
+  font-size: 0.85rem; font-weight: 600;
+  color: var(--text-muted);
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition);
+}
+.client-item:hover { border-color: var(--gold-border); color: var(--white); }
+
+/* ── 게시판 (공지사항 리스트: 기존 news-list 확장) ── */
+.board-tabs { margin-bottom: 32px; }
+.board-search {
+  display: flex; gap: 10px; margin-bottom: 24px;
+}
+.board-search .form-input { flex: 1; }
+.board-pagination { display: flex; justify-content: center; gap: 6px; margin-top: 32px; }
+.board-pagination a {
+  width: 36px; height: 36px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: var(--radius-xs);
+  font-size: 0.85rem; color: var(--text-muted);
+  border: 1px solid transparent;
+  transition: all var(--transition);
+}
+.board-pagination a:hover { border-color: var(--border); color: var(--white); }
+.board-pagination a.active { background: var(--gold); color: #FFF; }
+
+/* ── 홈 아카데미 하이라이트 (index.html 추가 섹션) ── */
+.academy-highlight {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 60px;
+  align-items: center;
+}
+.academy-highlight-img {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  height: 460px;
+  border: 1px solid var(--border);
+}
+.academy-highlight-img img { width: 100%; height: 100%; object-fit: cover; }
+.academy-highlight-chip {
+  position: absolute; left: 24px; bottom: 24px;
+  padding: 14px 20px;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+}
+.academy-highlight-chip b { display: block; font-family: var(--font-display); font-size: 1.1rem; color: var(--gold); }
+.academy-highlight-chip span { font-size: 0.75rem; color: var(--text-muted); }
+.academy-mini-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 28px 0; }
+.academy-mini-list a {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  padding: 14px 18px;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.86rem; font-weight: 600; color: var(--white);
+  transition: all var(--transition);
+}
+.academy-mini-list a:hover { border-color: var(--gold-border); color: var(--gold); }
+.academy-mini-list a small { display: block; font-size: 0.72rem; color: var(--text-dim); font-weight: 400; margin-top: 2px; }
+.academy-mini-list a .arrow { color: var(--text-dim); }
+
+/* ── Responsive ────────────────────────────── */
+@media (max-width: 1200px) {
+  .course-cat-grid { grid-template-columns: repeat(2, 1fr); }
+  .client-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 1024px) {
+  .hrd-banner { grid-template-columns: 1fr; gap: 40px; padding: 40px; }
+  .checkout-layout { grid-template-columns: 1fr; }
+  .order-summary { position: static; }
+  .course-info-grid { grid-template-columns: repeat(2, 1fr); }
+  .course-info-item.wide { grid-column: span 2; }
+  .facility-grid { grid-template-columns: 1fr 1fr; }
+  .facility-item.large { grid-column: span 2; aspect-ratio: 16/9; }
+  .academy-highlight { grid-template-columns: 1fr; gap: 36px; }
+  .academy-highlight-img { height: 340px; }
+  .num-list { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .sub-nav { top: var(--header-h); }
+  .course-cat-grid { grid-template-columns: 1fr; }
+  .course-detail-header, .course-detail-body { padding: 28px 22px; }
+  .course-price-block { text-align: left; }
+  .course-price { font-size: 2rem; }
+  .course-info-grid { grid-template-columns: 1fr; }
+  .course-info-item.wide { grid-column: span 1; }
+  .checkout-steps { grid-template-columns: 1fr 1fr; }
+  .checkout-step { border-bottom: 1px solid var(--border); }
+  .checkout-step:nth-child(2n) { border-right: none; }
+  .checkout-panel { padding: 26px 20px; }
+  .select-grid, .pay-methods { grid-template-columns: 1fr; }
+  .order-summary { padding: 26px 20px; }
+  .facility-grid { grid-template-columns: 1fr; }
+  .facility-item.large { grid-column: span 1; }
+  .client-grid { grid-template-columns: repeat(2, 1fr); }
+  .academy-mini-list { grid-template-columns: 1fr; }
+  .hrd-card-visual { transform: none; }
+  .hrd-banner { padding: 28px 20px; }
+}

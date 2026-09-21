@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>교육과정 — 액션에어 아카데미 | 액션에어그룹</title>
+  <meta name="description" content="에어컨설치실무 국비지원과정(국민내일배움카드), 에어컨기술 창업과정, 에어컨청소 창업과정, 집중 단과반. 액션에어 아카데미 교육과정 안내.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/academy.css">
+  <script>window.AAG_LIVE_BASE = 'https://www.actionairgroup.com/pages/';</script>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/academy.js" defer></script>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="nav">
+    <div class="container">
+      <a href="../index.html" class="nav-logo">
+        <img src="../images/logo.png" alt="액션에어그룹" class="nav-logo-img" onerror="this.classList.add('error')">
+        <span class="nav-logo-text">ACTION AIR GROUP</span>
+      </a>
+      <div class="nav-menu" id="navMenu">
+        <a href="https://www.actionairgroup.com/pages/about.html" class="nav-link">그룹소개</a>
+        <a href="https://www.actionairgroup.com/pages/nz15c.html" class="nav-link">N.Z 1.5℃ 쇼룸</a>
+        <a href="https://www.actionairgroup.com/pages/iot.html" class="nav-link">IoT 쇼룸</a>
+        <a href="https://www.actionairgroup.com/pages/archi-u.html" class="nav-link">아키유</a>
+        <div class="nav-dropdown">
+          <a href="academy.html" class="nav-link active">아카데미<span class="nav-link-caret">▾</span></a>
+          <div class="nav-dropdown-menu">
+            <a href="academy.html" class="nav-dropdown-item"><span class="nav-dd-text"><span class="nav-dd-label">아카데미 소개</span><span class="nav-dd-desc">교육이념 · 연혁 · 시설 · 오시는 길</span></span><span class="nav-dd-arrow">&rarr;</span></a>
+            <a href="academy-courses.html" class="nav-dropdown-item active"><span class="nav-dd-text"><span class="nav-dd-label">교육과정</span><span class="nav-dd-desc">국비지원 · 창업과정 · 청소과정 · 단과반</span></span><span class="nav-dd-arrow">&rarr;</span></a>
+            <a href="academy-payment.html" class="nav-dropdown-item"><span class="nav-dd-text"><span class="nav-dd-label">학원비 결제</span><span class="nav-dd-desc">국민내일배움카드 · 신용카드 · 계좌이체</span></span><span class="nav-dd-arrow">&rarr;</span></a>
+            <a href="academy-partner.html" class="nav-dropdown-item"><span class="nav-dd-text"><span class="nav-dd-label">파트너 · 창업</span><span class="nav-dd-desc">파트너 모집 · 아카데미 가맹 · 시공/기업서비스</span></span><span class="nav-dd-arrow">&rarr;</span></a>
+            <a href="academy-community.html" class="nav-dropdown-item"><span class="nav-dd-text"><span class="nav-dd-label">커뮤니티</span><span class="nav-dd-desc">공지사항 · FAQ · 1:1 상담신청</span></span><span class="nav-dd-arrow">&rarr;</span></a>
+          </div>
+        </div>
+        <a href="https://www.actionairgroup.com/pages/consulting.html" class="nav-link">컨설팅</a>
+        <a href="https://www.actionairgroup.com/pages/contact.html" class="nav-link">문의</a>
+        <a href="academy-payment.html" class="nav-cta">수강 신청</a>
+      </div>
+      <div class="nav-auth">
+        <button class="nav-auth-btn" id="navLoginBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          로그인
+        </button>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="메뉴"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="page-header-bg">
+      <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1920&q=80" alt="교육과정" onerror="this.src='../images/adademy-front.jpg'">
+    </div>
+    <div class="container">
+      <div class="section-label">Curriculum</div>
+      <h1>지구환경 변화로 계속 성장하는 에어컨 시장,<br><span class="text-gradient">에어컨 기술로 미래를 준비하세요</span></h1>
+      <p class="section-desc">매년 국내에서 300만대 이상의 에어컨이 신규 설치되고, 기존 에어컨의 수선 · AS 수요가 지속 발생합니다. 에어컨 기술자의 수요는 증가할 수밖에 없는 성장가능성 무궁한 분야입니다.</p>
+    </div>
+  </header>
+
+  <!-- SUB NAV -->
+  <div class="sub-nav">
+    <div class="container">
+      <a href="#overview" class="active">과정 한눈에</a>
+      <a href="#hrd">국비지원과정</a>
+      <a href="#startup">에어컨기술 창업과정</a>
+      <a href="#clean">에어컨청소 창업과정</a>
+      <a href="#short">단과반</a>
+      <a href="#hrdcard">내일배움카드 안내</a>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <section class="section" id="overview">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:60px;">
+        <div class="section-label" style="justify-content:center;">Programs</div>
+        <h2 class="section-title">목적에 맞게 선택하는<br><span class="text-gradient">4가지 교육 트랙</span></h2>
+        <p class="section-desc" style="margin:0 auto;">
+          국비지원으로 시작하는 실무과정부터 창업 · 세척 · 단기 집중과정까지, 수료 후 현장 투입이 가능한 수준으로 교육합니다.
+        </p>
+      </div>
+
+      <div class="course-cat-grid card-stagger">
+        <div class="course-cat featured">
+          <div class="course-cat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg></div>
+          <div class="course-cat-badge">국민내일배움카드</div>
+          <div class="course-cat-name">에어컨설치실무 국비지원과정</div>
+          <div class="course-cat-sub">BASIC 1 · 8주 주말과정</div>
+          <div class="course-cat-desc">벽걸이 · 스탠드 · 천장형 에어컨을 설치할 수 있는 실무 기술을 집중 교육. 국민내일배움카드 소지자 누구나 신청 가능.</div>
+          <div class="course-cat-meta">
+            <span>교육기간 <strong>8주 (토/일)</strong></span>
+            <span>모집인원 <strong>16명</strong></span>
+            <span>수강료 <strong class="price">1,213,280원</strong></span>
+            <span>국비지원 <strong>45% ~ 100%</strong></span>
+          </div>
+          <a href="#hrd" class="btn btn-primary btn-sm">과정 상세 <span class="btn-icon">→</span></a>
+        </div>
+
+        <div class="course-cat">
+          <div class="course-cat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+          <div class="course-cat-badge">창업 · 취업</div>
+          <div class="course-cat-name">에어컨기술 창업과정</div>
+          <div class="course-cat-sub">이전/설치 5일 · ADVANCED 101 10일</div>
+          <div class="course-cat-desc">벽걸이 · 스탠드 이전/설치부터 아파트 올인원 · 상업용 천장형 싱글 시공까지. ATC 인증서 발급, 현장실습 최대 3회.</div>
+          <div class="course-cat-meta">
+            <span>프로그램 ① <strong class="price">60만원</strong></span>
+            <span>프로그램 ② <strong class="price">210만원</strong></span>
+            <span>모집인원 <strong>16명</strong></span>
+            <span>교육시간 <strong>월~금 09:00~16:00</strong></span>
+          </div>
+          <a href="#startup" class="btn btn-outline btn-sm">과정 상세 <span class="btn-icon">→</span></a>
+        </div>
+
+        <div class="course-cat">
+          <div class="course-cat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2.7c3 4 6 7.2 6 10.8a6 6 0 01-12 0c0-3.6 3-6.8 6-10.8z"/><path d="M9 14a3 3 0 003 3"/></svg></div>
+          <div class="course-cat-badge">차별화된 세척 교육</div>
+          <div class="course-cat-name">에어컨청소 창업과정</div>
+          <div class="course-cat-sub">기본과정 10일 · 집중과정 5일</div>
+          <div class="course-cat-desc">에어컨 기본이론 및 이전/철거/설치 실습, 벽걸이 · 스탠드 · 시스템에어컨 분해/세척, AS 기술까지 숙달.</div>
+          <div class="course-cat-meta">
+            <span>기본과정 <strong class="price">120만원</strong></span>
+            <span>집중과정 <strong class="price">60만원</strong></span>
+            <span>모집인원 <strong>12명</strong></span>
+            <span>교육시간 <strong>평일 09:00~16:00</strong></span>
+          </div>
+          <a href="#clean" class="btn btn-outline btn-sm">과정 상세 <span class="btn-icon">→</span></a>
+        </div>
+
+        <div class="course-cat">
+          <div class="course-cat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+          <div class="course-cat-badge">핵심 기술만 쏙</div>
+          <div class="course-cat-name">에어컨기술 집중 단과반</div>
+          <div class="course-cat-sub">1~2일 · 수시모집</div>
+          <div class="course-cat-desc">냉매 충전/보충/완충, 에어컨 철거, 고장부위 AS 진단 · 조치, 실전 마케팅 특강. 필요한 기술만 골라 단기 집중.</div>
+          <div class="course-cat-meta">
+            <span>서비스 기술 (2일) <strong class="price">40만원</strong></span>
+            <span>냉매 + AS (1일) <strong class="price">20만원</strong></span>
+            <span>철거 + AS (1일) <strong class="price">20만원</strong></span>
+            <span>실전 마케팅 <strong class="price">30만원</strong></span>
+          </div>
+          <a href="#short" class="btn btn-outline btn-sm">과정 상세 <span class="btn-icon">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 국비지원과정 ══════════ -->
+  <section class="section section-dark" id="hrd">
+    <div class="container">
+      <div class="section-label">국비지원과정 · 국민내일배움카드</div>
+      <h2 class="section-title">에어컨설치실무<br><span class="text-gradient">국비지원과정</span></h2>
+      <p class="section-desc" style="margin-bottom:48px;">
+        본 과정은 벽걸이에어컨, 스탠드에어컨, 천장형에어컨을 설치할 수 있는 실무 기술을 집중 교육하고 있습니다.
+        국민내일배움카드를 가지고 있으면 누구나 신청 가능한 과정입니다. (대학교 3학년도 신청 가능)
+      </p>
+
+      <div class="course-detail featured">
+        <div class="course-detail-header">
+          <div>
+            <div class="badge" style="margin-bottom:12px;">BASIC 1 커리큘럼</div>
+            <div class="course-detail-title">에어컨설치실무 국비지원과정</div>
+            <div class="course-detail-sub">국비교육 수료생 삼성 DVM-HOME, SAC 에어컨 자격교육 연계</div>
+          </div>
+          <div class="course-price-block">
+            <div class="course-price">1,213,280<span>원</span></div>
+            <div class="course-price-note">45% ~ 100% 국비지원 · 자비부담 최소 0원</div>
+          </div>
+        </div>
+        <div class="course-detail-body">
+          <div class="course-info-grid">
+            <div class="course-info-item wide"><div class="course-info-label">교육기간</div><div class="course-info-value">2025-05-24 ~ 07-13 (8주 주말과정)</div></div>
+            <div class="course-info-item"><div class="course-info-label">교육시간</div><div class="course-info-value">토/일 09:00 ~ 17:00</div></div>
+            <div class="course-info-item"><div class="course-info-label">모집인원</div><div class="course-info-value">16명</div></div>
+            <div class="course-info-item full"><div class="course-info-label">특전</div><div class="course-info-value">국비교육 수료생 삼성 DVM-HOME, SAC 에어컨 자격교육 연계 · 수료 후 현장실습 지원 (소정 보수)</div></div>
+          </div>
+
+          <button class="curriculum-toggle open" data-target="cur-hrd" type="button"><span class="label">커리큘럼 접기</span><span class="chev">▾</span></button>
+          <div class="curriculum-panel open" id="cur-hrd">
+            <div class="curriculum-wrap">
+              <table class="curriculum">
+                <thead><tr><th>주차</th><th>교육내용</th><th style="width:140px;">비고</th></tr></thead>
+                <tbody>
+                  <tr><td>1주차</td><td><ul><li>냉동사이클 기초이론 교육 및 시공공구 종류의 이해</li><li>에어컨 시공 자재 종류 소개 및 동배관 가공 실습</li></ul></td><td></td></tr>
+                  <tr><td>2주차</td><td><ul><li>전기에 대한 이해 / 시공현장 안전관리 교육</li><li>통신선 및 전원선 연결 실습</li></ul></td><td></td></tr>
+                  <tr><td>3주차</td><td><ul><li>용접이론교육 및 실습</li></ul></td><td><span class="tag">토치 / 산소용접</span></td></tr>
+                  <tr><td>4주차</td><td><ul><li>타공실습 및 에어컨 설치공구 작동실습</li><li>에어컨 시공실습 1</li></ul></td><td><span class="tag">벽걸이 에어컨</span></td></tr>
+                  <tr><td>5주차</td><td><ul><li>에어컨 시공실습 2</li></ul></td><td><span class="tag">스탠드 에어컨</span></td></tr>
+                  <tr><td>6주차</td><td><ul><li>에어컨 시공실습 3</li></ul></td><td><span class="tag">천장형 에어컨</span></td></tr>
+                  <tr><td>7주차</td><td><ul><li>에어컨 유지 관리[에어컨 세척] 및 고장진단 실습</li><li>냉매주입 및 냉매회수기 작동실습</li><li>대기환경 및 EPA608 자격의 이해</li></ul></td><td></td></tr>
+                  <tr><td>8주차</td><td><ul><li>에어컨 설치계획 및 적산/견적 실습</li><li>영업/마케팅의 이해 및 창업준비</li></ul></td><td></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="course-note">※ 현장실습의 보수는 개인의 기술숙련도 및 현장상황에 따라 변동될 수 있으며, 학원 사정상 미실시될 수 있습니다.</p>
+          </div>
+
+          <div class="course-cta">
+            <a href="academy-payment.html?course=hrd" class="btn btn-primary">국민내일배움카드로 수강 신청 <span class="btn-icon">→</span></a>
+            <a href="https://www.hrd.go.kr" target="_blank" rel="noopener" class="btn btn-outline">내일배움카드 신청 (HRD-Net)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 에어컨기술 창업과정 ══════════ -->
+  <section class="section" id="startup">
+    <div class="container">
+      <div class="section-label">에어컨기술 창업과정</div>
+      <h2 class="section-title">환경변화로 점점 더워지는 지구,<br><span class="text-gradient">에어컨기술로 미래를 설계해 보세요</span></h2>
+      <p class="section-desc" style="margin-bottom:56px;">
+        가정에어컨 및 시스템에어컨 설치 경력 십년 이상인 전문강사가 현장 실전 노하우를 아낌없이 전수해 드립니다.
+        교육수료 후 현장설치가 가능할 수 있도록 반복해서 교육해 드립니다.
+      </p>
+
+      <!-- 장점 -->
+      <h3 style="margin-bottom:24px;">ACTION air 에어컨기술 창업과정 장점</h3>
+      <div class="num-list" style="margin-bottom:72px;">
+        <div class="num-item"><div class="n">01</div><div><b>현장에서 바로 활용할 수 있는 기술교육</b><p>십년 이상 경력의 전문강사가 현장 실전 노하우를 전수하고, 수료 후 현장설치가 가능하도록 반복 교육합니다.</p></div></div>
+        <div class="num-item"><div class="n">02</div><div><b>현장견학 / 실습</b><p>교육수료 후 에어컨 설치현장 견학 또는 실습을 통해 배운 내용을 직접 시현해보고 다양한 현장 상황을 경험합니다.</p></div></div>
+        <div class="num-item"><div class="n">03</div><div><b>창업지원</b><p>법인설립 또는 개인사업자 등록, 작업차량 및 시공도구 준비, 견적서 작성, 카드단말기 등록, 전자세금계산서 발행, 명함제작 등 창업 기본사항 준비를 돕습니다.</p></div></div>
+        <div class="num-item"><div class="n">04</div><div><b>홍보 마케팅 교육</b><p>홈페이지/블로그 제작 및 활용, SNS(유튜브 · 인스타그램) 활용 방법 및 사례, 전단지/현수막 제작 등 마케팅 도구 활용법을 지원합니다.</p></div></div>
+        <div class="num-item"><div class="n">05</div><div><b>에어컨 및 부자재 도매가 공급</b><p>아카데미 수료생에게는 최대 도매할인율을 적용한 가격으로 에어컨 및 관련 부자재를 안정적으로 공급합니다.</p></div></div>
+        <div class="num-item"><div class="n">06</div><div><b>수료 후 진로</b><p>개인 창업 · ACTION air 파트너 활동 · 시공팀 취업 · 도급현장 연계 등 창업과정 교육을 통해 다양한 진로를 정할 수 있습니다.</p></div></div>
+      </div>
+
+      <!-- 프로그램 ① -->
+      <div class="course-detail">
+        <div class="course-detail-header">
+          <div>
+            <div class="badge" style="margin-bottom:12px;">프로그램 ① · 에어컨 이전/설치 커리큘럼</div>
+            <div class="course-detail-title">에어컨 이전 / 설치 과정</div>
+            <div class="course-detail-sub">벽걸이 및 스탠드에어컨(2in1 포함)을 설치 · 철거 · 이전하는 기술을 숙달할 수 있도록 구성되어 있습니다.</div>
+          </div>
+          <div class="course-price-block">
+            <div class="course-price-original">100만원</div>
+            <div class="course-price">60<span>만원</span></div>
+            <div class="course-price-note">60% 할인</div>
+          </div>
+        </div>
+        <div class="course-detail-body">
+          <div class="course-info-grid">
+            <div class="course-info-item wide"><div class="course-info-label">교육기간</div><div class="course-info-value">5일 평일과정 (수시모집)</div></div>
+            <div class="course-info-item"><div class="course-info-label">교육시간</div><div class="course-info-value">월~금 09:00 ~ 16:00</div></div>
+            <div class="course-info-item"><div class="course-info-label">모집인원</div><div class="course-info-value">16명</div></div>
+            <div class="course-info-item full"><div class="course-info-label">특전</div><div class="course-info-value">현장실습(오피스 · 상업시설 · 아파트 등) 최대 2회 (소정보수 지급)</div></div>
+          </div>
+          <button class="curriculum-toggle" data-target="cur-st1" type="button"><span class="label">커리큘럼 보기</span><span class="chev">▾</span></button>
+          <div class="curriculum-panel" id="cur-st1">
+            <div class="curriculum-wrap">
+              <table class="curriculum">
+                <thead><tr><th>구분</th><th>내용</th><th style="width:140px;">일정</th></tr></thead>
+                <tbody>
+                  <tr><td>이론교육</td><td><ul><li>에어컨 구조 및 작동원리</li><li>에어컨 전기</li></ul></td><td><span class="tag">1일차</span></td></tr>
+                  <tr><td>설치실습</td><td><ul><li>에어컨용 수동공구 및 전동공구 사용법</li><li>동관작업 (가스용접 및 플레어)</li><li>진공작업 및 냉매충전 (매니폴드게이지 활용)</li><li>전원선 및 통신선 연결</li><li>배관작업</li><li>에어컨설치 및 시운전 (벽걸이, 스탠드형)</li><li>주요 하자사례 및 조치방법</li></ul></td><td><span class="tag">2~5일차</span></td></tr>
+                  <tr><td>현장실습</td><td>최대 2회 (교육 수료 후) · 수료 후 3개월 이내 신청자 한</td><td></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="course-note">※ 현장실습의 보수는 개인의 기술숙련도 및 현장상황에 따라 변동될 수 있으며, 학원 사정상 미실시될 수 있습니다.</p>
+          </div>
+          <div class="course-cta">
+            <a href="academy-payment.html?course=startup1" class="btn btn-primary">수강 신청 <span class="btn-icon">→</span></a>
+            <a href="academy-community.html#contact" class="btn btn-outline">먼저 상담 신청</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 프로그램 ② -->
+      <div class="course-detail featured">
+        <div class="course-detail-header">
+          <div>
+            <div class="badge" style="margin-bottom:12px;">프로그램 ② · ADVANCED 101 커리큘럼</div>
+            <div class="course-detail-title">시스템에어컨 시공 ADVANCED 101</div>
+            <div class="course-detail-sub">최근 에어컨 수요의 90% 이상을 차지하는 아파트 올인원 에어컨 및 상업용 천장형 싱글 에어컨을 설치할 수 있는 기술을 숙달합니다. 교육 수료 후 매년 달라지는 최신기술 보수교육 실시 (연 1회 예정).</div>
+          </div>
+          <div class="course-price-block">
+            <div class="course-price-original">300만원</div>
+            <div class="course-price">210<span>만원</span></div>
+            <div class="course-price-note">30% off 할인이벤트 · 2명 동시 수강 시 인당 180만원</div>
+          </div>
+        </div>
+        <div class="course-detail-body">
+          <div class="course-info-grid">
+            <div class="course-info-item wide"><div class="course-info-label">교육기간</div><div class="course-info-value">10일 평일과정 (수시모집)</div></div>
+            <div class="course-info-item"><div class="course-info-label">교육시간</div><div class="course-info-value">월~금 09:00 ~ 16:00</div></div>
+            <div class="course-info-item"><div class="course-info-label">모집인원</div><div class="course-info-value">16명</div></div>
+            <div class="course-info-item full"><div class="course-info-label">특전</div><div class="course-info-value">현장실습(오피스 · 상업용시설 · 아파트 등) 최대 3회 지원 (소정 보수지급) · ACTION air 파트너로 활동할 수 있는 ATC 인증서 발급</div></div>
+          </div>
+          <button class="curriculum-toggle" data-target="cur-st2" type="button"><span class="label">커리큘럼 보기</span><span class="chev">▾</span></button>
+          <div class="curriculum-panel" id="cur-st2">
+            <div class="curriculum-wrap">
+              <table class="curriculum">
+                <thead><tr><th>구분</th><th>내용</th></tr></thead>
+                <tbody>
+                  <tr><td>이론교육</td><td><ul><li>시스템에어컨 시장 및 전망</li><li>시스템에어컨 주요하자 및 보수방법</li><li>상업용 천장형 싱글 주요하자 및 보수방법</li><li>용접기초 · 견적내기</li><li>상업공간 도면 검토 제품용량 제안</li><li>전기용량 확인 및 전원선 용량 선정</li><li>실외기실 위치 및 시공안전성 확인</li><li>자재산출 및 제품 장비대 산정 · 제품 및 자재 양중비 산정 · 견적서 작성</li></ul></td></tr>
+                  <tr><td>설치실습</td><td><ul><li>제품 용량산정 및 설계 실습</li><li>아파트 시스템에어컨 설치시공 실습</li><li>상업용 천장형 싱글 시공 실습</li><li>덕트형 에어컨 시공 실습 · 전열교환기 설치 실습</li><li>용접실습 · 전기용량 산정 실습</li><li>MV/LATS 활용기초</li><li>시공 하자사례 대응 실습</li><li>천장 석고보드 타공 및 마감 실습 [도배포함]</li></ul><span class="tag">교육시간 이외 / 수료 후 추가실습 가능 (신청 후 실습)</span></td></tr>
+                  <tr><td>마케팅</td><td>홈페이지, 블로그, 유튜브 활용 마케팅 방법 소개</td></tr>
+                  <tr><td>현장견학 / 실습</td><td>최대 3회 (교육 수료 후, 소정보수 지급) · 수료 후 3개월 이내 신청자 한</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="course-note">※ 현장실습의 보수는 개인의 기술숙련도 및 현장상황에 따라 변동될 수 있으며, 학원 사정상 미실시될 수 있습니다.</p>
+          </div>
+          <div class="course-cta">
+            <a href="academy-payment.html?course=startup2" class="btn btn-primary">수강 신청 <span class="btn-icon">→</span></a>
+            <a href="academy-community.html#contact" class="btn btn-outline">먼저 상담 신청</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 에어컨청소 창업과정 ══════════ -->
+  <section class="section section-dark" id="clean">
+    <div class="container">
+      <div class="section-label">에어컨청소 창업과정</div>
+      <h2 class="section-title">차별화된 "에어컨청소 교육"<br><span class="text-gradient">ACTION air에서 시작해보세요</span></h2>
+
+      <div class="grid grid-2" style="margin:48px 0 64px;">
+        <div class="card">
+          <div class="card-icon">📈</div>
+          <div class="card-title">에어컨청소시장 성장성 및 가능성</div>
+          <ul class="price-features" style="margin-bottom:0;">
+            <li>가정에서 에어컨청소 경험 비율 약 15%로 추산, 향후 시장 확대 기대</li>
+            <li>매년 에어컨청소를 실시하는 단체 시장 풍부</li>
+            <li>위생 · 전력효율 · 냉방성능 — 에어컨청소를 꼭 해야 하는 이유</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-icon">🧰</div>
+          <div class="card-title">ACTION air 에어컨청소 창업과정 장점</div>
+          <ul class="price-features" style="margin-bottom:0;">
+            <li>현장에서 접할 수 있는 다양한 에어컨청소용 실습장비 구비</li>
+            <li>체계적이고 전문적인 교육 실시</li>
+            <li>다양한 수료생 지원 (현장실습 · 부자재 공급 · 파트너 연계)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="notice" style="margin-bottom:40px;">
+        <div class="notice-title">◆ 실습 대상 에어컨</div>
+        천장형 (360원형 · 4WAY · 2WAY · 1WAY) · 스탠드형 (대형냉난방 · 가정용 LG/삼성) · 덕트형 · 벽걸이 (냉난방 · 가정용) · 실외기 (LG · 삼성)
+      </div>
+
+      <!-- 기본과정 -->
+      <div class="course-detail">
+        <div class="course-detail-header">
+          <div>
+            <div class="badge" style="margin-bottom:12px;">프로그램 ① · 기본과정</div>
+            <div class="course-detail-title">에어컨청소 창업 기본과정</div>
+            <div class="course-detail-sub">에어컨 기본이론 및 이전/철거/설치 실습교육, 벽걸이/스탠드/시스템에어컨 분해 · 세척 교육과 고장상황에 대처할 수 있는 AS 기술을 숙달합니다.</div>
+          </div>
+          <div class="course-price-block">
+            <div class="course-price-original">200만원</div>
+            <div class="course-price">120<span>만원</span></div>
+            <div class="course-price-note">40% 할인</div>
+          </div>
+        </div>
+        <div class="course-detail-body">
+          <div class="course-info-grid">
+            <div class="course-info-item wide"><div class="course-info-label">교육기간</div><div class="course-info-value">수시모집 (10일, 평일과정)</div></div>
+            <div class="course-info-item"><div class="course-info-label">교육시간</div><div class="course-info-value">평일 09:00 ~ 16:00</div></div>
+            <div class="course-info-item"><div class="course-info-label">모집인원</div><div class="course-info-value">12명</div></div>
+            <div class="course-info-item full"><div class="course-info-label">특전</div><div class="course-info-value">현장실습 지원 (자세한 내용은 학원에 문의 주세요)</div></div>
+          </div>
+          <button class="curriculum-toggle" data-target="cur-cl1" type="button"><span class="label">커리큘럼 보기</span><span class="chev">▾</span></button>
+          <div class="curriculum-panel" id="cur-cl1">
+            <div class="curriculum-wrap">
+              <table class="curriculum">
+                <thead><tr><th>구분</th><th>내용</th><th style="width:140px;">일정</th></tr></thead>
+                <tbody>
+                  <tr><td>이론교육</td><td><ul><li>에어컨 구조 및 작동원리</li><li>에어컨 전기</li></ul></td><td><span class="tag">1일차</span></td></tr>
+                  <tr><td>이전/철거/설치<br>및 AS 실습</td><td><ul><li>에어컨용 수동공구 및 전동공구 사용법</li><li>동관작업 (가스용접 및 플레어)</li><li>진공작업 및 냉매충전 (매니폴드게이지 활용)</li><li>전원선 및 통신선 연결 · 배관작업</li><li>에어컨설치 및 시운전 (벽걸이, 스탠드형)</li><li>주요 AS사례 및 조치방법</li></ul></td><td><span class="tag">2~5일차</span></td></tr>
+                  <tr><td>에어컨<br>세척 실습</td><td><ul><li>에어컨세척장비 소개 및 공구사용법 숙달</li><li>에어컨세척 약품소개 및 약품별 사용방법 소개</li><li>벽걸이/스탠드/1way/2way/4way/원형/덕트형 에어컨/실외기 세척실습</li></ul></td><td><span class="tag">6~10일차</span></td></tr>
+                  <tr><td>마케팅</td><td>에어컨세척시장 상황 및 영업노하우 소개</td><td><span class="tag">10일차</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="course-cta">
+            <a href="academy-payment.html?course=clean1" class="btn btn-primary">수강 신청 <span class="btn-icon">→</span></a>
+            <a href="academy-community.html#contact" class="btn btn-outline">먼저 상담 신청</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 집중과정 -->
+      <div class="course-detail">
+        <div class="course-detail-header">
+          <div>
+            <div class="badge" style="margin-bottom:12px;">프로그램 ② · 집중과정</div>
+            <div class="course-detail-title">에어컨청소 집중과정</div>
+            <div class="course-detail-sub">벽걸이/스탠드/시스템(1way, 4way, 원형에어컨) 및 상업용 대형냉난방기에 대한 분해/세척 교육을 집중 진행합니다.</div>
+          </div>
+          <div class="course-price-block">
+            <div class="course-price-original">100만원</div>
+            <div class="course-price">60<span>만원</span></div>
+            <div class="course-price-note">40% 할인</div>
+          </div>
+        </div>
+        <div class="course-detail-body">
+          <div class="course-info-grid">
+            <div class="course-info-item wide"><div class="course-info-label">교육기간</div><div class="course-info-value">수시모집 (5일, 평일과정)</div></div>
+            <div class="course-info-item"><div class="course-info-label">교육시간</div><div class="course-info-value">평일 09:00 ~ 16:00</div></div>
+            <div class="course-info-item"><div class="course-info-label">모집인원</div><div class="course-info-value">12명</div></div>
+            <div class="course-info-item full"><div class="course-info-label">특전</div><div class="course-info-value">현장실습 지원 (자세한 내용은 학원에 문의 주세요)</div></div>
+          </div>
+          <button class="curriculum-toggle" data-target="cur-cl2" type="button"><span class="label">커리큘럼 보기</span><span class="chev">▾</span></button>
+          <div class="curriculum-panel" id="cur-cl2">
+            <div class="curriculum-wrap">
+              <table class="curriculum">
+                <thead><tr><th>구분</th><th>내용</th><th style="width:140px;">일정</th></tr></thead>
+                <tbody>
+                  <tr><td>이론교육</td><td><ul><li>에어컨 구조 및 작동원리 · 세척 약품 및 장비의 이해</li></ul></td><td><span class="tag">1일차</span></td></tr>
+                  <tr><td>세척 실습</td><td><ul><li>벽걸이 / 스탠드 분해 · 세척</li><li>시스템에어컨 (1way, 4way, 원형) 분해 · 세척</li><li>상업용 대형냉난방기 분해 · 세척</li><li>실외기 세척 및 재조립 · 시운전</li></ul></td><td><span class="tag">2~5일차</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="course-cta">
+            <a href="academy-payment.html?course=clean2" class="btn btn-primary">수강 신청 <span class="btn-icon">→</span></a>
+            <a href="academy-community.html#contact" class="btn btn-outline">먼저 상담 신청</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 단과반 ══════════ -->
+  <section class="section" id="short">
+    <div class="container">
+      <div class="section-label">에어컨기술 집중 단과반</div>
+      <h2 class="section-title">에어컨 핵심 기술만 "쏙" 뽑은<br><span class="text-gradient">집중 단과반</span></h2>
+      <p class="section-desc" style="margin-bottom:48px;">현직 기술자 · 예비 창업자를 위한 1~2일 단기 집중과정. 필요한 기술만 골라 수강하세요. (수시모집 · 09:00~16:00)</p>
+
+      <div class="grid grid-2">
+        <div class="price-card featured" style="text-align:left;">
+          <div class="badge" style="margin-bottom:16px;">단과반 ① · 2일</div>
+          <h3 style="margin-bottom:8px;">에어컨 서비스 기술 과정</h3>
+          <p style="font-size:0.88rem;color:var(--text-muted);line-height:1.7;margin-bottom:20px;">냉매 충전/보충/완충 기술과 에어컨 철거, 많이 발생하는 고장부위 AS 진단 및 조치 방법을 배우는 과정입니다.</p>
+          <div class="price-amount"><s style="font-size:1rem;color:var(--text-dim);font-weight:400;margin-right:8px;">60만원</s>40만원</div>
+          <div class="price-period">수시모집 (2일, 평일과정) · 모집인원 10명 · 30% off</div>
+          <ul class="price-features">
+            <li>냉매 충전 / 보충 / 완충 실습</li>
+            <li>안전한 에어컨 철거 기술</li>
+            <li>고장부위 AS 진단 및 조치</li>
+          </ul>
+          <a href="academy-payment.html?course=short1" class="btn btn-primary" style="width:100%;">수강 신청 <span class="btn-icon">→</span></a>
+        </div>
+        <div class="price-card" style="text-align:left;">
+          <div class="badge" style="margin-bottom:16px;">단과반 ② · 1일</div>
+          <h3 style="margin-bottom:8px;">냉매 서비스 + AS 진단 과정</h3>
+          <p style="font-size:0.88rem;color:var(--text-muted);line-height:1.7;margin-bottom:20px;">에어컨 냉매 충전/보충/완충 기술과 많이 발생하는 고장부위 AS 진단 및 조치 방법을 배우는 과정입니다.</p>
+          <div class="price-amount"><s style="font-size:1rem;color:var(--text-dim);font-weight:400;margin-right:8px;">30만원</s>20만원</div>
+          <div class="price-period">수시모집 (1일, 평일과정) · 모집인원 10명 · 30% off</div>
+          <ul class="price-features">
+            <li>매니폴드게이지 활용 냉매 작업</li>
+            <li>냉매 회수 및 재충전</li>
+            <li>고장부위 AS 진단 및 조치</li>
+          </ul>
+          <a href="academy-payment.html?course=short2" class="btn btn-outline" style="width:100%;">수강 신청 <span class="btn-icon">→</span></a>
+        </div>
+        <div class="price-card" style="text-align:left;">
+          <div class="badge" style="margin-bottom:16px;">단과반 ③ · 1일</div>
+          <h3 style="margin-bottom:8px;">에어컨 철거 + AS 진단 과정</h3>
+          <p style="font-size:0.88rem;color:var(--text-muted);line-height:1.7;margin-bottom:20px;">안전하게 에어컨을 철거하는 기술과 많이 발생하는 고장부위 AS 진단 및 조치 방법을 배우는 과정입니다.</p>
+          <div class="price-amount"><s style="font-size:1rem;color:var(--text-dim);font-weight:400;margin-right:8px;">30만원</s>20만원</div>
+          <div class="price-period">수시모집 (1일, 평일과정) · 모집인원 10명 · 30% off</div>
+          <ul class="price-features">
+            <li>펌프다운 및 안전 철거 절차</li>
+            <li>배관 · 배선 처리 및 이전 준비</li>
+            <li>고장부위 AS 진단 및 조치</li>
+          </ul>
+          <a href="academy-payment.html?course=short3" class="btn btn-outline" style="width:100%;">수강 신청 <span class="btn-icon">→</span></a>
+        </div>
+        <div class="price-card" style="text-align:left;">
+          <div class="badge" style="margin-bottom:16px;">단과반 ④ · 특강</div>
+          <h3 style="margin-bottom:8px;">실전 마케팅 스페셜 특강</h3>
+          <p style="font-size:0.88rem;color:var(--text-muted);line-height:1.7;margin-bottom:20px;">에어컨 예비창업자, 초보사업자를 위한 200% 빠른 매출성장을 만드는 매출공식 스페셜 마케팅 특강.</p>
+          <div class="price-amount"><s style="font-size:1rem;color:var(--text-dim);font-weight:400;margin-right:8px;">100만원</s>30만원</div>
+          <div class="price-period">수시모집 · 모집인원 16명 · 70% off</div>
+          <ul class="price-features">
+            <li>네이버 플레이스 · 블로그 · SNS 실전 세팅</li>
+            <li>견적 · 상담 전환율 높이는 매출공식</li>
+            <li>단골 · 재방문 만드는 고객관리</li>
+          </ul>
+          <a href="academy-payment.html?course=short4" class="btn btn-outline" style="width:100%;">수강 신청 <span class="btn-icon">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 국민내일배움카드 안내 ══════════ -->
+  <section class="section section-dark" id="hrdcard">
+    <div class="container">
+      <div class="hrd-banner">
+        <div>
+          <div class="section-label">국민내일배움카드란?</div>
+          <h2 class="section-title">카드 한 장으로 시작하는<br><span class="text-gradient">300만원 기본지원, 최대 500만원</span></h2>
+          <div class="hrd-pills">
+            <span class="hrd-pill">기간 <b>5년간</b></span>
+            <span class="hrd-pill">대상 <b>누구나 (일부 제외)</b></span>
+            <span class="hrd-pill">지원금액 <b>300만원 ~ 500만원</b></span>
+          </div>
+          <p style="color:var(--text-muted);line-height:1.8;font-size:0.95rem;">
+            지원 범위 내에서 <strong style="color:var(--gold-dark);">훈련비의 45~85%가 국비 지원</strong>됩니다. 최소한의 자비부담으로 원하는 훈련에 참여해 보세요.
+            (300만원의 계좌를 모두 소진한 경우, 일부 대상자에게는 100~200만원의 금액을 추가 지원)
+          </p>
+          <ul class="hrd-rate">
+            <li>일반인 <strong>45 ~ 85%</strong></li>
+            <li>국민취업제도 Ⅰ유형, 국민취업지원제도 Ⅱ유형 (특정계층) <strong>80 ~ 100%</strong></li>
+            <li>국민취업지원제도 Ⅱ유형 (청 · 중장년층) <strong>50 ~ 85%</strong></li>
+            <li>근로장려금 (EITC) 수급자 <strong>72.5 ~ 92.5%</strong></li>
+          </ul>
+          <div style="display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;">
+            <a href="https://www.hrd.go.kr" target="_blank" rel="noopener" class="btn btn-primary btn-sm">내일배움카드 신청 (HRD-Net) <span class="btn-icon">→</span></a>
+            <a href="academy-payment.html?course=hrd" class="btn btn-outline btn-sm">카드로 수강 신청</a>
+          </div>
+        </div>
+        <div>
+          <div class="hrd-card-visual">
+            <div class="hrd-card-top"><span>고용노동부</span><span>국민내일배움카드</span></div>
+            <div class="hrd-card-chip"></div>
+            <div class="hrd-card-num">0012 3456 7890 9870</div>
+            <div class="hrd-card-bottom">
+              <div>CARD HOLDER<b>ACTION AIR 수강생</b></div>
+              <div>VALID THRU<b>5 YEARS</b></div>
+            </div>
+          </div>
+          <p style="text-align:center;font-size:0.78rem;color:var(--text-dim);margin-top:28px;">※ 대학교 3학년도 신청 가능 · 발급은 HRD-Net 또는 가까운 고용센터에서</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="padding:80px 0;background:linear-gradient(135deg, #F0F0F4, #F7F7F9);">
+    <div class="container" style="text-align:center;">
+      <h2 style="margin-bottom:16px;">어떤 과정이 맞는지 고민되시나요?</h2>
+      <p class="section-desc" style="margin:0 auto 40px;">1533-2640 · 카카오톡 · 1:1 상담신청으로 목표에 맞는 과정을 추천해 드립니다.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="academy-community.html#contact" class="btn btn-primary">1:1 상담 신청 <span class="btn-icon">→</span></a>
+        <a href="academy-payment.html" class="btn btn-outline">학원비 결제 안내</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <img src="../images/logo.png" alt="액션에어그룹" style="opacity:0.7;background:transparent;border-radius:4px;" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+            <span style="display:none;font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--text-muted);">ACTION AIR GROUP</span>
+          </div>
+          <p class="footer-desc">히트펌프 산업의 미래,<br>액션에어그룹이 함께합니다.</p>
+        </div>
+        <div class="footer-links">
+          <h4>아카데미</h4>
+          <a href="academy.html">아카데미 소개</a>
+          <a href="academy-courses.html">교육과정</a>
+          <a href="academy-payment.html">학원비 결제</a>
+          <a href="academy-partner.html">파트너 · 창업</a>
+          <a href="academy-community.html">커뮤니티</a>
+        </div>
+        <div class="footer-links">
+          <h4>사업 분야</h4>
+          <a href="https://www.actionairgroup.com/pages/archi-u.html">아키유 건축컨설팅</a>
+          <a href="https://www.dawonairsys.co.kr" target="_blank">다원에어시스</a>
+          <a href="https://www.actionairgroup.com/pages/nz15c.html">N.Z 1.5℃ 쇼룸</a>
+          <a href="https://www.actionairgroup.com/pages/iot.html">아카라 IoT 쇼룸</a>
+          <a href="https://www.actionairgroup.com/pages/locations.html#distribution">액션에어 유통전문점</a>
+        </div>
+        <div class="footer-links">
+          <h4>연락처</h4>
+          <a href="tel:1533-2640">1533-2640</a>
+          <a href="tel:044-867-2627">044-867-2627</a>
+          <a href="mailto:info@actionairgroup.com">info@actionairgroup.com</a>
+          <a href="mailto:3122627@naver.com">3122627@naver.com</a>
+        </div>
+      </div>
+      <div class="footer-brands">
+        <div class="footer-brand-group">
+          <h4>액션에어 아카데미</h4>
+          <div class="footer-brand-links">
+            <a href="https://blog.naver.com/actionair2301" target="_blank" rel="noopener">Blog</a>
+            <a href="https://www.youtube.com/@actionair23" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://www.instagram.com/actionair_academy/" target="_blank" rel="noopener">Instagram</a>
+            <a href="http://www.actionair.co.kr" target="_blank" rel="noopener">기존 홈페이지</a>
+          </div>
+        </div>
+        <div class="footer-brand-group">
+          <h4>다원에어시스</h4>
+          <div class="footer-brand-links">
+            <a href="https://blog.naver.com/3122627" target="_blank" rel="noopener">Blog</a>
+            <a href="https://www.youtube.com/@ActionAir_dawon" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://www.instagram.com/dawon2627/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://smartstore.naver.com/actionair_dawon" target="_blank" rel="noopener">스마트스토어</a>
+          </div>
+        </div>
+        <div class="footer-brand-group">
+          <h4>Family Site</h4>
+          <div class="footer-brand-links">
+            <a href="https://www.lge.co.kr/air-solution/system-air-conditioner" target="_blank" rel="noopener">LG전자 시스템에어컨</a>
+            <a href="https://www.lge.co.kr" target="_blank" rel="noopener">LG전자 대표사이트</a>
+            <a href="https://www.hrd.go.kr" target="_blank" rel="noopener">HRD-Net (직업훈련포털)</a>
+          </div>
+        </div>
+      </div>
+      <div style="padding:24px 0;border-top:1px solid var(--border);margin-top:8px;font-size:0.78rem;color:var(--text-dim);line-height:1.8;">
+        <p><strong>액션에어 에어컨기술 창업학원 ㈜유앤영컴퍼니</strong> | 대표: 유한종 | 사업자등록번호: 324-87-02792 | 학원등록번호: 제1567호</p>
+        <p>통신판매업신고: 제-2023-세종조치원-0025호 | 주소: 세종특별자치시 소정면 소정구길 228 | 대표전화: 1533-2640</p>
+        <p><strong>액션에어그룹 (주)다원에어시스</strong> | 사업자등록번호: 520-88-00856 | 통신판매업신고: 2021-세종조치원-0050</p>
+        <div style="margin-top:12px;display:flex;gap:16px;flex-wrap:wrap;">
+          <a href="https://www.actionairgroup.com/pages/terms.html" style="color:var(--text-dim);text-decoration:underline;text-underline-offset:2px;">이용약관</a>
+          <a href="https://www.actionairgroup.com/pages/privacy.html" style="color:var(--text-dim);text-decoration:underline;text-underline-offset:2px;">개인정보처리방침</a>
+          <a href="https://www.actionairgroup.com/pages/refund.html" style="color:var(--text-dim);text-decoration:underline;text-underline-offset:2px;">환불 정책</a>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>&copy; 2026 액션에어그룹 · 액션에어 아카데미. All rights reserved.</span></div>
+    </div>
+  </footer>
+
+  <div class="floating-btns" id="floatingCta">
+    <a href="https://pf.kakao.com/_xbxcxcxj/chat" target="_blank" rel="noopener" class="floating-kakao" title="카카오톡 상담">
+      <svg viewBox="0 0 24 24" fill="#3C1E1E"><path d="M12 3C6.48 3 2 6.58 2 10.94c0 2.8 1.86 5.27 4.66 6.67-.15.53-.96 3.42-.99 3.66 0 0-.02.17.09.24.11.06.24.01.24.01.32-.04 3.7-2.44 4.28-2.85.56.08 1.14.13 1.72.13 5.52 0 10-3.58 10-7.86C22 6.58 17.52 3 12 3z"/></svg>
+    </a>
+    <a href="academy-payment.html" class="floating-cta-btn">수강 신청</a>
+  </div>
+
+</body>
+</html>

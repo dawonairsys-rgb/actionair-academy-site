@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>파트너 · 창업 — 액션에어 아카데미 | 액션에어그룹</title>
+  <meta name="description" content="ACTION air 파트너 모집, 아카데미 가맹 모집, 에어컨 시공 서비스, 기업 냉난방기 서비스 안내.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/academy.css">
+  <script>window.AAG_LIVE_BASE = 'https://www.actionairgroup.com/pages/';</script>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/academy.js" defer></script>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="nav">
+    <div class="container">
+      <a href="../index.html" class="nav-logo">
+        <img src="../images/logo.png" alt="액션에어그룹" class="nav-logo-img" onerror="this.classList.add('error')">
+        <span class="nav-logo-text">ACTION AIR GROUP</span>
+      </a>
+      <div class="nav-menu" id="navMenu">
+        <a href="https://www.actionairgroup.com/pages/about.html" class="nav-link">그룹소개</a>
+        <a href="https://www.actionairgroup.com/pages/nz15c.html" class="nav-link">N.Z 1.5℃ 쇼룸</a>
+        <a href="https://www.actionairgroup.com/pages/iot.html" class="nav-link">IoT 쇼룸</a>
+        <a href="https://www.actionairgroup.com/pages/archi-u.html" class="nav-link">아키유</a>
+        <div class="nav-dropdown">
+          <a href="academy.html" class="nav-link active">아카데미<span class="nav-link-caret">▾</span></a>
+          <div class="nav-dropdown-menu">
+            <a href="academy.html" class="nav-dropdown-item"><span class="nav-dd-text"><span class="nav-dd-label">아카데미 소개</span><span class="nav-dd-desc">교육이념 · 연혁 · 시설 · 오시는 길</span></span><span class="nav-dd-arrow">&rarr;</span></a>
+            <a href="academy-courses.html" class="nav-dropdown-item"><span class="nav-dd-text"><span class="nav-dd-label">교육과정</span><span class="nav-dd-desc">국비지원 · 창업과정 · 청소과정 · 단과반</span></span><span class="nav-dd-arrow">&rarr;</span></a>
+            <a href="academy-payment.html" class="nav-dropdown-item"><span class="nav-dd-text"><span class="nav-dd-label">학원비 결제</span><span class="nav-dd-desc">국민내일배움카드 · 신용카드 · 계좌이체</span></span><span class="nav-dd-arrow">&rarr;</span></a>
+            <a href="academy-partner.html" class="nav-dropdown-item active"><span class="nav-dd-text"><span class="nav-dd-label">파트너 · 창업</span><span class="nav-dd-desc">파트너 모집 · 아카데미 가맹 · 시공/기업서비스</span></span><span class="nav-dd-arrow">&rarr;</span></a>
+            <a href="academy-community.html" class="nav-dropdown-item"><span class="nav-dd-text"><span class="nav-dd-label">커뮤니티</span><span class="nav-dd-desc">공지사항 · FAQ · 1:1 상담신청</span></span><span class="nav-dd-arrow">&rarr;</span></a>
+          </div>
+        </div>
+        <a href="https://www.actionairgroup.com/pages/consulting.html" class="nav-link">컨설팅</a>
+        <a href="https://www.actionairgroup.com/pages/contact.html" class="nav-link">문의</a>
+        <a href="academy-payment.html" class="nav-cta">수강 신청</a>
+      </div>
+      <div class="nav-auth">
+        <button class="nav-auth-btn" id="navLoginBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          로그인
+        </button>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="메뉴"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="page-header-bg">
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1920&q=80" alt="파트너 · 창업" onerror="this.src='../images/showroom-drone.jpg'">
+    </div>
+    <div class="container">
+      <div class="section-label">Partner &amp; Franchise</div>
+      <h1>어려운 취업시장에서 고민하지 마시고<br><span class="text-gradient">ACTION air 파트너로 전문기술 창업</span></h1>
+      <p class="section-desc">서울 · 인천 · 경기 · 천안 · 세종 · 대전 파트너 모집 중. 에어컨 교육의 새로운 기준을 제시하는 ACTION air 창업학원 가맹은 전국 모집 중입니다.</p>
+    </div>
+  </header>
+
+  <div class="sub-nav">
+    <div class="container">
+      <a href="#partner" class="active">파트너 모집</a>
+      <a href="#partner-cost">파트너 창업비용</a>
+      <a href="#franchise">아카데미 가맹 모집</a>
+      <a href="#install">에어컨 시공</a>
+      <a href="#biz">기업서비스</a>
+    </div>
+  </div>
+
+  <!-- ══════════ 파트너 모집 ══════════ -->
+  <section class="section" id="partner">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:60px;">
+        <div class="section-label" style="justify-content:center;">Why ACTION air Partner</div>
+        <h2 class="section-title">왜 ACTION air <span class="text-gradient">파트너</span>인가?</h2>
+        <p class="section-desc" style="margin:0 auto;">개인사업자로 사업자등록증을 보유하신 분이라면 누구나 지원할 수 있습니다.</p>
+      </div>
+
+      <div class="feature-grid card-stagger" style="grid-template-columns:repeat(3,1fr);margin-bottom:72px;">
+        <div class="feature-item" style="text-align:center;padding:44px 32px;">
+          <div class="feature-icon">🛡️</div>
+          <div class="feature-title" style="font-family:var(--font-display);font-size:1.2rem;color:var(--gold);">신뢰도 UP</div>
+          <div class="feature-desc">ACTION air 브랜드 사용으로 고객신뢰를 얻을 수 있습니다.</div>
+        </div>
+        <div class="feature-item" style="text-align:center;padding:44px 32px;">
+          <div class="feature-icon">⚙️</div>
+          <div class="feature-title" style="font-family:var(--font-display);font-size:1.2rem;color:var(--gold);">기술경쟁력 UP</div>
+          <div class="feature-desc">ACTION air 직영 지원팀이 현장지원을 통해 파트너분의 기술 경쟁력을 올려드립니다.</div>
+        </div>
+        <div class="feature-item" style="text-align:center;padding:44px 32px;">
+          <div class="feature-icon">💰</div>
+          <div class="feature-title" style="font-family:var(--font-display);font-size:1.2rem;color:var(--gold);">가격경쟁력 UP</div>
+          <div class="feature-desc">에어컨/시공부자재/공구를 도매가로 지원해드려 가격경쟁력을 가져갈 수 있습니다.</div>
+        </div>
+      </div>
+
+      <div class="section-label">차별화된 지원</div>
+      <h3 style="margin-bottom:12px;">ACTION air는 파트너분의 성공을 최우선 목표로 합니다</h3>
+      <p style="color:var(--text-muted);margin-bottom:32px;">차별화된 지원으로 여러분과 함께 성장하겠습니다. — 주요 지원 내역</p>
+      <div class="library-grid">
+        <div class="library-item"><span class="library-num">01</span><span class="library-title">설치현장 기술지원 <small style="font-weight:400;color:var(--text-dim);">— 지원팀 현장 방문 설치 기술지원</small></span></div>
+        <div class="library-item"><span class="library-num">02</span><span class="library-title">AS 현장지원 <small style="font-weight:400;color:var(--text-dim);">— 지원팀 현장 방문 AS 지원</small></span></div>
+        <div class="library-item"><span class="library-num">03</span><span class="library-title">견적서 작성지원 <small style="font-weight:400;color:var(--text-dim);">— 오피스 · 상가 · 아파트 등 다양한 현장</small></span></div>
+        <div class="library-item"><span class="library-num">04</span><span class="library-title">상생지원 (연 3회 이상) <small style="font-weight:400;color:var(--text-dim);">— 냉난방기 도급현장 연계</small></span></div>
+        <div class="library-item"><span class="library-num">05</span><span class="library-title">마케팅지원 <small style="font-weight:400;color:var(--text-dim);">— 개인홈페이지 · 블로그 · 유튜브 등 마케팅 TOOL</small></span></div>
+        <div class="library-item"><span class="library-num">06</span><span class="library-title">보수교육 실시 <small style="font-weight:400;color:var(--text-dim);">— 삼성 · LG 에어컨 최신기술 보수교육</small></span></div>
+        <div class="library-item"><span class="library-num">07</span><span class="library-title">도매가격으로 에어컨 및 부자재 공급 <small style="font-weight:400;color:var(--text-dim);">— 최대 도매할인율 적용</small></span></div>
+        <div class="library-item"><span class="library-num">08</span><span class="library-title">ATC 인증 수료생 우대 <small style="font-weight:400;color:var(--text-dim);">— 정규과정 수료 시 파트너 지원 우대</small></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 파트너 창업비용 -->
+  <section class="section section-dark" id="partner-cost">
+    <div class="container">
+      <div class="split">
+        <div>
+          <div class="section-label">Partner Cost</div>
+          <h2 class="section-title">3無 — 필요없는 비용은<br><span class="text-gradient">과감히 없앴습니다</span></h2>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px;">
+            <span class="hrd-pill">가맹비용 <b>X</b></span>
+            <span class="hrd-pill">인테리어비용 <b>X</b></span>
+            <span class="hrd-pill">추가비용 <b>X</b></span>
+          </div>
+          <div class="stat-number" style="font-size:2.6rem;margin-bottom:4px;" data-static>약 800만원</div>
+          <div class="stat-label" style="margin-bottom:24px;">창업 예상비용 (예시 · 상황에 따라 변동)</div>
+          <p style="font-size:0.85rem;color:var(--text-dim);line-height:1.7;">
+            ※ 현장기술 지원 및 AS지원, 견적서지원의 경우 소정의 별도 비용이 발생할 수 있습니다.<br>
+            ※ 제시된 금액은 VAT 미포함 금액입니다.
+          </p>
+          <div style="margin-top:28px;"><a href="academy-community.html#contact" class="btn btn-primary">파트너 신청 <span class="btn-icon">→</span></a></div>
+        </div>
+        <div>
+          <table class="cost-table">
+            <thead><tr><th>구분</th><th>내용</th><th style="text-align:right;">금액</th></tr></thead>
+            <tbody>
+              <tr><td>장비 / 작업복 / 차량랩핑</td><td>본사 구매조건</td><td class="amt">약 300만원</td></tr>
+              <tr><td>이행보증비용</td><td>파트너계약 해지 시 원금 지급</td><td class="amt">약 500만원</td></tr>
+              <tr><td>브랜드 사용료</td><td>도급현장 연계 · 현장기술/AS지원 · 견적서 작성지원 · 마케팅지원</td><td class="amt">매월 10만원</td></tr>
+            </tbody>
+          </table>
+          <div class="notice" style="margin-top:20px;">
+            <div class="notice-title">◆ 파트너 지원 방법</div>
+            개인사업자로 사업자등록증을 보유하고 계셔야 합니다. 1:1 상담신청 또는 1533-2640으로 문의해 주세요.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 아카데미 가맹 모집 ══════════ -->
+  <section class="section" id="franchise">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:60px;">
+        <div class="section-label" style="justify-content:center;">Academy Franchise · 전국 모집 중</div>
+        <h2 class="section-title">왜 ACTION air<br><span class="text-gradient">에어컨기술 창업학원</span>인가?</h2>
+        <p class="section-desc" style="margin:0 auto;">에어컨 교육의 새로운 기준을 제시합니다. ACTION air 창업학원과 함께 성장해보세요.</p>
+      </div>
+
+      <div class="process-steps" style="margin-bottom:64px;">
+        <div class="process-step"><div class="process-step-title">가맹 상담 · 상권 검토</div><div class="process-step-desc">희망 지역 영업권 확인 (시도별 1개, 대도시 인구 100만명당 1개소)</div></div>
+        <div class="process-step"><div class="process-step-title">계약 · 학원 인허가</div><div class="process-step-desc">교육청 학원 등록 — 실습실 바닥면적 60㎡ 이상, 2종 근린생활시설</div></div>
+        <div class="process-step"><div class="process-step-title">인테리어 · 장비 세팅</div><div class="process-step-desc">당사 CI · 인테리어 매뉴얼 제공, 실습용 냉난방기 및 공구 세팅</div></div>
+        <div class="process-step"><div class="process-step-title">강사 교육 · 오픈</div><div class="process-step-desc">본사 실습강의 강사 지원, 운영노하우 · 서비스교육 · 오픈지원</div></div>
+      </div>
+
+      <div class="grid grid-2">
+        <div>
+          <h3 style="margin-bottom:20px;">기본 계약 내용</h3>
+          <table class="cost-table">
+            <tbody>
+              <tr><td>영업지역</td><td>각 시도별 1개 (대도시의 경우 인구 100만명당 1개소)</td></tr>
+              <tr><td>계약기간</td><td>2년 (추후 운영연장 심사 후 계약기간 연장 가능)</td></tr>
+              <tr><td>시설기준</td><td>전용면적 150㎡ (권장사항)</td></tr>
+              <tr><td>인테리어</td><td>당사 CI 및 인테리어 매뉴얼 제공</td></tr>
+              <tr><td>강사</td><td>본사 실습강의 강사 지원</td></tr>
+              <tr><td>직영센터 운영</td><td>에어컨시공 직영센터 운영지원</td></tr>
+              <tr><td>파트너 운영</td><td>가맹점에 소속된 파트너 운영지원</td></tr>
+              <tr><td>상호</td><td>당사 CI 및 BI 사용권리</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <h3 style="margin-bottom:20px;">창업비용 <small style="font-size:0.8rem;font-weight:400;color:var(--text-dim);">(VAT 별도 · 예시)</small></h3>
+          <table class="cost-table">
+            <thead><tr><th>구분</th><th>내용</th><th style="text-align:right;">금액</th></tr></thead>
+            <tbody>
+              <tr><td>가맹비</td><td>가맹지역 영업권 보장</td><td class="amt">10,000,000</td></tr>
+              <tr><td>브랜드 사용료</td><td>매출액의 3% (월)</td><td class="amt">—</td></tr>
+              <tr><td>인테리어</td><td>설계 및 내부공사 150㎡ 기준 (실습실 2개 · 휴게실 · 사무실) / 평당 100만원</td><td class="amt">50,000,000</td></tr>
+              <tr><td>교육장비 세팅</td><td>실습용 냉난방기 및 공구 (교육인원 20명 기준)</td><td class="amt">30,000,000</td></tr>
+              <tr><td>교육가구</td><td>책걸상 및 휴게실 가구</td><td class="amt">5,000,000</td></tr>
+              <tr><td>교육비</td><td>운영노하우 · 서비스교육 · 오픈지원 등</td><td class="amt">2,000,000</td></tr>
+              <tr><td>BI 패키지</td><td>유니폼 · 사인물 · 홍보출력물 등</td><td class="amt">3,000,000</td></tr>
+              <tr><td><strong>총 투자금액</strong></td><td></td><td class="amt">100,000,000</td></tr>
+            </tbody>
+          </table>
+          <p class="course-note">※ 위 금액은 예시이며, 실제비용과 다를 수 있습니다. 별도사항: 냉난방기 공사, 간판, 외부덕트, 소방공사, 전기증설, 도시가스, 화장실 공사</p>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:48px;">
+        <a href="academy-community.html#contact" class="btn btn-primary">ACADEMY 창업문의 <span class="btn-icon">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 에어컨 시공 ══════════ -->
+  <section class="section section-dark" id="install">
+    <div class="container">
+      <div class="case-banner">
+        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1400&q=80" alt="에어컨 시공" onerror="this.src='../images/showroom-hero.jpg'">
+        <div class="case-banner-overlay">
+          <span class="case-banner-label">Installation Service</span>
+          <div class="case-banner-title">안전하고 완벽한 에어컨 설치,<br>ACTION air에게 맡겨보세요</div>
+          <p class="case-banner-desc">10년 시공하자보증 · LG전자 시스템에어컨 우수협력업체 · 전국 시공설치팀. 가정용 벽걸이/스탠드부터 아파트 올인원 · 상업용 시스템에어컨까지.</p>
+          <a href="academy-community.html#contact" class="btn btn-outline btn-sm">시공 서비스 신청 &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 기업서비스 ══════════ -->
+  <section class="section" id="biz">
+    <div class="container">
+      <div class="split" style="margin-bottom:64px;">
+        <div class="split-text">
+          <div class="section-label">Business Service</div>
+          <h2 class="section-title">어려운 기업 냉난방기 업무,<br><span class="text-gradient">이제 ACTION air에 맡겨보세요</span></h2>
+          <p>전국 오피스 및 상업용 시설에 대한 냉난방기 설치 및 유지보수 (개별 설치 및 연간단가계약 가능)</p>
+          <p>무료견적 및 상담받아 보시고 결정하세요.</p>
+          <div class="divider"></div>
+          <a href="academy-community.html#contact" class="btn btn-primary btn-sm">기업서비스 상담신청 <span class="btn-icon">→</span></a>
+        </div>
+        <div class="split-img">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1000&q=80" alt="기업서비스" onerror="this.src='../images/showroom-hero.jpg'">
+        </div>
+      </div>
+
+      <div class="section-label">기업서비스 사례</div>
+      <div class="client-grid">
+        <div class="client-item">코오롱오토모티브 볼보전시장</div>
+        <div class="client-item">국립중앙의료원</div>
+        <div class="client-item">고창고등학교 모듈러 교실</div>
+        <div class="client-item">청주김안과의원</div>
+        <div class="client-item">뚜레쥬르 천안 · 아산지점</div>
+        <div class="client-item">두정이진병원</div>
+        <div class="client-item">빽다방 충청남도</div>
+        <div class="client-item">미래에셋금융서비스</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="padding:80px 0;background:linear-gradient(135deg, #F0F0F4, #F7F7F9);">
+    <div class="container" style="text-align:center;">
+      <h2 style="margin-bottom:16px;">ACTION air와 함께 성장하세요</h2>
+      <p class="section-desc" style="margin:0 auto 40px;">파트너 · 아카데미 가맹 · 시공 · 기업서비스 문의 1533-2640</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="academy-community.html#contact" class="btn btn-primary">1:1 상담 신청 <span class="btn-icon">→</span></a>
+        <a href="https://pf.kakao.com/_xbxcxcxj/chat" target="_blank" rel="noopener" class="btn btn-outline">카카오톡 상담</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <img src="../images/logo.png" alt="액션에어그룹" style="opacity:0.7;background:transparent;border-radius:4px;" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+            <span style="display:none;font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--text-muted);">ACTION AIR GROUP</span>
+          </div>
+          <p class="footer-desc">히트펌프 산업의 미래,<br>액션에어그룹이 함께합니다.</p>
+        </div>
+        <div class="footer-links">
+          <h4>아카데미</h4>
+          <a href="academy.html">아카데미 소개</a>
+          <a href="academy-courses.html">교육과정</a>
+          <a href="academy-payment.html">학원비 결제</a>
+          <a href="academy-partner.html">파트너 · 창업</a>
+          <a href="academy-community.html">커뮤니티</a>
+        </div>
+        <div class="footer-links">
+          <h4>사업 분야</h4>
+          <a href="https://www.actionairgroup.com/pages/archi-u.html">아키유 건축컨설팅</a>
+          <a href="https://www.dawonairsys.co.kr" target="_blank">다원에어시스</a>
+          <a href="https://www.actionairgroup.com/pages/nz15c.html">N.Z 1.5℃ 쇼룸</a>
+          <a href="https://www.actionairgroup.com/pages/iot.html">아카라 IoT 쇼룸</a>
+          <a href="https://www.actionairgroup.com/pages/locations.html#distribution">액션에어 유통전문점</a>
+        </div>
+        <div class="footer-links">
+          <h4>연락처</h4>
+          <a href="tel:1533-2640">1533-2640</a>
+          <a href="tel:044-867-2627">044-867-2627</a>
+          <a href="mailto:info@actionairgroup.com">info@actionairgroup.com</a>
+          <a href="mailto:3122627@naver.com">3122627@naver.com</a>
+        </div>
+      </div>
+      <div class="footer-brands">
+        <div class="footer-brand-group">
+          <h4>액션에어 아카데미</h4>
+          <div class="footer-brand-links">
+            <a href="https://blog.naver.com/actionair2301" target="_blank" rel="noopener">Blog</a>
+            <a href="https://www.youtube.com/@actionair23" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://www.instagram.com/actionair_academy/" target="_blank" rel="noopener">Instagram</a>
+            <a href="http://www.actionair.co.kr" target="_blank" rel="noopener">기존 홈페이지</a>
+          </div>
+        </div>
+        <div class="footer-brand-group">
+          <h4>다원에어시스</h4>
+          <div class="footer-brand-links">
+            <a href="https://blog.naver.com/3122627" target="_blank" rel="noopener">Blog</a>
+            <a href="https://www.youtube.com/@ActionAir_dawon" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://www.instagram.com/dawon2627/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://smartstore.naver.com/actionair_dawon" target="_blank" rel="noopener">스마트스토어</a>
+          </div>
+        </div>
+        <div class="footer-brand-group">
+          <h4>Family Site</h4>
+          <div class="footer-brand-links">
+            <a href="https://www.lge.co.kr/air-solution/system-air-conditioner" target="_blank" rel="noopener">LG전자 시스템에어컨</a>
+            <a href="https://www.lge.co.kr" target="_blank" rel="noopener">LG전자 대표사이트</a>
+            <a href="https://www.hrd.go.kr" target="_blank" rel="noopener">HRD-Net (직업훈련포털)</a>
+          </div>
+        </div>
+      </div>
+      <div style="padding:24px 0;border-top:1px solid var(--border);margin-top:8px;font-size:0.78rem;color:var(--text-dim);line-height:1.8;">
+        <p><strong>액션에어 에어컨기술 창업학원 ㈜유앤영컴퍼니</strong> | 대표: 유한종 | 사업자등록번호: 324-87-02792 | 학원등록번호: 제1567호</p>
+        <p>통신판매업신고: 제-2023-세종조치원-0025호 | 주소: 세종특별자치시 소정면 소정구길 228 | 대표전화: 1533-2640</p>
+        <p><strong>액션에어그룹 (주)다원에어시스</strong> | 사업자등록번호: 520-88-00856 | 통신판매업신고: 2021-세종조치원-0050</p>
+        <div style="margin-top:12px;display:flex;gap:16px;flex-wrap:wrap;">
+          <a href="https://www.actionairgroup.com/pages/terms.html" style="color:var(--text-dim);text-decoration:underline;text-underline-offset:2px;">이용약관</a>
+          <a href="https://www.actionairgroup.com/pages/privacy.html" style="color:var(--text-dim);text-decoration:underline;text-underline-offset:2px;">개인정보처리방침</a>
+          <a href="https://www.actionairgroup.com/pages/refund.html" style="color:var(--text-dim);text-decoration:underline;text-underline-offset:2px;">환불 정책</a>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>&copy; 2026 액션에어그룹 · 액션에어 아카데미. All rights reserved.</span></div>
+    </div>
+  </footer>
+
+  <div class="floating-btns" id="floatingCta">
+    <a href="https://pf.kakao.com/_xbxcxcxj/chat" target="_blank" rel="noopener" class="floating-kakao" title="카카오톡 상담">
+      <svg viewBox="0 0 24 24" fill="#3C1E1E"><path d="M12 3C6.48 3 2 6.58 2 10.94c0 2.8 1.86 5.27 4.66 6.67-.15.53-.96 3.42-.99 3.66 0 0-.02.17.09.24.11.06.24.01.24.01.32-.04 3.7-2.44 4.28-2.85.56.08 1.14.13 1.72.13 5.52 0 10-3.58 10-7.86C22 6.58 17.52 3 12 3z"/></svg>
+    </a>
+    <a href="academy-community.html#contact" class="floating-cta-btn">상담 신청</a>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>학원비 결제 — 액션에어 아카데미 | 액션에어그룹</title>
+  <meta name="description" content="액션에어 아카데미 수강 신청 및 학원비 결제. 국민내일배움카드 · 신용/체크카드 · 계좌이체.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/academy.css">
+  <script>window.AAG_LIVE_BASE = 'https://www.actionairgroup.com/pages/';</script>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/academy.js" defer></script>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="nav">
+    <div class="container">
+      <a href="../index.html" class="nav-logo">
+        <img src="../images/logo.png" alt="액션에어그룹" class="nav-logo-img" onerror="this.classList.add('error')">
+        <span class="nav-logo-text">ACTION AIR GROUP</span>
+      </a>
+      <div class="nav-menu" id="navMenu">
+        <a href="https://www.actionairgroup.com/pages/about.html" class="nav-link">그룹소개</a>
+        <a href="https://www.actionairgroup.com/pages/nz15c.html" class="nav-link">N.Z 1.5℃ 쇼룸</a>
+        <a href="https://www.actionairgroup.com/pages/iot.html" class="nav-link">IoT 쇼룸</a>
+        <a href="https://www.actionairgroup.com/pages/archi-u.html" class="nav-link">아키유</a>
+        <div class="nav-dropdown">
+          <a href="academy.html" class="nav-link active">아카데미<span class="nav-link-caret">▾</span></a>
+          <div class="nav-dropdown-menu">
+            <a href="academy.html" class="nav-dropdown-item"><span class="nav-dd-text"><span class="nav-dd-label">아카데미 소개</span><span class="nav-dd-desc">교육이념 · 연혁 · 시설 · 오시는 길</span></span><span class="nav-dd-arrow">&rarr;</span></a>
+            <a href="academy-courses.html" class="nav-dropdown-item"><span class="nav-dd-text"><span class="nav-dd-label">교육과정</span><span class="nav-dd-desc">국비지원 · 창업과정 · 청소과정 · 단과반</span></span><span class="nav-dd-arrow">&rarr;</span></a>
+            <a href="academy-payment.html" class="nav-dropdown-item active"><span class="nav-dd-text"><span class="nav-dd-label">학원비 결제</span><span class="nav-dd-desc">국민내일배움카드 · 신용카드 · 계좌이체</span></span><span class="nav-dd-arrow">&rarr;</span></a>
+            <a href="academy-partner.html" class="nav-dropdown-item"><span class="nav-dd-text"><span class="nav-dd-label">파트너 · 창업</span><span class="nav-dd-desc">파트너 모집 · 아카데미 가맹 · 시공/기업서비스</span></span><span class="nav-dd-arrow">&rarr;</span></a>
+            <a href="academy-community.html" class="nav-dropdown-item"><span class="nav-dd-text"><span class="nav-dd-label">커뮤니티</span><span class="nav-dd-desc">공지사항 · FAQ · 1:1 상담신청</span></span><span class="nav-dd-arrow">&rarr;</span></a>
+          </div>
+        </div>
+        <a href="https://www.actionairgroup.com/pages/consulting.html" class="nav-link">컨설팅</a>
+        <a href="https://www.actionairgroup.com/pages/contact.html" class="nav-link">문의</a>
+        <a href="academy-payment.html" class="nav-cta">수강 신청</a>
+      </div>
+      <div class="nav-auth">
+        <button class="nav-auth-btn" id="navLoginBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          로그인
+        </button>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="메뉴"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="page-header-bg">
+      <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1920&q=80" alt="학원비 결제" onerror="this.src='../images/showroom-hero.jpg'">
+    </div>
+    <div class="container">
+      <div class="section-label">Enrollment &amp; Payment</div>
+      <h1>수강 신청 ·<br><span class="text-gradient">학원비 결제</span></h1>
+      <p class="section-desc">국민내일배움카드, 신용/체크카드, 계좌이체 중 원하는 방법으로 결제하세요. 국비지원 과정은 자비부담금만 결제하시면 됩니다.</p>
+      <div style="margin-top:20px;"><span class="mock-badge"><span class="dot"></span>디자인 시안 — 실제 결제는 진행되지 않습니다</span></div>
+    </div>
+  </header>
+
+  <!-- CHECKOUT -->
+  <section class="section" id="checkout">
+    <div class="container">
+
+      <!-- Steps -->
+      <div class="checkout-steps">
+        <div class="checkout-step active"><span class="num">1</span>과정 선택</div>
+        <div class="checkout-step active"><span class="num">2</span>결제수단 선택</div>
+        <div class="checkout-step"><span class="num">3</span>수강생 정보 · 약관</div>
+        <div class="checkout-step"><span class="num">4</span>결제 완료</div>
+      </div>
+
+      <div class="checkout-layout">
+        <!-- LEFT -->
+        <div>
+
+          <!-- STEP 1: 과정 선택 -->
+          <div class="checkout-panel">
+            <div class="checkout-panel-title"><span class="step-badge">1</span>수강할 과정을 선택하세요</div>
+            <p class="checkout-panel-desc">모든 금액은 부가세 포함이며, 할인가는 현재 진행 중인 이벤트 기준입니다.</p>
+
+            <div class="section-label" style="font-size:0.7rem;margin-bottom:12px;">국비지원과정</div>
+            <div class="select-grid" style="margin-bottom:24px;">
+              <label class="select-card">
+                <input type="radio" name="course" value="hrd" checked>
+                <span class="check">✓</span>
+                <div class="select-card-name">에어컨설치실무 국비지원과정</div>
+                <div class="select-card-sub">8주 주말과정 · 토/일 09:00~17:00 · 16명</div>
+                <div class="select-card-price">1,213,280원 <small style="font-size:0.72rem;font-weight:600;color:var(--gold-dark);">국비 45~100%</small></div>
+              </label>
+            </div>
+
+            <div class="section-label" style="font-size:0.7rem;margin-bottom:12px;">에어컨기술 창업과정</div>
+            <div class="select-grid" style="margin-bottom:24px;">
+              <label class="select-card">
+                <input type="radio" name="course" value="startup1">
+                <span class="check">✓</span>
+                <div class="select-card-name">① 에어컨 이전 / 설치 과정</div>
+                <div class="select-card-sub">5일 평일과정 · 현장실습 최대 2회</div>
+                <div class="select-card-price"><s>1,000,000원</s>600,000원</div>
+              </label>
+              <label class="select-card">
+                <input type="radio" name="course" value="startup2">
+                <span class="check">✓</span>
+                <div class="select-card-name">② ADVANCED 101 (시스템에어컨)</div>
+                <div class="select-card-sub">10일 평일과정 · ATC 인증서 · 현장실습 3회</div>
+                <div class="select-card-price"><s>3,000,000원</s>2,100,000원</div>
+              </label>
+            </div>
+
+            <div class="section-label" style="font-size:0.7rem;margin-bottom:12px;">에어컨청소 창업과정</div>
+            <div class="select-grid" style="margin-bottom:24px;">
+              <label class="select-card">
+                <input type="radio" name="course" value="clean1">
+                <span class="check">✓</span>
+                <div class="select-card-name">① 에어컨청소 기본과정</div>
+                <div class="select-card-sub">10일 평일과정 · 12명</div>
+                <div class="select-card-price"><s>2,000,000원</s>1,200,000원</div>
+              </label>
+              <label class="select-card">
+                <input type="radio" name="course" value="clean2">
+                <span class="check">✓</span>
+                <div class="select-card-name">② 에어컨청소 집중과정</div>
+                <div class="select-card-sub">5일 평일과정 · 12명</div>
+                <div class="select-card-price"><s>1,000,000원</s>600,000원</div>
+              </label>
+            </div>
+
+            <div class="section-label" style="font-size:0.7rem;margin-bottom:12px;">집중 단과반</div>
+            <div class="select-grid">
+              <label class="select-card">
+                <input type="radio" name="course" value="short1">
+                <span class="check">✓</span>
+                <div class="select-card-name">에어컨 서비스 기술 과정 (2일)</div>
+                <div class="select-card-sub">냉매 + 철거 + AS 진단</div>
+                <div class="select-card-price"><s>600,000원</s>400,000원</div>
+              </label>
+              <label class="select-card">
+                <input type="radio" name="course" value="short2">
+                <span class="check">✓</span>
+                <div class="select-card-name">냉매 서비스 + AS 진단 (1일)</div>
+                <div class="select-card-sub">1일 평일과정</div>
+                <div class="select-card-price"><s>300,000원</s>200,000원</div>
+              </label>
+              <label class="select-card">
+                <input type="radio" name="course" value="short3">
+                <span class="check">✓</span>
+                <div class="select-card-name">에어컨 철거 + AS 진단 (1일)</div>
+                <div class="select-card-sub">1일 평일과정</div>
+                <div class="select-card-price"><s>300,000원</s>200,000원</div>
+              </label>
+              <label class="select-card">
+                <input type="radio" name="course" value="short4">
+                <span class="check">✓</span>
+                <div class="select-card-name">실전 마케팅 스페셜 특강</div>
+                <div class="select-card-sub">예비창업자 · 초보사업자</div>
+                <div class="select-card-price"><s>1,000,000원</s>300,000원</div>
+              </label>
+            </div>
+          </div>
+
+          <!-- STEP 2: 결제수단 -->
+          <div class="checkout-panel">
+            <div class="checkout-panel-title"><span class="step-badge">2</span>결제수단을 선택하세요</div>
+            <p class="checkout-panel-desc">국비지원과정은 국민내일배움카드로, 그 외 과정은 신용/체크카드 또는 계좌이체로 결제할 수 있습니다.</p>
+
+            <div class="pay-methods">
+              <label class="select-card pay-method">
+                <input type="radio" name="method" value="hrdcard" checked>
+                <span class="check">✓</span>
+                <div class="pay-method-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h3"/></svg></div>
+                <div class="select-card-name">국민내일배움카드</div>
+                <div class="select-card-sub">국비지원 · 자비부담금만 결제</div>
+                <span class="rec">국비지원과정 추천</span>
+              </label>
+              <label class="select-card pay-method">
+                <input type="radio" name="method" value="card">
+                <span class="check">✓</span>
+                <div class="pay-method-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><circle cx="17" cy="15" r="1.5"/></svg></div>
+                <div class="select-card-name">신용 · 체크카드</div>
+                <div class="select-card-sub">국내 모든 카드 · 무이자 할부 (문의)</div>
+              </label>
+              <label class="select-card pay-method">
+                <input type="radio" name="method" value="bank">
+                <span class="check">✓</span>
+                <div class="pay-method-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 10l9-6 9 6M5 10v9M19 10v9M9 10v9M15 10v9M2 19h20"/></svg></div>
+                <div class="select-card-name">계좌이체 (무통장)</div>
+                <div class="select-card-sub">가상계좌 발급 · 현금영수증 발행</div>
+              </label>
+            </div>
+
+            <!-- 결제수단별 안내 -->
+            <div class="pay-method-detail active" data-method="hrdcard">
+              <strong>국민내일배움카드 결제 안내</strong> — 일반 카드결제와 달리, 결제 전에 <strong>HRD-Net 수강신청 → 학원 승인</strong> 절차가 먼저 진행됩니다.
+              <ol>
+                <li>HRD-Net(hrd.go.kr) 또는 고용센터에서 국민내일배움카드 발급 (미보유 시)</li>
+                <li>HRD-Net에서 "액션에어 에어컨설치실무 과정" 검색 후 수강신청</li>
+                <li>학원 승인 후 개강일 안내 · 자비부담금(훈련비의 0~55%) 확정</li>
+                <li>자비부담금은 내일배움카드(체크/신용 기능)로 학원 단말기 또는 온라인에서 결제</li>
+              </ol>
+              <div id="hrdWarn" class="notice" style="display:none;margin-top:16px;border-color:rgba(192,57,43,0.35);background:rgba(192,57,43,0.05);">
+                <div class="notice-title" style="color:#C0392B;">⚠ 국비지원 대상 과정이 아닙니다</div>
+                선택하신 과정은 전액 자비부담 과정입니다. 신용/체크카드 또는 계좌이체를 선택해 주세요.
+              </div>
+              <div id="hrdTypeBox" style="margin-top:20px;">
+                <div class="form-label">지원 유형 선택 (자비부담금 예시 계산용)</div>
+                <div class="form-checkbox-group">
+                  <label class="form-checkbox"><input type="radio" name="hrdType" value="general" checked> 일반인 (45~85%)</label>
+                  <label class="form-checkbox"><input type="radio" name="hrdType" value="type2"> 국민취업지원 Ⅱ유형 청·중장년 (50~85%)</label>
+                  <label class="form-checkbox"><input type="radio" name="hrdType" value="eitc"> 근로장려금(EITC) 수급자 (72.5~92.5%)</label>
+                  <label class="form-checkbox"><input type="radio" name="hrdType" value="type1"> 국민취업지원 Ⅰ유형 · Ⅱ유형 특정계층 (80~100%)</label>
+                </div>
+              </div>
+            </div>
+            <div class="pay-method-detail" data-method="card">
+              <strong>신용 · 체크카드 결제 안내</strong>
+              <ol>
+                <li>결제하기 버튼 클릭 시 PG사(토스페이먼츠) 안전결제창이 열립니다.</li>
+                <li>카드 정보 입력 또는 간편결제(카카오페이 · 네이버페이 · 삼성페이) 선택</li>
+                <li>결제 완료 즉시 문자 · 이메일로 영수증과 수강 확정 안내가 발송됩니다.</li>
+              </ol>
+            </div>
+            <div class="pay-method-detail" data-method="bank">
+              <strong>계좌이체 (무통장입금) 안내</strong>
+              <ol>
+                <li>결제하기 클릭 시 수강생 명의의 가상계좌가 발급됩니다.</li>
+                <li>안내된 계좌로 24시간 이내 입금 (미입금 시 자동 취소)</li>
+                <li>입금 확인 후 현금영수증 자동 발행 및 수강 확정 안내</li>
+              </ol>
+            </div>
+          </div>
+
+          <!-- STEP 3: 수강생 정보 -->
+          <div class="checkout-panel">
+            <div class="checkout-panel-title"><span class="step-badge">3</span>수강생 정보를 입력하세요</div>
+            <p class="checkout-panel-desc">입력하신 연락처로 개강 안내 및 결제 영수증이 발송됩니다.</p>
+            <div class="grid grid-2" style="gap:0 20px;">
+              <div class="form-group">
+                <label class="form-label">이름 *</label>
+                <input type="text" class="form-input" placeholder="홍길동">
+              </div>
+              <div class="form-group">
+                <label class="form-label">연락처 *</label>
+                <input type="tel" class="form-input" placeholder="010-1234-5678">
+              </div>
+              <div class="form-group">
+                <label class="form-label">이메일 *</label>
+                <input type="email" class="form-input" placeholder="email@example.com">
+              </div>
+              <div class="form-group">
+                <label class="form-label">생년월일 (내일배움카드 확인용)</label>
+                <input type="text" class="form-input" placeholder="YYYY-MM-DD">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">희망 개강일 / 문의사항</label>
+              <textarea class="form-textarea" placeholder="예) 6월 주말반 희망, 현재 내일배움카드 보유 중"></textarea>
+            </div>
+
+            <div class="agree-box">
+              <label class="all"><input type="checkbox" id="agreeAll"> 전체 약관 동의</label>
+              <label><input type="checkbox" class="agree-item"> <span><strong>[필수]</strong> 학원 수강 약관 및 환불 규정 동의</span></label>
+              <label><input type="checkbox" class="agree-item"> <span><strong>[필수]</strong> 개인정보 수집 · 이용 및 PG사 제공 동의</span></label>
+              <label><input type="checkbox" class="agree-item"> <span><strong>[필수]</strong> 국비지원 과정의 경우 HRD-Net 수강신청 · 출석 규정 확인</span></label>
+              <label><input type="checkbox" class="agree-item"> <span>[선택] 개강 · 이벤트 안내 수신 동의 (문자 · 카카오톡)</span></label>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: 결제 요약 -->
+        <aside class="order-summary">
+          <h3>결제 요약</h3>
+          <div class="order-row" style="flex-direction:column;align-items:flex-start;gap:2px;">
+            <span style="font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);font-weight:700;">선택 과정</span>
+            <span id="sumCourse" style="font-size:0.95rem;">에어컨설치실무 국비지원과정</span>
+            <span id="sumSub" style="font-size:0.78rem;color:var(--text-dim);font-weight:400;">8주 주말과정</span>
+          </div>
+          <div class="order-row"><span>정가</span><span id="sumList">1,213,280원</span></div>
+          <div class="order-row discount" id="sumDiscountRow"><span>이벤트 할인</span><span id="sumDiscount">− 0원</span></div>
+          <div class="order-row support" id="sumHrdRow"><span id="sumHrdLabel">국비지원 (45%)</span><span id="sumHrd">− 545,976원</span></div>
+          <div class="order-row"><span>결제수단</span><span id="sumMethod">국민내일배움카드</span></div>
+          <div class="order-total">
+            <span class="label">최종 결제금액</span>
+            <span class="amount" id="sumTotal">667,304<span>원</span></span>
+          </div>
+          <p class="order-note" id="sumNote">자비부담금 예시입니다. 실제 지원율은 HRD-Net 카드 발급 시 확정된 유형에 따라 달라집니다.</p>
+          <button class="btn btn-primary" id="payBtn" type="button">💳 결제하기</button>
+          <div class="order-secure">🔒 토스페이먼츠 PG 안전결제 · SSL 암호화</div>
+          <div class="pay-logos">
+            <span>내일배움카드</span><span>VISA</span><span>MASTER</span><span>삼성</span><span>현대</span><span>KB</span><span>신한</span><span>카카오페이</span><span>네이버페이</span>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 결제 방법 안내 3종 -->
+  <section class="section section-dark">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:60px;">
+        <div class="section-label" style="justify-content:center;">How to Pay</div>
+        <h2 class="section-title">결제 방법별 <span class="text-gradient">진행 절차</span></h2>
+        <p class="section-desc" style="margin:0 auto;">국비지원 과정은 "HRD-Net 수강신청"이 먼저입니다. 일반 과정은 바로 결제하시면 됩니다.</p>
+      </div>
+      <div class="process-steps" style="grid-template-columns:repeat(4,1fr);">
+        <div class="process-step">
+          <div class="process-step-title">내일배움카드 발급</div>
+          <div class="process-step-desc">HRD-Net 온라인 신청 또는 고용센터 방문. 발급까지 약 1~2주 소요.</div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-title">HRD-Net 수강신청</div>
+          <div class="process-step-desc">"액션에어" 검색 → 과정 선택 → 수강신청. 학원에서 승인 처리.</div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-title">자비부담금 결제</div>
+          <div class="process-step-desc">훈련비 중 국비지원을 제외한 금액만 내일배움카드로 결제.</div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-title">개강 · 출석 관리</div>
+          <div class="process-step-desc">출석률 80% 이상 유지 시 지원 유지. 수료 시 자격교육 연계.</div>
+        </div>
+      </div>
+
+      <div class="grid grid-2" style="margin-top:32px;">
+        <div class="notice">
+          <div class="notice-title">◆ 환불 규정 (학원의 설립 · 운영 및 과외교습에 관한 법률 기준)</div>
+          개강 전 : 전액 환불 · 총 수업시간의 1/3 경과 전 : 2/3 환불 · 1/2 경과 전 : 1/2 환불 · 1/2 경과 후 : 환불 불가.
+          국비지원 과정은 HRD-Net 훈련생 규정에 따르며, 자비부담금 환불은 학원으로 문의해 주세요.
+        </div>
+        <div class="notice">
+          <div class="notice-title">◆ 결제 관련 문의</div>
+          평일 09:00 ~ 18:00 · 1533-2640 · 카카오톡 채널 상담 · 3122627@naver.com<br>
+          카드 할부, 분납, 법인카드 결제, 세금계산서 발행은 상담 후 진행 가능합니다.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <img src="../images/logo.png" alt="액션에어그룹" style="opacity:0.7;background:transparent;border-radius:4px;" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+            <span style="display:none;font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--text-muted);">ACTION AIR GROUP</span>
+          </div>
+          <p class="footer-desc">히트펌프 산업의 미래,<br>액션에어그룹이 함께합니다.</p>
+        </div>
+        <div class="footer-links">
+          <h4>아카데미</h4>
+          <a href="academy.html">아카데미 소개</a>
+          <a href="academy-courses.html">교육과정</a>
+          <a href="academy-payment.html">학원비 결제</a>
+          <a href="academy-partner.html">파트너 · 창업</a>
+          <a href="academy-community.html">커뮤니티</a>
+        </div>
+        <div class="footer-links">
+          <h4>사업 분야</h4>
+          <a href="https://www.actionairgroup.com/pages/archi-u.html">아키유 건축컨설팅</a>
+          <a href="https://www.dawonairsys.co.kr" target="_blank">다원에어시스</a>
+          <a href="https://www.actionairgroup.com/pages/nz15c.html">N.Z 1.5℃ 쇼룸</a>
+          <a href="https://www.actionairgroup.com/pages/iot.html">아카라 IoT 쇼룸</a>
+          <a href="https://www.actionairgroup.com/pages/locations.html#distribution">액션에어 유통전문점</a>
+        </div>
+        <div class="footer-links">
+          <h4>연락처</h4>
+          <a href="tel:1533-2640">1533-2640</a>
+          <a href="tel:044-867-2627">044-867-2627</a>
+          <a href="mailto:info@actionairgroup.com">info@actionairgroup.com</a>
+          <a href="mailto:3122627@naver.com">3122627@naver.com</a>
+        </div>
+      </div>
+      <div class="footer-brands">
+        <div class="footer-brand-group">
+          <h4>액션에어 아카데미</h4>
+          <div class="footer-brand-links">
+            <a href="https://blog.naver.com/actionair2301" target="_blank" rel="noopener">Blog</a>
+            <a href="https://www.youtube.com/@actionair23" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://www.instagram.com/actionair_academy/" target="_blank" rel="noopener">Instagram</a>
+            <a href="http://www.actionair.co.kr" target="_blank" rel="noopener">기존 홈페이지</a>
+          </div>
+        </div>
+        <div class="footer-brand-group">
+          <h4>다원에어시스</h4>
+          <div class="footer-brand-links">
+            <a href="https://blog.naver.com/3122627" target="_blank" rel="noopener">Blog</a>
+            <a href="https://www.youtube.com/@ActionAir_dawon" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://www.instagram.com/dawon2627/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://smartstore.naver.com/actionair_dawon" target="_blank" rel="noopener">스마트스토어</a>
+          </div>
+        </div>
+        <div class="footer-brand-group">
+          <h4>Family Site</h4>
+          <div class="footer-brand-links">
+            <a href="https://www.lge.co.kr/air-solution/system-air-conditioner" target="_blank" rel="noopener">LG전자 시스템에어컨</a>
+            <a href="https://www.lge.co.kr" target="_blank" rel="noopener">LG전자 대표사이트</a>
+            <a href="https://www.hrd.go.kr" target="_blank" rel="noopener">HRD-Net (직업훈련포털)</a>
+          </div>
+        </div>
+      </div>
+      <div style="padding:24px 0;border-top:1px solid var(--border);margin-top:8px;font-size:0.78rem;color:var(--text-dim);line-height:1.8;">
+        <p><strong>액션에어 에어컨기술 창업학원 ㈜유앤영컴퍼니</strong> | 대표: 유한종 | 사업자등록번호: 324-87-02792 | 학원등록번호: 제1567호</p>
+        <p>통신판매업신고: 제-2023-세종조치원-0025호 | 주소: 세종특별자치시 소정면 소정구길 228 | 대표전화: 1533-2640</p>
+        <p><strong>액션에어그룹 (주)다원에어시스</strong> | 사업자등록번호: 520-88-00856 | 통신판매업신고: 2021-세종조치원-0050</p>
+        <div style="margin-top:12px;display:flex;gap:16px;flex-wrap:wrap;">
+          <a href="https://www.actionairgroup.com/pages/terms.html" style="color:var(--text-dim);text-decoration:underline;text-underline-offset:2px;">이용약관</a>
+          <a href="https://www.actionairgroup.com/pages/privacy.html" style="color:var(--text-dim);text-decoration:underline;text-underline-offset:2px;">개인정보처리방침</a>
+          <a href="https://www.actionairgroup.com/pages/refund.html" style="color:var(--text-dim);text-decoration:underline;text-underline-offset:2px;">환불 정책</a>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>&copy; 2026 액션에어그룹 · 액션에어 아카데미. All rights reserved.</span></div>
+    </div>
+  </footer>
+
+  <div class="floating-btns" id="floatingCta">
+    <a href="https://pf.kakao.com/_xbxcxcxj/chat" target="_blank" rel="noopener" class="floating-kakao" title="카카오톡 상담">
+      <svg viewBox="0 0 24 24" fill="#3C1E1E"><path d="M12 3C6.48 3 2 6.58 2 10.94c0 2.8 1.86 5.27 4.66 6.67-.15.53-.96 3.42-.99 3.66 0 0-.02.17.09.24.11.06.24.01.24.01.32-.04 3.7-2.44 4.28-2.85.56.08 1.14.13 1.72.13 5.52 0 10-3.58 10-7.86C22 6.58 17.52 3 12 3z"/></svg>
+    </a>
+    <a href="#checkout" class="floating-cta-btn">결제하기</a>
+  </div>
+
+  <!-- 시안 안내 모달 (실제 결제 없음) -->
+  <div class="modal-overlay" id="mockModal">
+    <div class="modal" style="text-align:left;max-width:480px;padding:0;">
+      <div style="padding:32px 36px 20px;text-align:center;border-bottom:1px solid var(--border);">
+        <div style="font-size:48px;line-height:1;margin-bottom:12px;">🧾</div>
+        <h3 style="margin-bottom:8px;">결제 요청 (디자인 시안)</h3>
+        <p style="font-size:0.88rem;color:var(--text-muted);margin:0;">실제 사이트에서는 이 단계에서 PG 결제창이 열립니다.</p>
+      </div>
+      <div style="padding:24px 36px;">
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:10px 16px;font-size:0.9rem;">
+          <div style="color:var(--text-muted);">과정</div><div id="mockCourse" style="color:var(--text);font-weight:600;"></div>
+          <div style="color:var(--text-muted);">결제수단</div><div id="mockMethod" style="color:var(--text);"></div>
+          <div style="color:var(--text-muted);">결제금액</div><div id="mockAmount" style="color:var(--gold-dark);font-weight:700;"></div>
+          <div style="color:var(--text-muted);">주문번호</div><div style="color:var(--text);">ACA-2026-0000 (예시)</div>
+        </div>
+      </div>
+      <div style="padding:0 36px 32px;">
+        <button class="btn btn-primary" style="width:100%;" type="button" onclick="document.getElementById('mockModal').classList.remove('active')">확인</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

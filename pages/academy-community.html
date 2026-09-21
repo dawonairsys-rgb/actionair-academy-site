@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>커뮤니티 — 액션에어 아카데미 | 액션에어그룹</title>
+  <meta name="description" content="액션에어 아카데미 공지사항, 자주묻는질문(FAQ), 1:1 상담신청, 취업정보, 갤러리.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/academy.css">
+  <script>window.AAG_LIVE_BASE = 'https://www.actionairgroup.com/pages/';</script>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/academy.js" defer></script>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="nav">
+    <div class="container">
+      <a href="../index.html" class="nav-logo">
+        <img src="../images/logo.png" alt="액션에어그룹" class="nav-logo-img" onerror="this.classList.add('error')">
+        <span class="nav-logo-text">ACTION AIR GROUP</span>
+      </a>
+      <div class="nav-menu" id="navMenu">
+        <a href="https://www.actionairgroup.com/pages/about.html" class="nav-link">그룹소개</a>
+        <a href="https://www.actionairgroup.com/pages/nz15c.html" class="nav-link">N.Z 1.5℃ 쇼룸</a>
+        <a href="https://www.actionairgroup.com/pages/iot.html" class="nav-link">IoT 쇼룸</a>
+        <a href="https://www.actionairgroup.com/pages/archi-u.html" class="nav-link">아키유</a>
+        <div class="nav-dropdown">
+          <a href="academy.html" class="nav-link active">아카데미<span class="nav-link-caret">▾</span></a>
+          <div class="nav-dropdown-menu">
+            <a href="academy.html" class="nav-dropdown-item"><span class="nav-dd-text"><span class="nav-dd-label">아카데미 소개</span><span class="nav-dd-desc">교육이념 · 연혁 · 시설 · 오시는 길</span></span><span class="nav-dd-arrow">&rarr;</span></a>
+            <a href="academy-courses.html" class="nav-dropdown-item"><span class="nav-dd-text"><span class="nav-dd-label">교육과정</span><span class="nav-dd-desc">국비지원 · 창업과정 · 청소과정 · 단과반</span></span><span class="nav-dd-arrow">&rarr;</span></a>
+            <a href="academy-payment.html" class="nav-dropdown-item"><span class="nav-dd-text"><span class="nav-dd-label">학원비 결제</span><span class="nav-dd-desc">국민내일배움카드 · 신용카드 · 계좌이체</span></span><span class="nav-dd-arrow">&rarr;</span></a>
+            <a href="academy-partner.html" class="nav-dropdown-item"><span class="nav-dd-text"><span class="nav-dd-label">파트너 · 창업</span><span class="nav-dd-desc">파트너 모집 · 아카데미 가맹 · 시공/기업서비스</span></span><span class="nav-dd-arrow">&rarr;</span></a>
+            <a href="academy-community.html" class="nav-dropdown-item active"><span class="nav-dd-text"><span class="nav-dd-label">커뮤니티</span><span class="nav-dd-desc">공지사항 · FAQ · 1:1 상담신청</span></span><span class="nav-dd-arrow">&rarr;</span></a>
+          </div>
+        </div>
+        <a href="https://www.actionairgroup.com/pages/consulting.html" class="nav-link">컨설팅</a>
+        <a href="https://www.actionairgroup.com/pages/contact.html" class="nav-link">문의</a>
+        <a href="academy-payment.html" class="nav-cta">수강 신청</a>
+      </div>
+      <div class="nav-auth">
+        <button class="nav-auth-btn" id="navLoginBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          로그인
+        </button>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="메뉴"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="page-header-bg">
+      <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1920&q=80" alt="커뮤니티" onerror="this.src='../images/showroom-hero.jpg'">
+    </div>
+    <div class="container">
+      <div class="section-label">Community</div>
+      <h1>공지사항 · FAQ ·<br><span class="text-gradient">1:1 상담신청</span></h1>
+      <p class="section-desc">개강 일정과 이벤트 소식, 자주 묻는 질문을 확인하고 궁금한 점은 1:1 상담으로 문의해 주세요.</p>
+    </div>
+  </header>
+
+  <div class="sub-nav">
+    <div class="container">
+      <a href="#notice" class="active">공지사항</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">1:1 상담신청</a>
+      <a href="#jobs">취업정보</a>
+      <a href="#gallery">갤러리</a>
+    </div>
+  </div>
+
+  <!-- NOTICE -->
+  <section class="section" id="notice">
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:32px;flex-wrap:wrap;gap:16px;">
+        <div>
+          <div class="section-label">Notice</div>
+          <h2 class="section-title" style="margin-bottom:0;">공지사항</h2>
+        </div>
+        <div class="board-search" style="margin:0;">
+          <input type="text" class="form-input" placeholder="검색어를 입력하세요" style="min-width:260px;">
+          <button class="btn btn-outline btn-sm" type="button">검색</button>
+        </div>
+      </div>
+      <div class="tabs board-tabs">
+        <button class="tab active" type="button">전체</button>
+        <button class="tab" type="button">모집안내</button>
+        <button class="tab" type="button">이벤트</button>
+        <button class="tab" type="button">교육안내</button>
+        <button class="tab" type="button">휴강</button>
+      </div>
+      <div class="news-list">
+        <a href="#" class="news-item"><span class="news-badge">모집안내</span><span class="news-title">[국비] 에어컨설치실무 국비지원과정 주말반 모집 (국민내일배움카드)</span><span class="news-date">2026.05.01</span></a>
+        <a href="#" class="news-item"><span class="news-badge">이벤트</span><span class="news-title">ADVANCED 101 과정 30% 할인 이벤트 — 2명 동시 수강 시 인당 180만원</span><span class="news-date">2026.04.20</span></a>
+        <a href="#" class="news-item"><span class="news-badge">교육안내</span><span class="news-title">삼성 DVM-HOME · SAC 에어컨 자격교육 연계 안내 (국비 수료생 대상)</span><span class="news-date">2026.04.12</span></a>
+        <a href="#" class="news-item"><span class="news-badge">모집안내</span><span class="news-title">에어컨청소 창업과정 기본반 · 집중반 수시모집</span><span class="news-date">2026.04.05</span></a>
+        <a href="#" class="news-item"><span class="news-badge">교육안내</span><span class="news-title">2026년 수료생 보수교육 일정 안내 (연 1회)</span><span class="news-date">2026.03.28</span></a>
+        <a href="#" class="news-item"><span class="news-badge">모집안내</span><span class="news-title">ACTION air 파트너 모집 — 서울 · 인천 · 경기 · 천안 · 세종 · 대전</span><span class="news-date">2026.03.15</span></a>
+        <a href="#" class="news-item"><span class="news-badge">휴강</span><span class="news-title">설 연휴 휴강 안내</span><span class="news-date">2026.02.10</span></a>
+      </div>
+      <div class="board-pagination">
+        <a href="#">‹</a><a href="#" class="active">1</a><a href="#">2</a><a href="#">3</a><a href="#">›</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section-dark" id="faq">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:48px;">
+        <div class="section-label" style="justify-content:center;">FAQ</div>
+        <h2 class="section-title">자주 묻는 질문</h2>
+      </div>
+      <div class="tabs" style="margin:0 auto 40px;">
+        <button class="tab active" type="button">교육관련</button>
+        <button class="tab" type="button">파트너관련</button>
+        <button class="tab" type="button">아카데미창업관련</button>
+        <button class="tab" type="button">기업서비스관련</button>
+        <button class="tab" type="button">시공관련</button>
+        <button class="tab" type="button">기타</button>
+      </div>
+      <div style="max-width:900px;margin:0 auto;">
+        <div class="faq-item open">
+          <button class="faq-question" type="button">국비지원 과정으로 수강할 수 있나요? <span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">네. "에어컨설치실무 국비지원과정"은 국민내일배움카드로 수강 가능하며, 훈련비의 45~100%가 국비 지원됩니다. HRD-Net에서 수강신청 후 학원 승인을 거쳐 자비부담금만 결제하시면 됩니다. 창업과정 · 청소과정 · 단과반은 전액 자비부담 과정입니다.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" type="button">실습과정은 어떻게 되나요? <span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">교육 수료 후 신청자에 한해서 진행이 되며, 아파트 · 상가 · 오피스 등 실제 에어컨 설치 현장에 투입되어 교육받은 내용을 실습하실 수 있습니다. 최대 5회까지 지원해 드리며, 소정의 보수를 지급해 드립니다. (보수금액은 현장상황 및 기술수준에 따라 차등 지급될 수 있습니다.)</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" type="button">교육수료 후 창업할 수 있나요? <span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">네. 교육 수료 후 창업하실 수 있는 수준으로 교육을 진행하므로 가능합니다. 창업 후 현장에서 발생하는 다양한 상황에 대한 지원 및 ACTION air 브랜드를 사용할 수 있는 파트너로 활동하시는 것을 추천 드립니다.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" type="button">취업알선도 해주시나요? <span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">수료생이 원할 경우 도급현장 등을 연계해 드리며, ACTION air 파트너로 활동해보시길 권유드립니다.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" type="button">ATC 인증서는 무엇인가요? <span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">ACTION air에서 운영하는 정규과정 수료 시 발급해 드리는 인증서입니다. 향후 ACTION air 파트너로 지원 시 우대해 드립니다.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" type="button">공구를 구입하고 싶은데 어떻게 하나요? <span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">ACTION air에서 운영하는 네이버 스마트스토어에서 저렴하게 구매 가능합니다. 수료생에게는 최대 도매할인율을 적용해 드립니다.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" type="button">차량으로 이동 예정인데 주차는 가능하나요? <span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">네. 세종시 소정면 소정구길 228 학원 건물 내에 무료 주차가 가능합니다.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" type="button">학원비는 어떻게 결제하나요? 할부도 되나요? <span class="faq-icon">+</span></button>
+          <div class="faq-answer"><div class="faq-answer-inner">신용/체크카드, 계좌이체(무통장), 국민내일배움카드(국비과정)로 결제 가능합니다. 카드 할부 · 분납 · 법인카드 · 세금계산서 발행은 상담 후 진행됩니다. 자세한 내용은 <a href="academy-payment.html" style="color:var(--gold);font-weight:600;">학원비 결제</a> 페이지를 확인해 주세요.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="split" style="align-items:start;">
+        <div>
+          <div class="section-label">1:1 Consultation</div>
+          <h2 class="section-title">1:1 상담신청</h2>
+          <p style="color:var(--text-muted);line-height:1.8;margin-bottom:24px;">교육과정 · 파트너 · 아카데미 창업 · 시공 · 기업서비스 등 궁금한 점을 남겨주시면 담당자가 1영업일 이내 연락드립니다.</p>
+          <div class="grid" style="gap:14px;">
+            <div class="card" style="padding:24px 28px;display:flex;align-items:center;gap:16px;">
+              <div class="card-icon" style="margin:0;width:44px;height:44px;font-size:1.1rem;">📞</div>
+              <div><div style="font-size:0.75rem;color:var(--text-dim);">대표전화</div><div style="font-weight:700;color:var(--white);">1533-2640</div></div>
+            </div>
+            <div class="card" style="padding:24px 28px;display:flex;align-items:center;gap:16px;">
+              <div class="card-icon" style="margin:0;width:44px;height:44px;font-size:1.1rem;">💬</div>
+              <div><div style="font-size:0.75rem;color:var(--text-dim);">카카오톡 채널</div><div style="font-weight:700;color:var(--white);">ACTION air 상담</div></div>
+            </div>
+            <div class="card" style="padding:24px 28px;display:flex;align-items:center;gap:16px;">
+              <div class="card-icon" style="margin:0;width:44px;height:44px;font-size:1.1rem;">✉️</div>
+              <div><div style="font-size:0.75rem;color:var(--text-dim);">이메일</div><div style="font-weight:700;color:var(--white);">3122627@naver.com</div></div>
+            </div>
+          </div>
+        </div>
+        <form class="checkout-panel" data-ajax data-modal="contactModal" style="margin:0;">
+          <div class="grid grid-2" style="gap:0 20px;">
+            <div class="form-group"><label class="form-label">이름 *</label><input type="text" class="form-input" placeholder="홍길동" required></div>
+            <div class="form-group"><label class="form-label">연락처 *</label><input type="tel" class="form-input" placeholder="010-1234-5678" required></div>
+          </div>
+          <div class="form-group"><label class="form-label">이메일</label><input type="email" class="form-input" placeholder="email@example.com"></div>
+          <div class="form-group">
+            <label class="form-label">상담 분야 *</label>
+            <select class="form-select" required>
+              <option value="">선택하세요</option>
+              <option>국비지원과정 (내일배움카드)</option>
+              <option>에어컨기술 창업과정</option>
+              <option>에어컨청소 창업과정</option>
+              <option>단과반</option>
+              <option>파트너 모집</option>
+              <option>아카데미 가맹 창업</option>
+              <option>에어컨 시공 · 기업서비스</option>
+              <option>기타</option>
+            </select>
+          </div>
+          <div class="form-group"><label class="form-label">문의 내용</label><textarea class="form-textarea" placeholder="궁금하신 내용을 자유롭게 남겨주세요."></textarea></div>
+          <div class="agree-box" style="margin-bottom:20px;">
+            <label><input type="checkbox" required> <span><strong>[필수]</strong> 개인정보 수집 · 이용 동의 (상담 목적)</span></label>
+          </div>
+          <button class="btn btn-primary" style="width:100%;" type="submit">상담 신청하기 <span class="btn-icon">→</span></button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOBS -->
+  <section class="section section-dark" id="jobs">
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:32px;flex-wrap:wrap;gap:16px;">
+        <div>
+          <div class="section-label">Jobs</div>
+          <h2 class="section-title" style="margin-bottom:0;">취업정보</h2>
+        </div>
+        <a href="#" class="btn btn-ghost btn-sm">전체보기 &rarr;</a>
+      </div>
+      <div class="news-list">
+        <a href="#" class="news-item"><span class="news-badge">채용</span><span class="news-title">[다원에어시스] 시스템에어컨 시공팀원 모집 — 수료생 우대 · 세종</span><span class="news-date">2026.04.28</span></a>
+        <a href="#" class="news-item"><span class="news-badge">도급</span><span class="news-title">[도급현장 연계] 천안 공동주택 올인원 시스템에어컨 시공 파트너 모집</span><span class="news-date">2026.04.15</span></a>
+        <a href="#" class="news-item"><span class="news-badge">채용</span><span class="news-title">[액션에어 아카데미] 실습 보조강사 모집 (ADVANCED 101 수료자)</span><span class="news-date">2026.04.02</span></a>
+        <a href="#" class="news-item"><span class="news-badge">채용</span><span class="news-title">[액션에어 유통센터] 아산 배방 물류 · 배송 인력 모집</span><span class="news-date">2026.03.20</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section" id="gallery">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:48px;">
+        <div class="section-label" style="justify-content:center;">Gallery</div>
+        <h2 class="section-title">교육 현장 <span class="text-gradient">갤러리</span></h2>
+      </div>
+      <div class="sns-grid">
+        <a href="https://www.instagram.com/actionair_academy/" target="_blank" rel="noopener" class="sns-item">
+          <img src="../images/adademy-front.jpg" alt="학원 전경">
+          <div class="sns-item-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></div>
+        </a>
+        <a href="https://www.instagram.com/actionair_academy/" target="_blank" rel="noopener" class="sns-item">
+          <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&q=80" alt="설치 실습" onerror="this.src='../images/showroom-01.jpg'">
+          <div class="sns-item-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></div>
+        </a>
+        <a href="https://www.instagram.com/actionair_academy/" target="_blank" rel="noopener" class="sns-item">
+          <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&q=80" alt="벽걸이 실습" onerror="this.src='../images/showroom-02.jpg'">
+          <div class="sns-item-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></div>
+        </a>
+        <a href="https://www.instagram.com/actionair_academy/" target="_blank" rel="noopener" class="sns-item">
+          <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80" alt="용접 실습" onerror="this.src='../images/showroom-03.jpg'">
+          <div class="sns-item-overlay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></div>
+        </a>
+      </div>
+      <div style="text-align:center;margin-top:40px;">
+        <a href="https://www.instagram.com/actionair_academy/" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Instagram 팔로우 &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <img src="../images/logo.png" alt="액션에어그룹" style="opacity:0.7;background:transparent;border-radius:4px;" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+            <span style="display:none;font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--text-muted);">ACTION AIR GROUP</span>
+          </div>
+          <p class="footer-desc">히트펌프 산업의 미래,<br>액션에어그룹이 함께합니다.</p>
+        </div>
+        <div class="footer-links">
+          <h4>아카데미</h4>
+          <a href="academy.html">아카데미 소개</a>
+          <a href="academy-courses.html">교육과정</a>
+          <a href="academy-payment.html">학원비 결제</a>
+          <a href="academy-partner.html">파트너 · 창업</a>
+          <a href="academy-community.html">커뮤니티</a>
+        </div>
+        <div class="footer-links">
+          <h4>사업 분야</h4>
+          <a href="https://www.actionairgroup.com/pages/archi-u.html">아키유 건축컨설팅</a>
+          <a href="https://www.dawonairsys.co.kr" target="_blank">다원에어시스</a>
+          <a href="https://www.actionairgroup.com/pages/nz15c.html">N.Z 1.5℃ 쇼룸</a>
+          <a href="https://www.actionairgroup.com/pages/iot.html">아카라 IoT 쇼룸</a>
+          <a href="https://www.actionairgroup.com/pages/locations.html#distribution">액션에어 유통전문점</a>
+        </div>
+        <div class="footer-links">
+          <h4>연락처</h4>
+          <a href="tel:1533-2640">1533-2640</a>
+          <a href="tel:044-867-2627">044-867-2627</a>
+          <a href="mailto:info@actionairgroup.com">info@actionairgroup.com</a>
+          <a href="mailto:3122627@naver.com">3122627@naver.com</a>
+        </div>
+      </div>
+      <div class="footer-brands">
+        <div class="footer-brand-group">
+          <h4>액션에어 아카데미</h4>
+          <div class="footer-brand-links">
+            <a href="https://blog.naver.com/actionair2301" target="_blank" rel="noopener">Blog</a>
+            <a href="https://www.youtube.com/@actionair23" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://www.instagram.com/actionair_academy/" target="_blank" rel="noopener">Instagram</a>
+            <a href="http://www.actionair.co.kr" target="_blank" rel="noopener">기존 홈페이지</a>
+          </div>
+        </div>
+        <div class="footer-brand-group">
+          <h4>다원에어시스</h4>
+          <div class="footer-brand-links">
+            <a href="https://blog.naver.com/3122627" target="_blank" rel="noopener">Blog</a>
+            <a href="https://www.youtube.com/@ActionAir_dawon" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://www.instagram.com/dawon2627/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://smartstore.naver.com/actionair_dawon" target="_blank" rel="noopener">스마트스토어</a>
+          </div>
+        </div>
+        <div class="footer-brand-group">
+          <h4>Family Site</h4>
+          <div class="footer-brand-links">
+            <a href="https://www.lge.co.kr/air-solution/system-air-conditioner" target="_blank" rel="noopener">LG전자 시스템에어컨</a>
+            <a href="https://www.lge.co.kr" target="_blank" rel="noopener">LG전자 대표사이트</a>
+            <a href="https://www.hrd.go.kr" target="_blank" rel="noopener">HRD-Net (직업훈련포털)</a>
+          </div>
+        </div>
+      </div>
+      <div style="padding:24px 0;border-top:1px solid var(--border);margin-top:8px;font-size:0.78rem;color:var(--text-dim);line-height:1.8;">
+        <p><strong>액션에어 에어컨기술 창업학원 ㈜유앤영컴퍼니</strong> | 대표: 유한종 | 사업자등록번호: 324-87-02792 | 학원등록번호: 제1567호</p>
+        <p>통신판매업신고: 제-2023-세종조치원-0025호 | 주소: 세종특별자치시 소정면 소정구길 228 | 대표전화: 1533-2640</p>
+        <p><strong>액션에어그룹 (주)다원에어시스</strong> | 사업자등록번호: 520-88-00856 | 통신판매업신고: 2021-세종조치원-0050</p>
+        <div style="margin-top:12px;display:flex;gap:16px;flex-wrap:wrap;">
+          <a href="https://www.actionairgroup.com/pages/terms.html" style="color:var(--text-dim);text-decoration:underline;text-underline-offset:2px;">이용약관</a>
+          <a href="https://www.actionairgroup.com/pages/privacy.html" style="color:var(--text-dim);text-decoration:underline;text-underline-offset:2px;">개인정보처리방침</a>
+          <a href="https://www.actionairgroup.com/pages/refund.html" style="color:var(--text-dim);text-decoration:underline;text-underline-offset:2px;">환불 정책</a>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>&copy; 2026 액션에어그룹 · 액션에어 아카데미. All rights reserved.</span></div>
+    </div>
+  </footer>
+
+  <div class="floating-btns" id="floatingCta">
+    <a href="https://pf.kakao.com/_xbxcxcxj/chat" target="_blank" rel="noopener" class="floating-kakao" title="카카오톡 상담">
+      <svg viewBox="0 0 24 24" fill="#3C1E1E"><path d="M12 3C6.48 3 2 6.58 2 10.94c0 2.8 1.86 5.27 4.66 6.67-.15.53-.96 3.42-.99 3.66 0 0-.02.17.09.24.11.06.24.01.24.01.32-.04 3.7-2.44 4.28-2.85.56.08 1.14.13 1.72.13 5.52 0 10-3.58 10-7.86C22 6.58 17.52 3 12 3z"/></svg>
+    </a>
+    <a href="#contact" class="floating-cta-btn">상담 신청</a>
+  </div>
+
+  <!-- 상담 접수 모달 (시안) -->
+  <div class="modal-overlay" id="contactModal">
+    <div class="modal">
+      <div class="modal-icon">✅</div>
+      <h3>상담 신청이 접수되었습니다</h3>
+      <p>담당자가 1영업일 이내 연락드리겠습니다.<br><small style="color:var(--text-dim);">(디자인 시안 — 실제 접수는 되지 않습니다)</small></p>
+      <button class="btn btn-primary" type="button" data-close-modal>확인</button>
+    </div>
+  </div>
+
+</body>
+</html>
