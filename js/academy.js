@@ -7,31 +7,72 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ── 0. 스크롤 애니메이션 안전망 ──────────────
-  // main.js 의 GSAP ScrollTrigger 는 카드류를 opacity 0 으로 두었다가 등장시키는데,
-  // 폰트/이미지 로드 후 레이아웃이 밀리거나 앵커 점프 시 트리거가 어긋나면 빈 공간으로 남는다.
-  // → 로드 완료 후 위치를 재계산하고, 화면에 들어왔는데도 숨겨져 있으면 강제로 표시한다.
-  if (window.gsap && window.ScrollTrigger) {
-    const refresh = () => ScrollTrigger.refresh();
-    window.addEventListener('load', refresh);
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(refresh);
-  }
+  // ── 0. 등장 애니메이션 (아카데미 페이지) ──────
+  // main.js 의 GSAP ScrollTrigger 등장 효과는 트리거가 어긋나면 카드가 투명/중간 상태로 남을 수 있다.
+  // 아카데미 페이지(.sub-nav 가 있는 페이지)에서는 그 트윈을 제거하고 CSS 전환 + IntersectionObserver 로 대체한다.
+  // index.html 처럼 .sub-nav 가 없는 페이지는 원본 동작을 유지하되, 숨겨진 채 남으면 강제 표시한다.
   const ANIMATED = '.feature-item, .card, .price-card, .process-step, .library-item, .news-item, .hww-card, .sns-item, .reveal, .case-banner';
-  const guard = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (!e.isIntersecting) return;
-      const el = e.target;
-      guard.unobserve(el);
-      setTimeout(() => {
-        if (parseFloat(getComputedStyle(el).opacity) < 0.05) {
-          if (window.gsap) gsap.set(el, { clearProps: 'opacity,transform,visibility' });
-          else { el.style.opacity = ''; el.style.transform = ''; }
-          el.classList.add('visible');
-        }
-      }, 1500);
-    });
-  }, { threshold: 0.05 });
-  document.querySelectorAll(ANIMATED).forEach(el => guard.observe(el));
+  const animated = Array.from(document.querySelectorAll(ANIMATED));
+  const isAcademyPage = !!document.querySelector('.sub-nav');
+
+  if (isAcademyPage && animated.length) {
+    if (window.gsap) {
+      if (window.ScrollTrigger) {
+        ScrollTrigger.getAll().forEach(t => {
+          const targets = t.animation && t.animation.targets ? t.animation.targets() : [];
+          if (targets.some(el => animated.includes(el))) t.kill(true);
+        });
+      }
+      gsap.killTweensOf(animated);
+      gsap.set(animated, { clearProps: 'opacity,transform,visibility,clipPath' });
+    }
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduce) {
+      animated.forEach(el => {
+        el.classList.remove('visible');
+        // 초기 숨김 상태는 전환 없이 즉시 적용 (보임→숨김 깜빡임 방지)
+        el.style.transition = 'none';
+        el.classList.add('aa-reveal');
+        void el.offsetWidth;
+        el.style.transition = '';
+        const sibs = Array.from(el.parentElement.children).filter(c => c.classList.contains('aa-reveal'));
+        el.style.transitionDelay = (sibs.indexOf(el) * 80) + 'ms';
+      });
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (!e.isIntersecting) return;
+          const el = e.target;
+          io.unobserve(el);
+          el.classList.add('in', 'visible');
+          // 전환이 끝나면 클래스를 걷어내 hover 등 원래 스타일로 복귀
+          setTimeout(() => { el.classList.remove('aa-reveal', 'in'); el.style.transitionDelay = ''; }, 900 + parseInt(el.style.transitionDelay || 0, 10));
+        });
+      }, { threshold: 0.05, rootMargin: '0px 0px -5% 0px' });
+      animated.forEach(el => io.observe(el));
+    } else {
+      animated.forEach(el => el.classList.add('visible'));
+    }
+  } else if (animated.length) {
+    if (window.gsap && window.ScrollTrigger) {
+      const refresh = () => ScrollTrigger.refresh();
+      window.addEventListener('load', refresh);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(refresh);
+    }
+    const guard = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        guard.unobserve(el);
+        setTimeout(() => {
+          if (parseFloat(getComputedStyle(el).opacity) < 0.05) {
+            if (window.gsap) gsap.set(el, { clearProps: 'opacity,transform,visibility' });
+            el.classList.add('visible');
+          }
+        }, 1500);
+      });
+    }, { threshold: 0.05 });
+    animated.forEach(el => guard.observe(el));
+  }
 
   // ── 1. 커리큘럼 토글 ─────────────────────────
   document.querySelectorAll('.curriculum-toggle').forEach(btn => {
