@@ -7,6 +7,32 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // ── 0. 스크롤 애니메이션 안전망 ──────────────
+  // main.js 의 GSAP ScrollTrigger 는 카드류를 opacity 0 으로 두었다가 등장시키는데,
+  // 폰트/이미지 로드 후 레이아웃이 밀리거나 앵커 점프 시 트리거가 어긋나면 빈 공간으로 남는다.
+  // → 로드 완료 후 위치를 재계산하고, 화면에 들어왔는데도 숨겨져 있으면 강제로 표시한다.
+  if (window.gsap && window.ScrollTrigger) {
+    const refresh = () => ScrollTrigger.refresh();
+    window.addEventListener('load', refresh);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(refresh);
+  }
+  const ANIMATED = '.feature-item, .card, .price-card, .process-step, .library-item, .news-item, .hww-card, .sns-item, .reveal, .case-banner';
+  const guard = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      guard.unobserve(el);
+      setTimeout(() => {
+        if (parseFloat(getComputedStyle(el).opacity) < 0.05) {
+          if (window.gsap) gsap.set(el, { clearProps: 'opacity,transform,visibility' });
+          else { el.style.opacity = ''; el.style.transform = ''; }
+          el.classList.add('visible');
+        }
+      }, 1500);
+    });
+  }, { threshold: 0.05 });
+  document.querySelectorAll(ANIMATED).forEach(el => guard.observe(el));
+
   // ── 1. 커리큘럼 토글 ─────────────────────────
   document.querySelectorAll('.curriculum-toggle').forEach(btn => {
     btn.addEventListener('click', () => {
